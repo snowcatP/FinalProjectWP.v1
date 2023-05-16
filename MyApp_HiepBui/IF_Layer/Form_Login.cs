@@ -38,7 +38,7 @@ namespace MyApp_HiepBui
         
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=Hoangpro\HOANGPRO;Initial Catalog=ConvenienceStoreManagement;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-TL4MGTDD\MSSQLSERVER01;Initial Catalog=ConvenienceStoreManagement;Integrated Security=True");
             this.Accont = txt_Account.Text.Trim();
             this.Password = txt_Password.Text.Trim();
             //try

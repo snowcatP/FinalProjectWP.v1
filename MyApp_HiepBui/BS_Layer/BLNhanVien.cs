@@ -11,8 +11,6 @@ namespace MyApp_HiepBui.BS_Layer
     class BLNhanVien
     {
         DBMain db = null;
-        public string Account = Form_Login.form_log.Accont;
-        public string PassWord = Form_Login.form_log.Password;
         public BLNhanVien()
         {
             db = new DBMain();
