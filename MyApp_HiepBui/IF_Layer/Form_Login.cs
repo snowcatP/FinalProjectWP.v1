@@ -17,6 +17,9 @@ namespace MyApp_HiepBui
         public string Account_Pass;
         public string Accont { get; set; }
         public string Password { get; set; }
+
+        string connstr = @"Data Source=Hoangpro\HOANGPRO;Initial Catalog=ConvenienceStoreManagement;Integrated Security=True";
+
         public Form_Login()
         {
             InitializeComponent();
@@ -38,7 +41,7 @@ namespace MyApp_HiepBui
         
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-TL4MGTDD\MSSQLSERVER01;Initial Catalog=ConvenienceStoreManagement;Integrated Security=True");
+            SqlConnection con = new SqlConnection(connstr);
             this.Accont = txt_Account.Text.Trim();
             this.Password = txt_Password.Text.Trim();
             //try

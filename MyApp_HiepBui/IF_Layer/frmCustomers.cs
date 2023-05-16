@@ -15,7 +15,9 @@ namespace MyApp_HiepBui.IF_Layer
 {
     public partial class frmCustomers : UserControl
     {
-        string connstr = @"Data Source=LAPTOP-TL4MGTDD\MSSQLSERVER01;Initial Catalog=ConvenienceStoreManagement;Integrated Security=True";
+
+        string connstr = @"Data Source=Hoangpro\HOANGPRO;Initial Catalog=ConvenienceStoreManagement;Integrated Security=True";
+
         string err;
         string IDCustomer;
         DataTable dtKhahcHang = null;

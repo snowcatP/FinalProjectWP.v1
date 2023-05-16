@@ -11,9 +11,6 @@ namespace MyApp_HiepBui.BS_Layer
      class BLCustomers
     {
         DBMain db = null;
-
-        
-        //string connStr = @"Data Source=Hoangpro\HOANGPRO;Initial Catalog=ConvenienceStoreManagement;User ID=" + Form_Login.form_log.Accont + ";PassWord=" + Form_Login.form_log.Password;
         public BLCustomers()
         {
             db=new DBMain();
