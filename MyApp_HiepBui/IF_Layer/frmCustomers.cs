@@ -78,7 +78,7 @@ namespace MyApp_HiepBui.IF_Layer
         }
         public void Textbox_PhoneLoad()
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=Hoangpro\HOANGPRO;Initial Catalog=ConvenienceStoreManagement;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-TL4MGTDD\MSSQLSERVER01;Initial Catalog=ConvenienceStoreManagement;Integrated Security=True");
             if (conn.State == ConnectionState.Open)
             {
                 conn.Close();
