@@ -141,6 +141,8 @@ namespace MyApp_HiepBui.IF_Layer
 
                     blOrder.AddNewOrder(newIDOrder, phone, idItem, quantity);
                 }
+                MessageBox.Show("Added new order success!");
+                
             }
             catch (Exception)
             {
@@ -171,6 +173,7 @@ namespace MyApp_HiepBui.IF_Layer
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            dgvOrders.Columns.Clear();
             dgvOrders.DataSource = null;
             DataTable dt = new DataTable();
             dt.Clear();
