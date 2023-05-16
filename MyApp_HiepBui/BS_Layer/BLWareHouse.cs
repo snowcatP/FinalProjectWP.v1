@@ -14,10 +14,6 @@ namespace MyApp_HiepBui.BS_Layer
     {
         DBMain db;
         string err;
-        public string Account = Form_Login.form_log.Accont;
-        public string PassWord = Form_Login.form_log.Password;
-        //string connStr = @"Data Source=Hoangpro\HOANGPRO;Initial Catalog=ConvenienceStoreManagement;User ID="
-        //                                            + Form_Login.form_log.Accont + ";PassWord=" + Form_Login.form_log.Password;
         public BLWareHouse()
         {
             db = new DBMain();

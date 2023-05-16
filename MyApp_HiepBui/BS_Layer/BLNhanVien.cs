@@ -11,16 +11,9 @@ namespace MyApp_HiepBui.BS_Layer
     class BLNhanVien
     {
         DBMain db = null;
-        public string Account = Form_Login.form_log.Accont;
-        public string PassWord = Form_Login.form_log.Password;
         public BLNhanVien()
         {
             db = new DBMain();
-        }
-        public DataSet Get_Employee_Is_Working()
-        {
-            // xoa sau
-            return db.ExecuteQueryDataSet("select * idawldhalwjdh from [Employees View]", CommandType.Text);
         }
         public BLNhanVien(string connstr)
         {

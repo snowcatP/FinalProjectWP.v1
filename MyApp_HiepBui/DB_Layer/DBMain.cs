@@ -12,7 +12,6 @@ namespace MyApp_HiepBui.DB_Layer
     {
         string connStr = @"Data Source=Hoangpro\HOANGPRO;Initial Catalog=ConvenienceStoreManagement;Integrated Security=True";
         
-        //string connStr = @"Data Source=Hoangpro\HOANGPRO;Initial Catalog=ConvenienceStoreManagement;User ID=" + Form_Login.form_log.Accont + ";PassWord=" + Form_Login.form_log.Password;
 
         SqlConnection conn = null;
         SqlCommand  comm = null;
