@@ -15,11 +15,6 @@ namespace MyApp_HiepBui.BS_Layer
         {
             db = new DBMain();
         }
-        public DataSet Get_Employee_Is_Working()
-        {
-            // xoa sau
-            return db.ExecuteQueryDataSet("select * idawldhalwjdh from [Employees View]", CommandType.Text);
-        }
         public BLNhanVien(string connstr)
         {
             db = new DBMain(connstr);

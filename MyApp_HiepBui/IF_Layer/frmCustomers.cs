@@ -15,6 +15,7 @@ namespace MyApp_HiepBui.IF_Layer
 {
     public partial class frmCustomers : UserControl
     {
+        string connstr = @"Data Source=LAPTOP-TL4MGTDD\MSSQLSERVER01;Initial Catalog=ConvenienceStoreManagement;Integrated Security=True";
         string err;
         string IDCustomer;
         DataTable dtKhahcHang = null;
@@ -78,7 +79,7 @@ namespace MyApp_HiepBui.IF_Layer
         }
         public void Textbox_PhoneLoad()
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-TL4MGTDD\MSSQLSERVER01;Initial Catalog=ConvenienceStoreManagement;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(connstr);
             if (conn.State == ConnectionState.Open)
             {
                 conn.Close();

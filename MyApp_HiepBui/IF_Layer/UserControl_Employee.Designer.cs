@@ -1,14 +1,14 @@
 ﻿
 namespace MyApp_HiepBui.IF_Layer
 {
-    partial class Form_DSNhanVien
+    partial class UserControl_Employee
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -21,16 +21,18 @@ namespace MyApp_HiepBui.IF_Layer
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_DSNhanVien));
-            this.dgv_NhanVien = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl_Employee));
+            this.btn_Search = new System.Windows.Forms.Button();
+            this.txt_SearchName = new System.Windows.Forms.TextBox();
+            this.label_Search = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_TypeEmp = new System.Windows.Forms.TextBox();
@@ -47,32 +49,47 @@ namespace MyApp_HiepBui.IF_Layer
             this.lb_Ngaysinh = new System.Windows.Forms.Label();
             this.lb_Hoten = new System.Windows.Forms.Label();
             this.lb_IDNhanVien = new System.Windows.Forms.Label();
-            this.label_Search = new System.Windows.Forms.Label();
-            this.txt_SearchName = new System.Windows.Forms.TextBox();
-            this.btn_Search = new System.Windows.Forms.Button();
-            this.btn_Exit = new System.Windows.Forms.Button();
+            this.dgv_NhanVien = new System.Windows.Forms.DataGridView();
             this.btn_Account = new System.Windows.Forms.Button();
             this.btn_Salary = new System.Windows.Forms.Button();
             this.btn_Reload = new System.Windows.Forms.Button();
             this.btn_modifyEmployee = new System.Windows.Forms.Button();
             this.btn_delEmployee = new System.Windows.Forms.Button();
             this.btn_addEmployee = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
+            this.btn_Exit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgv_NhanVien
+            // btn_Search
             // 
-            this.dgv_NhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_NhanVien.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgv_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_NhanVien.Location = new System.Drawing.Point(411, 249);
-            this.dgv_NhanVien.Margin = new System.Windows.Forms.Padding(4);
-            this.dgv_NhanVien.Name = "dgv_NhanVien";
-            this.dgv_NhanVien.RowHeadersWidth = 51;
-            this.dgv_NhanVien.Size = new System.Drawing.Size(958, 515);
-            this.dgv_NhanVien.TabIndex = 5;
-            this.dgv_NhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_NhanVien_CellClick);
+            this.btn_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Search.Location = new System.Drawing.Point(950, 122);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(84, 34);
+            this.btn_Search.TabIndex = 27;
+            this.btn_Search.Text = "Search";
+            this.btn_Search.UseVisualStyleBackColor = true;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
+            // 
+            // txt_SearchName
+            // 
+            this.txt_SearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SearchName.Location = new System.Drawing.Point(592, 125);
+            this.txt_SearchName.Name = "txt_SearchName";
+            this.txt_SearchName.Size = new System.Drawing.Size(350, 30);
+            this.txt_SearchName.TabIndex = 26;
+            this.txt_SearchName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_SearchName_KeyDown);
+            // 
+            // label_Search
+            // 
+            this.label_Search.AutoSize = true;
+            this.label_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Search.Location = new System.Drawing.Point(330, 128);
+            this.label_Search.Name = "label_Search";
+            this.label_Search.Size = new System.Drawing.Size(256, 25);
+            this.label_Search.TabIndex = 25;
+            this.label_Search.Text = "Search Name Of Employee:";
             // 
             // panel1
             // 
@@ -92,10 +109,10 @@ namespace MyApp_HiepBui.IF_Layer
             this.panel1.Controls.Add(this.lb_Ngaysinh);
             this.panel1.Controls.Add(this.lb_Hoten);
             this.panel1.Controls.Add(this.lb_IDNhanVien);
-            this.panel1.Location = new System.Drawing.Point(12, 249);
+            this.panel1.Location = new System.Drawing.Point(6, 169);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(392, 515);
-            this.panel1.TabIndex = 8;
+            this.panel1.Size = new System.Drawing.Size(392, 494);
+            this.panel1.TabIndex = 30;
             this.panel1.Tag = "";
             // 
             // label1
@@ -230,50 +247,18 @@ namespace MyApp_HiepBui.IF_Layer
             this.lb_IDNhanVien.TabIndex = 0;
             this.lb_IDNhanVien.Text = "ID:";
             // 
-            // label_Search
+            // dgv_NhanVien
             // 
-            this.label_Search.AutoSize = true;
-            this.label_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Search.Location = new System.Drawing.Point(445, 176);
-            this.label_Search.Name = "label_Search";
-            this.label_Search.Size = new System.Drawing.Size(256, 25);
-            this.label_Search.TabIndex = 15;
-            this.label_Search.Text = "Search Name Of Employee:";
-            // 
-            // txt_SearchName
-            // 
-            this.txt_SearchName.Location = new System.Drawing.Point(718, 178);
-            this.txt_SearchName.Name = "txt_SearchName";
-            this.txt_SearchName.Size = new System.Drawing.Size(350, 22);
-            this.txt_SearchName.TabIndex = 16;
-            this.txt_SearchName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_SearchName_KeyDown);
-            // 
-            // btn_Search
-            // 
-            this.btn_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Search.Location = new System.Drawing.Point(1089, 176);
-            this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(84, 34);
-            this.btn_Search.TabIndex = 18;
-            this.btn_Search.Text = "Search";
-            this.btn_Search.UseVisualStyleBackColor = true;
-            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
-            // 
-            // btn_Exit
-            // 
-            this.btn_Exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
-            this.btn_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_Exit.FlatAppearance.BorderSize = 0;
-            this.btn_Exit.ForeColor = System.Drawing.Color.White;
-            this.btn_Exit.Image = global::MyApp_HiepBui.Properties.Resources.exit_icon;
-            this.btn_Exit.Location = new System.Drawing.Point(938, 40);
-            this.btn_Exit.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(109, 89);
-            this.btn_Exit.TabIndex = 21;
-            this.btn_Exit.Text = "&Exit";
-            this.btn_Exit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_Exit.UseVisualStyleBackColor = false;
+            this.dgv_NhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_NhanVien.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgv_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_NhanVien.Location = new System.Drawing.Point(406, 171);
+            this.dgv_NhanVien.Margin = new System.Windows.Forms.Padding(4);
+            this.dgv_NhanVien.Name = "dgv_NhanVien";
+            this.dgv_NhanVien.RowHeadersWidth = 51;
+            this.dgv_NhanVien.Size = new System.Drawing.Size(773, 492);
+            this.dgv_NhanVien.TabIndex = 31;
+            this.dgv_NhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_NhanVien_CellContentClick);
             // 
             // btn_Account
             // 
@@ -283,11 +268,11 @@ namespace MyApp_HiepBui.IF_Layer
             this.btn_Account.FlatAppearance.BorderSize = 0;
             this.btn_Account.ForeColor = System.Drawing.Color.White;
             this.btn_Account.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_Account.Location = new System.Drawing.Point(804, 40);
+            this.btn_Account.Location = new System.Drawing.Point(761, 19);
             this.btn_Account.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Account.Name = "btn_Account";
             this.btn_Account.Size = new System.Drawing.Size(109, 89);
-            this.btn_Account.TabIndex = 20;
+            this.btn_Account.TabIndex = 29;
             this.btn_Account.Text = "&Account";
             this.btn_Account.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Account.UseVisualStyleBackColor = false;
@@ -301,11 +286,11 @@ namespace MyApp_HiepBui.IF_Layer
             this.btn_Salary.FlatAppearance.BorderSize = 0;
             this.btn_Salary.ForeColor = System.Drawing.Color.White;
             this.btn_Salary.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_Salary.Location = new System.Drawing.Point(667, 40);
+            this.btn_Salary.Location = new System.Drawing.Point(644, 19);
             this.btn_Salary.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Salary.Name = "btn_Salary";
             this.btn_Salary.Size = new System.Drawing.Size(109, 89);
-            this.btn_Salary.TabIndex = 19;
+            this.btn_Salary.TabIndex = 28;
             this.btn_Salary.Text = "&Salary";
             this.btn_Salary.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Salary.UseVisualStyleBackColor = false;
@@ -319,15 +304,15 @@ namespace MyApp_HiepBui.IF_Layer
             this.btn_Reload.FlatAppearance.BorderSize = 0;
             this.btn_Reload.ForeColor = System.Drawing.Color.White;
             this.btn_Reload.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_Reload.Location = new System.Drawing.Point(546, 40);
+            this.btn_Reload.Location = new System.Drawing.Point(523, 19);
             this.btn_Reload.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Reload.Name = "btn_Reload";
             this.btn_Reload.Size = new System.Drawing.Size(109, 89);
-            this.btn_Reload.TabIndex = 13;
+            this.btn_Reload.TabIndex = 24;
             this.btn_Reload.Text = "&Reload";
             this.btn_Reload.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Reload.UseVisualStyleBackColor = false;
-            this.btn_Reload.Click += new System.EventHandler(this.btn_Reload_Click_1);
+            this.btn_Reload.Click += new System.EventHandler(this.btn_Reload_Click);
             // 
             // btn_modifyEmployee
             // 
@@ -337,11 +322,11 @@ namespace MyApp_HiepBui.IF_Layer
             this.btn_modifyEmployee.FlatAppearance.BorderSize = 0;
             this.btn_modifyEmployee.ForeColor = System.Drawing.Color.White;
             this.btn_modifyEmployee.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_modifyEmployee.Location = new System.Drawing.Point(425, 40);
+            this.btn_modifyEmployee.Location = new System.Drawing.Point(406, 19);
             this.btn_modifyEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.btn_modifyEmployee.Name = "btn_modifyEmployee";
             this.btn_modifyEmployee.Size = new System.Drawing.Size(109, 89);
-            this.btn_modifyEmployee.TabIndex = 12;
+            this.btn_modifyEmployee.TabIndex = 23;
             this.btn_modifyEmployee.Text = "&Modify";
             this.btn_modifyEmployee.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_modifyEmployee.UseVisualStyleBackColor = false;
@@ -355,11 +340,11 @@ namespace MyApp_HiepBui.IF_Layer
             this.btn_delEmployee.FlatAppearance.BorderSize = 0;
             this.btn_delEmployee.ForeColor = System.Drawing.Color.White;
             this.btn_delEmployee.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_delEmployee.Location = new System.Drawing.Point(304, 40);
+            this.btn_delEmployee.Location = new System.Drawing.Point(289, 19);
             this.btn_delEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.btn_delEmployee.Name = "btn_delEmployee";
             this.btn_delEmployee.Size = new System.Drawing.Size(109, 89);
-            this.btn_delEmployee.TabIndex = 11;
+            this.btn_delEmployee.TabIndex = 22;
             this.btn_delEmployee.Text = "&Delete";
             this.btn_delEmployee.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_delEmployee.UseVisualStyleBackColor = false;
@@ -373,24 +358,40 @@ namespace MyApp_HiepBui.IF_Layer
             this.btn_addEmployee.FlatAppearance.BorderSize = 0;
             this.btn_addEmployee.ForeColor = System.Drawing.Color.White;
             this.btn_addEmployee.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_addEmployee.Location = new System.Drawing.Point(183, 40);
+            this.btn_addEmployee.Location = new System.Drawing.Point(172, 19);
             this.btn_addEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.btn_addEmployee.Name = "btn_addEmployee";
             this.btn_addEmployee.Size = new System.Drawing.Size(109, 89);
-            this.btn_addEmployee.TabIndex = 10;
+            this.btn_addEmployee.TabIndex = 21;
             this.btn_addEmployee.Text = "&Add";
             this.btn_addEmployee.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_addEmployee.UseVisualStyleBackColor = false;
-            this.btn_addEmployee.Click += new System.EventHandler(this.btn_addCustomer_Click);
+            this.btn_addEmployee.Click += new System.EventHandler(this.btn_addEmployee_Click);
             // 
-            // Form_DSNhanVien
+            // btn_Exit
             // 
-            this.AcceptButton = this.btn_Search;
+            this.btn_Exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
+            this.btn_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Exit.FlatAppearance.BorderSize = 0;
+            this.btn_Exit.ForeColor = System.Drawing.Color.White;
+            this.btn_Exit.Image = global::MyApp_HiepBui.Properties.Resources.exit_icon;
+            this.btn_Exit.Location = new System.Drawing.Point(878, 19);
+            this.btn_Exit.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(109, 89);
+            this.btn_Exit.TabIndex = 32;
+            this.btn_Exit.Text = "&Exit";
+            this.btn_Exit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_Exit.UseVisualStyleBackColor = false;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            // 
+            // UserControl_Employee
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1394, 785);
             this.Controls.Add(this.btn_Exit);
+            this.Controls.Add(this.dgv_NhanVien);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_Account);
             this.Controls.Add(this.btn_Salary);
             this.Controls.Add(this.btn_Search);
@@ -400,28 +401,30 @@ namespace MyApp_HiepBui.IF_Layer
             this.Controls.Add(this.btn_modifyEmployee);
             this.Controls.Add(this.btn_delEmployee);
             this.Controls.Add(this.btn_addEmployee);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dgv_NhanVien);
-            this.KeyPreview = true;
-            this.Name = "Form_DSNhanVien";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_DSNhanVien";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_DSNhanVien_FormClosed);
-            this.Load += new System.EventHandler(this.Form_DSNhanVien_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).EndInit();
+            this.Name = "UserControl_Employee";
+            this.Size = new System.Drawing.Size(1209, 666);
+            this.Load += new System.EventHandler(this.UserControl_Employee_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dgv_NhanVien;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_addEmployee;
-        private System.Windows.Forms.Button btn_delEmployee;
+
+        private System.Windows.Forms.Button btn_Account;
+        private System.Windows.Forms.Button btn_Salary;
+        private System.Windows.Forms.Button btn_Search;
+        private System.Windows.Forms.TextBox txt_SearchName;
+        private System.Windows.Forms.Label label_Search;
+        private System.Windows.Forms.Button btn_Reload;
         private System.Windows.Forms.Button btn_modifyEmployee;
+        private System.Windows.Forms.Button btn_delEmployee;
+        private System.Windows.Forms.Button btn_addEmployee;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_TypeEmp;
         private System.Windows.Forms.TextBox txt_Position;
         private System.Windows.Forms.TextBox txt_Phone;
@@ -436,14 +439,7 @@ namespace MyApp_HiepBui.IF_Layer
         private System.Windows.Forms.Label lb_Ngaysinh;
         private System.Windows.Forms.Label lb_Hoten;
         private System.Windows.Forms.Label lb_IDNhanVien;
-        private System.Windows.Forms.Label label1;
-        private UserControl_ThemNhanVien userControl_ThemNhanVien1;
-        private System.Windows.Forms.Button btn_Reload;
-        private System.Windows.Forms.Label label_Search;
-        private System.Windows.Forms.TextBox txt_SearchName;
-        private System.Windows.Forms.Button btn_Search;
-        private System.Windows.Forms.Button btn_Salary;
-        private System.Windows.Forms.Button btn_Account;
+        private System.Windows.Forms.DataGridView dgv_NhanVien;
         private System.Windows.Forms.Button btn_Exit;
     }
 }
