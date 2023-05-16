@@ -15,34 +15,43 @@ namespace MyApp_HiepBui.IF_Layer
     {
 
         string err;
+        DataTable dtKindOfEmp = null;
+        DataTable dtGroupEmp = null;
+        DataTable dtTypeUser = null;
         DataTable dtNhanVien = null;
         BLNhanVien dbNV = new BLNhanVien();
         bool Them = false;
         public UserControl_ThemNhanVien()
         {
             InitializeComponent();
+            dateTimePicker_AddDOB.Format = DateTimePickerFormat.Custom;
+            dateTimePicker_AddDOB.CustomFormat = "dd-MM-yyyy";
         }
         void loadDataNV()
         {
             try
             {
-                dtNhanVien = new DataTable();
-                dtNhanVien.Clear();
-                DataSet ds = dbNV.Lay_DSNhanVien_Full();
-                dtNhanVien = ds.Tables[0];
-                dgv_UserControl_ThemNhanVien.DataSource = dtNhanVien;
-                dgv_UserControl_ThemNhanVien.AutoResizeColumns();
-
+                dtKindOfEmp = new DataTable();
+                dtKindOfEmp.Clear();
+                DataSet dsKOE = dbNV.Get_List_Kind_Of_Employee();
+                dtKindOfEmp = dsKOE.Tables[0];
+                dgv_KindOfEmployee.DataSource = dtKindOfEmp;
+                dgv_KindOfEmployee.AutoResizeColumns();
                 //
-                txt_AddName.ResetText();
-                dateTimePicker_Add.ResetText();
-                txt_AddDiaChi.ResetText();
-                txt_AddPhone.ResetText();
-                txt_AddStatusEmp.ResetText();
-                txt_AddIDKOE.ResetText();
-                txt_AddIDGroupEmp.ResetText();
-                txt_AddIDTypeUser.ResetText();
-                txt_AddIDStore.ResetText();
+                dtGroupEmp = new DataTable();
+                dtGroupEmp.Clear();
+                DataSet dsGroupEmp = dbNV.Get_List_Group_Of_Employee();
+                dtGroupEmp = dsGroupEmp.Tables[0];
+                dgv_GroupEmp.DataSource = dtGroupEmp;
+                dgv_GroupEmp.AutoResizeColumns();
+                //
+                dtTypeUser = new DataTable();
+                dtTypeUser.Clear();
+                DataSet dsTypeUser = dbNV.Get_List_Type_Of_User();
+                dtTypeUser = dsTypeUser.Tables[0];
+                dgv_TypeUser.DataSource = dtTypeUser;
+                dgv_TypeUser.AutoResizeColumns();
+
             }
             catch (SqlException)
             {
@@ -56,45 +65,56 @@ namespace MyApp_HiepBui.IF_Layer
             loadDataNV();
         }
 
+        
+
+       
+
+        private void label_Ngaysinh_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            if (Them)
+            try
             {
-                try
+                // Thực hiện lệnh
+                BLNhanVien blNhanVien = new BLNhanVien();
+                int value_StatusEmp = Convert.ToInt32(txt_AddStatusEmp.Text);
+                dateTimePicker_AddDOB.CustomFormat = "yyyy-MM-dd";
+                blNhanVien.ThemNhanVien(txt_AddName.Text, dateTimePicker_AddDOB.Text, txt_AddAddress.Text, txt_AddPhone.Text,
+                    value_StatusEmp, txt_AddIDKindEmp.Text, txt_AddGroupEmp.Text,
+                    txt_AddTypeUser.Text, txt_AddIDStore.Text, ref err);
+                if (err != "")
                 {
-                    // Thực hiện lệnh
-                    BLNhanVien blNhanVien = new BLNhanVien();
-                    int value_StatusEmp = Convert.ToInt32(txt_AddStatusEmp.Text);
-                    dateTimePicker_Add.CustomFormat = "yyyy-MM-dd";
-                    blNhanVien.ThemNhanVien(txt_AddName.Text, dateTimePicker_Add.Text, txt_AddDiaChi.Text, txt_AddPhone.Text,
-                        value_StatusEmp, txt_AddIDKOE.Text, txt_AddIDGroupEmp.Text,
-                        txt_AddIDTypeUser.Text, txt_AddIDStore.Text, ref err);
-                    // Load lại dữ liệu trên DataGridView
-                    loadDataNV();
-                    // Thông báo
-                    MessageBox.Show("Đã thêm xong!");
+                    MessageBox.Show(err);
+                    return;
                 }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Không thêm được. Lỗi rồi!");
-                }
+                // Thông báo
+                MessageBox.Show("Đã thêm xong!");
             }
-
+            catch (SqlException)
+            {
+                MessageBox.Show("Không thêm được. Lỗi rồi!");
+            }
         }
 
-        private void btn_Cancel_Click(object sender, EventArgs e)
+        private void btn_Clear_Click(object sender, EventArgs e)
         {
-            txt_AddName.ResetText();
-            dateTimePicker_Add.ResetText();
-            txt_AddDiaChi.ResetText();
-            txt_AddPhone.ResetText();
-            txt_AddStatusEmp.ResetText();
-            txt_AddIDKOE.ResetText();
-            txt_AddIDGroupEmp.ResetText();
-            txt_AddIDTypeUser.ResetText();
-            txt_AddIDStore.ResetText();
+            txt_AddName.Clear();
+            dateTimePicker_AddDOB.ResetText();
+            txt_AddAddress.Clear();
+            txt_AddPhone.Clear();
+            txt_AddStatusEmp.Clear();
+            txt_AddIDKindEmp.Clear();
+            txt_AddGroupEmp.Clear();
+            txt_AddTypeUser.Clear();
+            txt_AddIDStore.Clear();
         }
 
-
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

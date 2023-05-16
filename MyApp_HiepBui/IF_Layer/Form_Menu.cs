@@ -24,6 +24,7 @@ namespace MyApp_HiepBui
         {
             frmCustomers1.Hide();
             userControlWareHousecs2.Hide();
+            userControl_Employee1.Hide();
         }
         private void Form_Programm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -87,9 +88,11 @@ namespace MyApp_HiepBui
             //    fNV.Show();
             //    fNV.BringToFront();
             //}
-            Form_DSNhanVien fNV = new Form_DSNhanVien();
-            fNV.Show();
-            fNV.BringToFront();
+            //Form_DSNhanVien fNV = new Form_DSNhanVien();
+            //fNV.Show();
+            //fNV.BringToFront();
+            userControl_Employee1.Show();
+            userControl_Employee1.BringToFront();
         }
 
         private void mnuWarehouse_Click(object sender, EventArgs e)

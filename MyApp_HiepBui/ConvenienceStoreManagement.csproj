@@ -168,6 +168,12 @@
     <Compile Include="IF_Layer\UserControlWareHousecs.Designer.cs">
       <DependentUpon>UserControlWareHousecs.cs</DependentUpon>
     </Compile>
+    <Compile Include="IF_Layer\UserControl_Employee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IF_Layer\UserControl_Employee.Designer.cs">
+      <DependentUpon>UserControl_Employee.cs</DependentUpon>
+    </Compile>
     <Compile Include="IF_Layer\UserControl_SuaNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IF_Layer\UserControlWareHousecs.resx">
       <DependentUpon>UserControlWareHousecs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IF_Layer\UserControl_Employee.resx">
+      <DependentUpon>UserControl_Employee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IF_Layer\UserControl_SuaNhanVien.resx">
       <DependentUpon>UserControl_SuaNhanVien.cs</DependentUpon>
@@ -328,6 +337,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
