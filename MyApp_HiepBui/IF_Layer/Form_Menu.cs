@@ -24,6 +24,7 @@ namespace MyApp_HiepBui
         {
             frmCustomers1.Hide();
             userControlWareHousecs2.Hide();
+            //userControlWareHousecs1.Hide();
 
             addNewOrder2.Hide();
 
@@ -82,9 +83,9 @@ namespace MyApp_HiepBui
         private void mnuEmployees_Click(object sender, EventArgs e)
         {
 
-            Form_DSNhanVien fNV = new Form_DSNhanVien();
-            fNV.Show();
-            fNV.BringToFront();
+            //Form_DSNhanVien fNV = new Form_DSNhanVien();
+            //fNV.Show();
+            //fNV.BringToFront();
 
             //if (Const.TypeOfAcc == "IncompleteAuthority")
             //{
@@ -99,6 +100,10 @@ namespace MyApp_HiepBui
             //Form_DSNhanVien fNV = new Form_DSNhanVien();
             //fNV.Show();
             //fNV.BringToFront();
+
+
+
+
             userControl_Employee1.Show();
             userControl_Employee1.BringToFront();
 

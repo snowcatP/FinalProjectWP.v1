@@ -84,8 +84,8 @@ namespace MyApp_HiepBui.IF_Layer
             dateTimePicker_Ngaysinh.Text = dgv_NhanVien.Rows[r].Cells[2].Value.ToString();
             txt_Phone.Text = dgv_NhanVien.Rows[r].Cells[3].Value.ToString();
             txt_Address.Text = dgv_NhanVien.Rows[r].Cells[4].Value.ToString();
-            txt_Position.Text = dgv_NhanVien.Rows[r].Cells[5].Value.ToString();
-            txt_TypeEmp.Text = dgv_NhanVien.Rows[r].Cells[6].Value.ToString();
+            //txt_Position.Text = dgv_NhanVien.Rows[r].Cells[5].Value.ToString();
+            //txt_TypeEmp.Text = dgv_NhanVien.Rows[r].Cells[6].Value.ToString();
         }
 
         private void btn_addEmployee_Click(object sender, EventArgs e)

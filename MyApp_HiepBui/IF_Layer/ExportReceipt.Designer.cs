@@ -1,4 +1,6 @@
-﻿namespace MyApp_HiepBui.IF_Layer
+﻿
+
+namespace MyApp_HiepBui.IF_Layer
 {
     partial class ExportReceipt
     {
