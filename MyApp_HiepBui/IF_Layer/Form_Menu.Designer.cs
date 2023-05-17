@@ -45,14 +45,14 @@
             this.mnuCustomers = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHelp = new System.Windows.Forms.ToolStripMenuItem();
 
-            //this.pnMain = new System.Windows.Forms.Panel();
+            this.pnMain = new System.Windows.Forms.Panel();
 
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            //this.userControlWareHousecs2 = new MyApp_HiepBui.IF_Layer.UserControlWareHousecs();
+            this.userControlWareHousecs2 = new MyApp_HiepBui.IF_Layer.UserControlWareHousecs();
 
             this.frmCustomers1 = new MyApp_HiepBui.IF_Layer.frmCustomers();
             this.userControlWareHousecs2 = new MyApp_HiepBui.IF_Layer.UserControlWareHousecs();
-            //this.userControlWareHousecs1 = new MyApp_HiepBui.IF_Layer.UserControlWareHousecs();
+            this.userControlWareHousecs1 = new MyApp_HiepBui.IF_Layer.UserControlWareHousecs();
             this.addNewOrder1 = new MyApp_HiepBui.IF_Layer.AddNewOrder();
 
             this.addNewOrder2 = new MyApp_HiepBui.IF_Layer.AddNewOrder();
@@ -257,14 +257,14 @@
             // 
             // userControlWareHousecs1
             // 
-            //this.userControlWareHousecs1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            //this.userControlWareHousecs1.Dock = System.Windows.Forms.DockStyle.Fill;
-            //this.userControlWareHousecs1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.userControlWareHousecs1.Location = new System.Drawing.Point(0, 0);
-            //this.userControlWareHousecs1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            //this.userControlWareHousecs1.Name = "userControlWareHousecs1";
-            //this.userControlWareHousecs1.Size = new System.Drawing.Size(1387, 743);
-            //this.userControlWareHousecs1.TabIndex = 2;
+            this.userControlWareHousecs1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.userControlWareHousecs1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlWareHousecs1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userControlWareHousecs1.Location = new System.Drawing.Point(0, 0);
+            this.userControlWareHousecs1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.userControlWareHousecs1.Name = "userControlWareHousecs1";
+            this.userControlWareHousecs1.Size = new System.Drawing.Size(1387, 743);
+            this.userControlWareHousecs1.TabIndex = 2;
             // 
             // addNewOrder1
             // 
@@ -304,7 +304,7 @@
             this.ClientSize = new System.Drawing.Size(1387, 768);
             this.Controls.Add(this.pnMain);
             this.Controls.Add(this.panel1);
-            //this.Controls.Add(this.userControlWareHousecs1);
+            this.Controls.Add(this.userControlWareHousecs1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.addNewOrder1);
             this.Name = "Form_Menu";
@@ -340,7 +340,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuHelp;
         private System.Windows.Forms.Panel pnMain;
         private IF_Layer.frmCustomers frmCustomers1;
-        //private IF_Layer.UserControlWareHousecs userControlWareHousecs1;
+        private IF_Layer.UserControlWareHousecs userControlWareHousecs1;
         private IF_Layer.AddNewOrder addNewOrder1;
         private IF_Layer.UserControlWareHousecs userControlWareHousecs2;
 
