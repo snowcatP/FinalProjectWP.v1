@@ -13,6 +13,7 @@ namespace MyApp_HiepBui.DB_Layer
         string connStr = @"Data Source=HIEPBUI2812\SQLEXPRESS;Initial Catalog=ConvenienceStoreManagement(new);Integrated Security=True";
         
 
+
         SqlConnection conn = null;
         SqlCommand  comm = null;
         SqlDataAdapter SqlAdapter= null;

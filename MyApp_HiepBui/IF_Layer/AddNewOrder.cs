@@ -141,6 +141,8 @@ namespace MyApp_HiepBui.IF_Layer
 
                     blOrder.AddNewOrder(newIDOrder, phone, idItem, quantity);
                 }
+                MessageBox.Show("Added new order success!");
+                
             }
             catch (Exception)
             {
@@ -171,6 +173,7 @@ namespace MyApp_HiepBui.IF_Layer
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            dgvOrders.Columns.Clear();
             dgvOrders.DataSource = null;
             DataTable dt = new DataTable();
             dt.Clear();
@@ -267,6 +270,14 @@ namespace MyApp_HiepBui.IF_Layer
             {
 
             }
+        }
+
+        private void btn_Export_Click(object sender, EventArgs e)
+        {
+            int r = dgvOrders.CurrentCell.RowIndex;
+            string idCus = dgvOrders.Rows[r].Cells[0].Value.ToString();
+            ExportReceipt exportReceipt = new ExportReceipt(idCus);
+            exportReceipt.Show();
         }
 
         private void txtNameOfItem_Enter(object sender, EventArgs e)

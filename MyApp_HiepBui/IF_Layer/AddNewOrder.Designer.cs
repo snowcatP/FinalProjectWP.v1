@@ -56,14 +56,28 @@ namespace MyApp_HiepBui.IF_Layer
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNewOrder = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+
+            this.btn_Export = new System.Windows.Forms.Button();
+
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.pnDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvOrders
             // 
+            this.dgvOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOrders.BackgroundColor = System.Drawing.Color.White;
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column5});
             this.dgvOrders.Location = new System.Drawing.Point(17, 86);
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.RowHeadersWidth = 51;
@@ -97,7 +111,7 @@ namespace MyApp_HiepBui.IF_Layer
             this.txtNameOfItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNameOfItem.Location = new System.Drawing.Point(171, 208);
             this.txtNameOfItem.Name = "txtNameOfItem";
-            this.txtNameOfItem.Size = new System.Drawing.Size(215, 30);
+            this.txtNameOfItem.Size = new System.Drawing.Size(215, 26);
             this.txtNameOfItem.TabIndex = 17;
             this.txtNameOfItem.TextChanged += new System.EventHandler(this.txtNameOfItem_Enter);
             this.txtNameOfItem.DragEnter += new System.Windows.Forms.DragEventHandler(this.txtNameOfItem_Enter);
@@ -109,7 +123,7 @@ namespace MyApp_HiepBui.IF_Layer
             this.lbItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbItem.Location = new System.Drawing.Point(26, 157);
             this.lbItem.Name = "lbItem";
-            this.lbItem.Size = new System.Drawing.Size(79, 25);
+            this.lbItem.Size = new System.Drawing.Size(66, 20);
             this.lbItem.TabIndex = 16;
             this.lbItem.Text = "Item ID:";
             // 
@@ -119,7 +133,7 @@ namespace MyApp_HiepBui.IF_Layer
             this.txtUnitPrice.Location = new System.Drawing.Point(155, 263);
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.ReadOnly = true;
-            this.txtUnitPrice.Size = new System.Drawing.Size(231, 30);
+            this.txtUnitPrice.Size = new System.Drawing.Size(231, 26);
             this.txtUnitPrice.TabIndex = 14;
             // 
             // txtQuantity
@@ -127,7 +141,7 @@ namespace MyApp_HiepBui.IF_Layer
             this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuantity.Location = new System.Drawing.Point(155, 322);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(231, 30);
+            this.txtQuantity.Size = new System.Drawing.Size(231, 26);
             this.txtQuantity.TabIndex = 13;
             // 
             // txtItemID
@@ -136,7 +150,7 @@ namespace MyApp_HiepBui.IF_Layer
             this.txtItemID.Location = new System.Drawing.Point(144, 157);
             this.txtItemID.Name = "txtItemID";
             this.txtItemID.ReadOnly = true;
-            this.txtItemID.Size = new System.Drawing.Size(242, 30);
+            this.txtItemID.Size = new System.Drawing.Size(242, 26);
             this.txtItemID.TabIndex = 12;
             // 
             // lbUnitPrice
@@ -145,7 +159,7 @@ namespace MyApp_HiepBui.IF_Layer
             this.lbUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUnitPrice.Location = new System.Drawing.Point(27, 266);
             this.lbUnitPrice.Name = "lbUnitPrice";
-            this.lbUnitPrice.Size = new System.Drawing.Size(101, 25);
+            this.lbUnitPrice.Size = new System.Drawing.Size(81, 20);
             this.lbUnitPrice.TabIndex = 9;
             this.lbUnitPrice.Text = "Unit Price:";
             // 
@@ -155,7 +169,7 @@ namespace MyApp_HiepBui.IF_Layer
             this.lbQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbQuantity.Location = new System.Drawing.Point(30, 322);
             this.lbQuantity.Name = "lbQuantity";
-            this.lbQuantity.Size = new System.Drawing.Size(91, 25);
+            this.lbQuantity.Size = new System.Drawing.Size(72, 20);
             this.lbQuantity.TabIndex = 8;
             this.lbQuantity.Text = "Quantity:";
             // 
@@ -165,7 +179,7 @@ namespace MyApp_HiepBui.IF_Layer
             this.lxNameItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lxNameItem.Location = new System.Drawing.Point(26, 211);
             this.lxNameItem.Name = "lxNameItem";
-            this.lxNameItem.Size = new System.Drawing.Size(133, 25);
+            this.lxNameItem.Size = new System.Drawing.Size(109, 20);
             this.lxNameItem.TabIndex = 7;
             this.lxNameItem.Text = "Name of Item:";
             // 
@@ -175,7 +189,7 @@ namespace MyApp_HiepBui.IF_Layer
             this.txtNameCus.Location = new System.Drawing.Point(144, 69);
             this.txtNameCus.Name = "txtNameCus";
             this.txtNameCus.ReadOnly = true;
-            this.txtNameCus.Size = new System.Drawing.Size(242, 30);
+            this.txtNameCus.Size = new System.Drawing.Size(242, 26);
             this.txtNameCus.TabIndex = 5;
             // 
             // lbName
@@ -184,7 +198,7 @@ namespace MyApp_HiepBui.IF_Layer
             this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.Location = new System.Drawing.Point(30, 69);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(75, 25);
+            this.lbName.Size = new System.Drawing.Size(59, 20);
             this.lbName.TabIndex = 4;
             this.lbName.Text = "Name :";
             // 
@@ -204,7 +218,7 @@ namespace MyApp_HiepBui.IF_Layer
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.Location = new System.Drawing.Point(144, 16);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(242, 30);
+            this.txtPhone.Size = new System.Drawing.Size(242, 26);
             this.txtPhone.TabIndex = 2;
             // 
             // lbPhone
@@ -213,7 +227,7 @@ namespace MyApp_HiepBui.IF_Layer
             this.lbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPhone.Location = new System.Drawing.Point(27, 16);
             this.lbPhone.Name = "lbPhone";
-            this.lbPhone.Size = new System.Drawing.Size(80, 25);
+            this.lbPhone.Size = new System.Drawing.Size(63, 20);
             this.lbPhone.TabIndex = 1;
             this.lbPhone.Text = "Phone :";
             // 
@@ -225,7 +239,7 @@ namespace MyApp_HiepBui.IF_Layer
             this.txtTotalPrice.Location = new System.Drawing.Point(914, 501);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.ReadOnly = true;
-            this.txtTotalPrice.Size = new System.Drawing.Size(231, 30);
+            this.txtTotalPrice.Size = new System.Drawing.Size(231, 26);
             this.txtTotalPrice.TabIndex = 15;
             // 
             // lbTotalPrice
@@ -234,13 +248,13 @@ namespace MyApp_HiepBui.IF_Layer
             this.lbTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalPrice.Location = new System.Drawing.Point(790, 501);
             this.lbTotalPrice.Name = "lbTotalPrice";
-            this.lbTotalPrice.Size = new System.Drawing.Size(111, 25);
+            this.lbTotalPrice.Size = new System.Drawing.Size(87, 20);
             this.lbTotalPrice.TabIndex = 10;
             this.lbTotalPrice.Text = "Total Price:";
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(790, 584);
+            this.btnAdd.Location = new System.Drawing.Point(745, 584);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(106, 39);
             this.btnAdd.TabIndex = 2;
@@ -250,7 +264,7 @@ namespace MyApp_HiepBui.IF_Layer
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(934, 584);
+            this.btnSave.Location = new System.Drawing.Point(863, 584);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(111, 39);
             this.btnSave.TabIndex = 3;
@@ -260,7 +274,7 @@ namespace MyApp_HiepBui.IF_Layer
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(1070, 584);
+            this.btnCancel.Location = new System.Drawing.Point(986, 584);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 39);
             this.btnCancel.TabIndex = 4;
@@ -294,7 +308,7 @@ namespace MyApp_HiepBui.IF_Layer
             this.txtSearchInfo.ForeColor = System.Drawing.Color.Gray;
             this.txtSearchInfo.Location = new System.Drawing.Point(17, 24);
             this.txtSearchInfo.Name = "txtSearchInfo";
-            this.txtSearchInfo.Size = new System.Drawing.Size(430, 30);
+            this.txtSearchInfo.Size = new System.Drawing.Size(430, 26);
             this.txtSearchInfo.TabIndex = 7;
             this.txtSearchInfo.Text = "Input something";
             this.txtSearchInfo.Enter += new System.EventHandler(this.txtSearchInfo_Enter);
@@ -306,7 +320,7 @@ namespace MyApp_HiepBui.IF_Layer
             this.cbCategories.FormattingEnabled = true;
             this.cbCategories.Location = new System.Drawing.Point(453, 24);
             this.cbCategories.Name = "cbCategories";
-            this.cbCategories.Size = new System.Drawing.Size(138, 33);
+            this.cbCategories.Size = new System.Drawing.Size(138, 28);
             this.cbCategories.TabIndex = 8;
             this.cbCategories.TextChanged += new System.EventHandler(this.cbCategories_TextChanged);
             // 
@@ -340,11 +354,60 @@ namespace MyApp_HiepBui.IF_Layer
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+
+            // btn_Export
+            // 
+            this.btn_Export.Location = new System.Drawing.Point(1104, 584);
+            this.btn_Export.Name = "btn_Export";
+            this.btn_Export.Size = new System.Drawing.Size(106, 39);
+            this.btn_Export.TabIndex = 18;
+            this.btn_Export.Text = "Export";
+            this.btn_Export.UseVisualStyleBackColor = true;
+            this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
+
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column1.DataPropertyName = "ID Order";
+            this.Column1.HeaderText = "ID Order";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 103;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column2.DataPropertyName = "Name customer";
+            this.Column2.HeaderText = "Name customer";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 144;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column3.DataPropertyName = "Total price";
+            this.Column3.HeaderText = "Total price";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 108;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column5.DataPropertyName = "Day transaction";
+            this.Column5.HeaderText = "Day transaction";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 143;
+
+            // 
             // AddNewOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(231)))), ((int)(((byte)(243)))));
+            this.Controls.Add(this.btn_Export);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnNewOrder);
             this.Controls.Add(this.btnSearch);
@@ -362,7 +425,7 @@ namespace MyApp_HiepBui.IF_Layer
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddNewOrder";
-            this.Size = new System.Drawing.Size(1209, 706);
+            this.Size = new System.Drawing.Size(1239, 706);
             this.Load += new System.EventHandler(this.AddNewOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             this.pnDetails.ResumeLayout(false);
@@ -401,5 +464,13 @@ namespace MyApp_HiepBui.IF_Layer
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnNewOrder;
         private System.Windows.Forms.Button btnExit;
+
+        private System.Windows.Forms.Button btn_Export;
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+
     }
 }

@@ -34,6 +34,9 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnMain = new System.Windows.Forms.Panel();
+            this.frmCustomers1 = new MyApp_HiepBui.IF_Layer.frmCustomers();
+            this.addNewOrder2 = new MyApp_HiepBui.IF_Layer.AddNewOrder();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuSystem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,14 +47,12 @@
             this.mnuEmployees = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCustomers = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHelp = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnMain = new System.Windows.Forms.Panel();
             this.userControlWareHousecs2 = new MyApp_HiepBui.IF_Layer.UserControlWareHousecs();
-            this.frmCustomers1 = new MyApp_HiepBui.IF_Layer.frmCustomers();
-            this.userControlWareHousecs1 = new MyApp_HiepBui.IF_Layer.UserControlWareHousecs();
-            this.addNewOrder1 = new MyApp_HiepBui.IF_Layer.AddNewOrder();
+            this.userControl_Employee1 = new MyApp_HiepBui.IF_Layer.UserControl_Employee();
+            this.userControl_Employee2 = new MyApp_HiepBui.IF_Layer.UserControl_Employee();
             this.statusStrip1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.pnMain.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -64,9 +65,9 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 742);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 743);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1387, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(1387, 25);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -76,7 +77,7 @@
             this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.White;
             this.toolStripStatusLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel1.Image")));
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(76, 20);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(68, 20);
             this.toolStripStatusLabel1.Text = "Ready";
             // 
             // panel1
@@ -85,8 +86,47 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(1362, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(25, 742);
+            this.panel1.Size = new System.Drawing.Size(25, 743);
             this.panel1.TabIndex = 4;
+            // 
+            // pnMain
+            // 
+            this.pnMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnMain.BackgroundImage")));
+            this.pnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnMain.Controls.Add(this.userControl_Employee2);
+            this.pnMain.Controls.Add(this.frmCustomers1);
+            this.pnMain.Controls.Add(this.addNewOrder2);
+            this.pnMain.Controls.Add(this.menuStrip1);
+            this.pnMain.Controls.Add(this.userControlWareHousecs2);
+            this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnMain.Location = new System.Drawing.Point(0, 0);
+            this.pnMain.Name = "pnMain";
+            this.pnMain.Size = new System.Drawing.Size(1362, 743);
+            this.pnMain.TabIndex = 6;
+            // 
+            // frmCustomers1
+            // 
+            this.frmCustomers1.AutoSize = true;
+            this.frmCustomers1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.frmCustomers1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.frmCustomers1.Location = new System.Drawing.Point(0, 28);
+            this.frmCustomers1.Margin = new System.Windows.Forms.Padding(4);
+            this.frmCustomers1.Name = "frmCustomers1";
+            this.frmCustomers1.Size = new System.Drawing.Size(1362, 715);
+            this.frmCustomers1.TabIndex = 2;
+            this.frmCustomers1.Load += new System.EventHandler(this.frmCustomers1_Load);
+            // 
+            // addNewOrder2
+            // 
+            this.addNewOrder2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(231)))), ((int)(((byte)(243)))));
+            this.addNewOrder2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addNewOrder2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewOrder2.Location = new System.Drawing.Point(0, 28);
+            this.addNewOrder2.Margin = new System.Windows.Forms.Padding(4);
+            this.addNewOrder2.Name = "addNewOrder2";
+            this.addNewOrder2.Size = new System.Drawing.Size(1362, 715);
+            this.addNewOrder2.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -102,7 +142,7 @@
             this.mnuHelp});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1362, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(1362, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -114,7 +154,7 @@
             this.logoutToolStripMenuItem});
             this.mnuSystem.Image = ((System.Drawing.Image)(resources.GetObject("mnuSystem.Image")));
             this.mnuSystem.Name = "mnuSystem";
-            this.mnuSystem.Size = new System.Drawing.Size(105, 28);
+            this.mnuSystem.Size = new System.Drawing.Size(90, 24);
             this.mnuSystem.Text = "&System";
             this.mnuSystem.Click += new System.EventHandler(this.mnuSystem_Click);
             // 
@@ -122,7 +162,7 @@
             // 
             this.accountToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.accountToolStripMenuItem.Text = "&Account";
             this.accountToolStripMenuItem.Click += new System.EventHandler(this.accountToolStripMenuItem_Click);
             // 
@@ -130,7 +170,7 @@
             // 
             this.versionToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.versionToolStripMenuItem.Name = "versionToolStripMenuItem";
-            this.versionToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.versionToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.versionToolStripMenuItem.Text = "&Version";
             this.versionToolStripMenuItem.Click += new System.EventHandler(this.versionToolStripMenuItem_Click);
             // 
@@ -138,7 +178,7 @@
             // 
             this.logoutToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.logoutToolStripMenuItem.Text = "&Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
@@ -146,7 +186,7 @@
             // 
             this.mnuWarehouse.Image = ((System.Drawing.Image)(resources.GetObject("mnuWarehouse.Image")));
             this.mnuWarehouse.Name = "mnuWarehouse";
-            this.mnuWarehouse.Size = new System.Drawing.Size(142, 28);
+            this.mnuWarehouse.Size = new System.Drawing.Size(117, 24);
             this.mnuWarehouse.Text = "&Warehouse";
             this.mnuWarehouse.Click += new System.EventHandler(this.mnuWarehouse_Click);
             // 
@@ -154,7 +194,7 @@
             // 
             this.mnuOrders.Image = ((System.Drawing.Image)(resources.GetObject("mnuOrders.Image")));
             this.mnuOrders.Name = "mnuOrders";
-            this.mnuOrders.Size = new System.Drawing.Size(102, 28);
+            this.mnuOrders.Size = new System.Drawing.Size(86, 24);
             this.mnuOrders.Text = "&Orders";
             this.mnuOrders.Click += new System.EventHandler(this.mnuOrders_Click);
             // 
@@ -162,7 +202,7 @@
             // 
             this.mnuEmployees.Image = ((System.Drawing.Image)(resources.GetObject("mnuEmployees.Image")));
             this.mnuEmployees.Name = "mnuEmployees";
-            this.mnuEmployees.Size = new System.Drawing.Size(139, 28);
+            this.mnuEmployees.Size = new System.Drawing.Size(114, 24);
             this.mnuEmployees.Text = "&Employees";
             this.mnuEmployees.Click += new System.EventHandler(this.mnuEmployees_Click);
             // 
@@ -170,7 +210,7 @@
             // 
             this.mnuCustomers.Image = ((System.Drawing.Image)(resources.GetObject("mnuCustomers.Image")));
             this.mnuCustomers.Name = "mnuCustomers";
-            this.mnuCustomers.Size = new System.Drawing.Size(134, 28);
+            this.mnuCustomers.Size = new System.Drawing.Size(114, 24);
             this.mnuCustomers.Text = "&Customers";
             this.mnuCustomers.Click += new System.EventHandler(this.mnuCustomers_Click_1);
             // 
@@ -178,67 +218,37 @@
             // 
             this.mnuHelp.Image = ((System.Drawing.Image)(resources.GetObject("mnuHelp.Image")));
             this.mnuHelp.Name = "mnuHelp";
-            this.mnuHelp.Size = new System.Drawing.Size(84, 28);
+            this.mnuHelp.Size = new System.Drawing.Size(70, 24);
             this.mnuHelp.Text = "&Help";
-            // 
-            // pnMain
-            // 
-            this.pnMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnMain.BackgroundImage")));
-            this.pnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnMain.Controls.Add(this.userControlWareHousecs2);
-            this.pnMain.Controls.Add(this.frmCustomers1);
-            this.pnMain.Controls.Add(this.menuStrip1);
-            this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnMain.Location = new System.Drawing.Point(0, 0);
-            this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(1362, 742);
-            this.pnMain.TabIndex = 6;
             // 
             // userControlWareHousecs2
             // 
             this.userControlWareHousecs2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(231)))), ((int)(((byte)(243)))));
             this.userControlWareHousecs2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userControlWareHousecs2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userControlWareHousecs2.Location = new System.Drawing.Point(0, 32);
+            this.userControlWareHousecs2.Location = new System.Drawing.Point(0, 0);
             this.userControlWareHousecs2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.userControlWareHousecs2.Name = "userControlWareHousecs2";
-            this.userControlWareHousecs2.Size = new System.Drawing.Size(1362, 710);
+            this.userControlWareHousecs2.Size = new System.Drawing.Size(1362, 743);
             this.userControlWareHousecs2.TabIndex = 3;
             // 
-            // frmCustomers1
+            // userControl_Employee1
             // 
-            this.frmCustomers1.AutoSize = true;
-            this.frmCustomers1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.frmCustomers1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frmCustomers1.Location = new System.Drawing.Point(0, 32);
-            this.frmCustomers1.Margin = new System.Windows.Forms.Padding(4);
-            this.frmCustomers1.Name = "frmCustomers1";
-            this.frmCustomers1.Size = new System.Drawing.Size(1362, 710);
-            this.frmCustomers1.TabIndex = 2;
-            this.frmCustomers1.Load += new System.EventHandler(this.frmCustomers1_Load);
+            this.userControl_Employee1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_Employee1.Location = new System.Drawing.Point(0, 32);
+            this.userControl_Employee1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userControl_Employee1.Name = "userControl_Employee1";
+            this.userControl_Employee1.Size = new System.Drawing.Size(1387, 724);
+            this.userControl_Employee1.TabIndex = 4;
             // 
-            // userControlWareHousecs1
+            // userControl_Employee2
             // 
-            this.userControlWareHousecs1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.userControlWareHousecs1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlWareHousecs1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userControlWareHousecs1.Location = new System.Drawing.Point(0, 0);
-            this.userControlWareHousecs1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.userControlWareHousecs1.Name = "userControlWareHousecs1";
-            this.userControlWareHousecs1.Size = new System.Drawing.Size(1387, 742);
-            this.userControlWareHousecs1.TabIndex = 2;
-            // 
-            // addNewOrder1
-            // 
-            this.addNewOrder1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(231)))), ((int)(((byte)(243)))));
-            this.addNewOrder1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.addNewOrder1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addNewOrder1.Location = new System.Drawing.Point(0, 0);
-            this.addNewOrder1.Margin = new System.Windows.Forms.Padding(4);
-            this.addNewOrder1.Name = "addNewOrder1";
-            this.addNewOrder1.Size = new System.Drawing.Size(1387, 768);
-            this.addNewOrder1.TabIndex = 0;
+            this.userControl_Employee2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_Employee2.Location = new System.Drawing.Point(0, 28);
+            this.userControl_Employee2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userControl_Employee2.Name = "userControl_Employee2";
+            this.userControl_Employee2.Size = new System.Drawing.Size(1362, 715);
+            this.userControl_Employee2.TabIndex = 4;
             // 
             // Form_Menu
             // 
@@ -247,9 +257,7 @@
             this.ClientSize = new System.Drawing.Size(1387, 768);
             this.Controls.Add(this.pnMain);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.userControlWareHousecs1);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.addNewOrder1);
             this.Name = "Form_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "H4 Store";
@@ -257,10 +265,10 @@
             this.Load += new System.EventHandler(this.Form_Menu_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.pnMain.ResumeLayout(false);
             this.pnMain.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,9 +290,13 @@
         private System.Windows.Forms.ToolStripMenuItem mnuCustomers;
         private System.Windows.Forms.ToolStripMenuItem mnuHelp;
         private System.Windows.Forms.Panel pnMain;
+        private IF_Layer.UserControl_Employee userControl_Employee1;
         private IF_Layer.frmCustomers frmCustomers1;
-        private IF_Layer.UserControlWareHousecs userControlWareHousecs1;
-        private IF_Layer.AddNewOrder addNewOrder1;
+        //private IF_Layer.UserControlWareHousecs userControlWareHousecs1;
+        //private IF_Layer.AddNewOrder addNewOrder1;
         private IF_Layer.UserControlWareHousecs userControlWareHousecs2;
+
+        private IF_Layer.AddNewOrder addNewOrder2;
+        private IF_Layer.UserControl_Employee userControl_Employee2;
     }
 }
