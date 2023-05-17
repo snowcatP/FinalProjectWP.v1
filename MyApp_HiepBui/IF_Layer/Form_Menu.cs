@@ -27,7 +27,7 @@ namespace MyApp_HiepBui
 
             addNewOrder2.Hide();
 
-            userControl_Employee1.Hide();
+            //userControl_Employee1.Hide();
 
         }
         private void Form_Programm_FormClosed(object sender, FormClosedEventArgs e)
@@ -82,9 +82,9 @@ namespace MyApp_HiepBui
         private void mnuEmployees_Click(object sender, EventArgs e)
         {
 
-            Form_DSNhanVien fNV = new Form_DSNhanVien();
-            fNV.Show();
-            fNV.BringToFront();
+            //Form_DSNhanVien fNV = new Form_DSNhanVien();
+            //fNV.Show();
+            //fNV.BringToFront();
 
             //if (Const.TypeOfAcc == "IncompleteAuthority")
             //{
