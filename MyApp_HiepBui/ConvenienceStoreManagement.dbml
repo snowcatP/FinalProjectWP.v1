@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ConvenienceStoreManagement" Class="ConvenienceStoreManagementDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HOANGPRO\HOANGPRO;Initial Catalog=ConvenienceStoreManagement;Integrated Security=True" SettingsObjectName="MyApp_HiepBui.Properties.Settings" SettingsPropertyName="ConvenienceStoreManagementConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ACCOUNT" Member="ACCOUNTs">
+    <Type Name="ACCOUNT">
+      <Column Name="IDEmp" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="EMPLOYEE_ACCOUNT" Member="EMPLOYEE" ThisKey="IDEmp" OtherKey="IDEmp" Type="EMPLOYEE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AUTHORITY" Member="AUTHORITies">
+    <Type Name="AUTHORITY">
+      <Column Name="IDAuthority" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NameAuthority" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="AUTHORITY_TYPE_OF_USER" Member="TYPE_OF_USERs" ThisKey="IDAuthority" OtherKey="IDAuthority" Type="TYPE_OF_USER" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KIND_OF_EMPLOYEE" Member="KIND_OF_EMPLOYEEs">
+    <Type Name="KIND_OF_EMPLOYEE">
+      <Column Name="IDKindEmp" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="KIND_OF_EMPLOYEE_EMPLOYEE" Member="EMPLOYEEs" ThisKey="IDKindEmp" OtherKey="IDKindEmp" Type="EMPLOYEE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TYPE_OF_USER" Member="TYPE_OF_USERs">
+    <Type Name="TYPE_OF_USER">
+      <Column Name="IDTypeUser" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NameTypeOfUser" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IDAuthority" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Association Name="TYPE_OF_USER_EMPLOYEE" Member="EMPLOYEEs" ThisKey="IDTypeUser" OtherKey="IDTypeUser" Type="EMPLOYEE" />
+      <Association Name="AUTHORITY_TYPE_OF_USER" Member="AUTHORITY" ThisKey="IDAuthority" OtherKey="IDAuthority" Type="AUTHORITY" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EMPLOYEES" Member="EMPLOYEEs">
+    <Type Name="EMPLOYEE">
+      <Column Name="IDEmp" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Status_emp" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IDKindEmp" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="IDGroup" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="IDTypeUser" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="IDStore" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Association Name="EMPLOYEE_ACCOUNT" Member="ACCOUNT" ThisKey="IDEmp" OtherKey="IDEmp" Type="ACCOUNT" Cardinality="One" />
+      <Association Name="EMPLOYEE_WORKINGTIME" Member="WORKINGTIME" ThisKey="IDEmp" OtherKey="IDEmp" Type="WORKINGTIME" Cardinality="One" />
+      <Association Name="EMPLOYEE_ORDER" Member="ORDERs" ThisKey="IDEmp" OtherKey="IDEmp" Type="ORDER" />
+      <Association Name="KIND_OF_EMPLOYEE_EMPLOYEE" Member="KIND_OF_EMPLOYEE" ThisKey="IDKindEmp" OtherKey="IDKindEmp" Type="KIND_OF_EMPLOYEE" IsForeignKey="true" />
+      <Association Name="TYPE_OF_USER_EMPLOYEE" Member="TYPE_OF_USER" ThisKey="IDTypeUser" OtherKey="IDTypeUser" Type="TYPE_OF_USER" IsForeignKey="true" />
+      <Association Name="GROUP_OF_EMPLOYEE_EMPLOYEE" Member="GROUP_OF_EMPLOYEE" ThisKey="IDGroup" OtherKey="IDGroup" Type="GROUP_OF_EMPLOYEE" IsForeignKey="true" />
+      <Association Name="STORE_EMPLOYEE" Member="STORE" ThisKey="IDStore" OtherKey="IDStore" Type="STORE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GROUP_OF_EMPLOYEE" Member="GROUP_OF_EMPLOYEEs">
+    <Type Name="GROUP_OF_EMPLOYEE">
+      <Column Name="IDGroup" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NameOfGroup" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="GROUP_OF_EMPLOYEE_EMPLOYEE" Member="EMPLOYEEs" ThisKey="IDGroup" OtherKey="IDGroup" Type="EMPLOYEE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WORKINGTIME" Member="WORKINGTIMEs">
+    <Type Name="WORKINGTIME">
+      <Column Name="IDEmp" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TotalTime" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="EMPLOYEE_WORKINGTIME" Member="EMPLOYEE" ThisKey="IDEmp" OtherKey="IDEmp" Type="EMPLOYEE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.STORE" Member="STOREs">
+    <Type Name="STORE">
+      <Column Name="IDStore" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="STORE_EMPLOYEE" Member="EMPLOYEEs" ThisKey="IDStore" OtherKey="IDStore" Type="EMPLOYEE" />
+      <Association Name="STORE_ORDER" Member="ORDERs" ThisKey="IDStore" OtherKey="IDStore" Type="ORDER" />
+      <Association Name="STORE_ITEM" Member="ITEMs" ThisKey="IDStore" OtherKey="IDStore" Type="ITEM" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PAYMENT_TYPE" Member="PAYMENT_TYPEs">
+    <Type Name="PAYMENT_TYPE">
+      <Column Name="IDPaymentType" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NamePayment" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="PAYMENT_TYPE_ORDER" Member="ORDERs" ThisKey="IDPaymentType" OtherKey="IDPaymentType" Type="ORDER" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ORDERS" Member="ORDERs">
+    <Type Name="ORDER">
+      <Column Name="IDOrder" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TotalPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InvoiceDay" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="IDEmp" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="IDCustomer" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="IDPaymentType" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="IDStore" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Association Name="ORDER_ITEM_IN_ORDER" Member="ITEM_IN_ORDERs" ThisKey="IDOrder" OtherKey="IDOrder" Type="ITEM_IN_ORDER" />
+      <Association Name="EMPLOYEE_ORDER" Member="EMPLOYEE" ThisKey="IDEmp" OtherKey="IDEmp" Type="EMPLOYEE" IsForeignKey="true" />
+      <Association Name="PAYMENT_TYPE_ORDER" Member="PAYMENT_TYPE" ThisKey="IDPaymentType" OtherKey="IDPaymentType" Type="PAYMENT_TYPE" IsForeignKey="true" />
+      <Association Name="STORE_ORDER" Member="STORE" ThisKey="IDStore" OtherKey="IDStore" Type="STORE" IsForeignKey="true" />
+      <Association Name="CUSTOMER_ORDER" Member="CUSTOMER" ThisKey="IDCustomer" OtherKey="IDCustomer" Type="CUSTOMER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CUSTOMERS" Member="CUSTOMERs">
+    <Type Name="CUSTOMER">
+      <Column Name="IDCustomer" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="OpeningDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="TransactionDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="AccumulatedPoint" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDTypeCus" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Association Name="CUSTOMER_ORDER" Member="ORDERs" ThisKey="IDCustomer" OtherKey="IDCustomer" Type="ORDER" />
+      <Association Name="TYPE_OF_CUSTOMER_CUSTOMER" Member="TYPE_OF_CUSTOMER" ThisKey="IDTypeCus" OtherKey="IDTypeCus" Type="TYPE_OF_CUSTOMER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TYPE_OF_CUSTOMER" Member="TYPE_OF_CUSTOMERs">
+    <Type Name="TYPE_OF_CUSTOMER">
+      <Column Name="IDTypeCus" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NameTypeOfCustomer" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TYPE_OF_CUSTOMER_CUSTOMER" Member="CUSTOMERs" ThisKey="IDTypeCus" OtherKey="IDTypeCus" Type="CUSTOMER" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TYPE_OF_ITEM" Member="TYPE_OF_ITEMs">
+    <Type Name="TYPE_OF_ITEM">
+      <Column Name="IDType" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NameTypeOfItem" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="TYPE_OF_ITEM_ITEM" Member="ITEMs" ThisKey="IDType" OtherKey="IDType" Type="ITEM" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WAREHOUSE" Member="WAREHOUSEs">
+    <Type Name="WAREHOUSE">
+      <Column Name="IDItem" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NumberOfItem" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ITEM_WAREHOUSE" Member="ITEM" ThisKey="IDItem" OtherKey="IDItem" Type="ITEM" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ITEMS" Member="ITEMs">
+    <Type Name="ITEM">
+      <Column Name="IDItem" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NameItem" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductionDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="ExpirationDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="IDType" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="IDStore" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="IDSupplier" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Association Name="ITEM_WAREHOUSE" Member="WAREHOUSE" ThisKey="IDItem" OtherKey="IDItem" Type="WAREHOUSE" Cardinality="One" />
+      <Association Name="ITEM_ITEM_IN_ORDER" Member="ITEM_IN_ORDERs" ThisKey="IDItem" OtherKey="IDItem" Type="ITEM_IN_ORDER" />
+      <Association Name="STORE_ITEM" Member="STORE" ThisKey="IDStore" OtherKey="IDStore" Type="STORE" IsForeignKey="true" />
+      <Association Name="TYPE_OF_ITEM_ITEM" Member="TYPE_OF_ITEM" ThisKey="IDType" OtherKey="IDType" Type="TYPE_OF_ITEM" IsForeignKey="true" />
+      <Association Name="SUPPLIER_ITEM" Member="SUPPLIER" ThisKey="IDSupplier" OtherKey="IDSupplier" Type="SUPPLIER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SUPPLIER" Member="SUPPLIERs">
+    <Type Name="SUPPLIER">
+      <Column Name="IDSupplier" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NameOfSupplier" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="AddressOfSupplier" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="SUPPLIER_ITEM" Member="ITEMs" ThisKey="IDSupplier" OtherKey="IDSupplier" Type="ITEM" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ITEM_IN_ORDER" Member="ITEM_IN_ORDERs">
+    <Type Name="ITEM_IN_ORDER">
+      <Column Name="IDItemInOrder" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDItem" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="IDOrder" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="NumberItem" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ITEM_ITEM_IN_ORDER" Member="ITEM" ThisKey="IDItem" OtherKey="IDItem" Type="ITEM" IsForeignKey="true" />
+      <Association Name="ORDER_ITEM_IN_ORDER" Member="ORDER" ThisKey="IDOrder" OtherKey="IDOrder" Type="ORDER" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
