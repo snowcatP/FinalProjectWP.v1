@@ -104,7 +104,7 @@
             // 
             this.pnMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnMain.BackgroundImage")));
             this.pnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnMain.Controls.Add(this.userControl_Employee1);
+            //this.pnMain.Controls.Add(this.userControl_Employee1);
             this.pnMain.Controls.Add(this.userControlWareHousecs2);
             this.pnMain.Controls.Add(this.frmCustomers1);
             this.pnMain.Controls.Add(this.menuStrip1);
