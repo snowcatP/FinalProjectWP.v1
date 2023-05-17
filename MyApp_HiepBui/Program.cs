@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyApp_HiepBui.IF_Layer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,8 +17,8 @@ namespace MyApp_HiepBui
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Login());
-            //Application.Run(new Form_Menu());
+            //Application.Run(new ExportReceipt());
+            Application.Run(new Form_Menu());
 
         }
     }
