@@ -272,6 +272,14 @@ namespace MyApp_HiepBui.IF_Layer
             }
         }
 
+        private void btn_Export_Click(object sender, EventArgs e)
+        {
+            int r = dgvOrders.CurrentCell.RowIndex;
+            string idCus = dgvOrders.Rows[r].Cells[0].Value.ToString();
+            ExportReceipt exportReceipt = new ExportReceipt(idCus);
+            exportReceipt.Show();
+        }
+
         private void txtNameOfItem_Enter(object sender, EventArgs e)
         {
             string idofitem = "";

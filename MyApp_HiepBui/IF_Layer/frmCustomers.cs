@@ -16,7 +16,11 @@ namespace MyApp_HiepBui.IF_Layer
     public partial class frmCustomers : UserControl
     {
 
+        //string connstr = "Data Source=HIEPBUI2812\\SQLEXPRESS;Initial Catalog=ConvenienceStoreManagement(new);Integrated Security=True";
+
+
         string connstr = @"Data Source=Hoangpro\HOANGPRO;Initial Catalog=ConvenienceStoreManagement;Integrated Security=True";
+
 
         string err;
         string IDCustomer;
