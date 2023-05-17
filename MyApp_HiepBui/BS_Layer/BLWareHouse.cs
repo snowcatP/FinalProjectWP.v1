@@ -18,20 +18,84 @@ namespace MyApp_HiepBui.BS_Layer
         {
             db = new DBMain();
         }
-        public DataSet CheckInventory()
+
+        public DataTable CheckInventory()
         {
-            string str = "SELECT * FROM v_Status_Of_WareHouse ";
-            return db.ExecuteQueryDataSet(str, CommandType.Text);
+            ConvenienceStoreManagementDataContext store = new ConvenienceStoreManagementDataContext();
+
+            var data = from it in store.ITEMs
+                       join wh in store.WAREHOUSEs on it.IDItem equals wh.IDItem
+                       join toi in store.TYPE_OF_ITEMs on it.IDType equals toi.IDType
+                       join sup in store.SUPPLIERs on it.IDSupplier equals sup.IDSupplier
+                       select new
+                       {
+                           it.IDItem,
+                           it.NameItem,
+                           it.Price,
+                           Type = toi.NameTypeOfItem,
+                           sup.NameOfSupplier,
+                           wh.NumberOfItem,
+                           it.ProductionDate,
+                           it.ExpirationDate
+                       };
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("IDItem");
+            dataTable.Columns.Add("NameItem");
+            dataTable.Columns.Add("Price");
+            dataTable.Columns.Add("Type");
+            dataTable.Columns.Add("NameOfSupplier");
+            dataTable.Columns.Add("NumberOfItem");
+            dataTable.Columns.Add("ProductionDate");
+            dataTable.Columns.Add("ExpirationDate");
+
+            foreach (var item in data)
+            {
+                dataTable.Rows.Add(
+                    item.IDItem,
+                    item.NameItem,
+                    item.Price,
+                    item.Type,
+                    item.NameOfSupplier,
+                    item.NumberOfItem,
+                    item.ProductionDate.ToString("dd/MM/yyyy"),
+                    item.ExpirationDate.ToString("dd/MM/yyyy")
+                );
+            }
+
+
+            return dataTable;
+
+
         }
         public DataTable GetTypeOfItem()
         {
-            string str = "SELECT NameTypeOfItem FROM TYPE_OF_ITEM";
-            return db.ExecuteQueryDataTable(str, CommandType.Text);
+            ConvenienceStoreManagementDataContext store = new ConvenienceStoreManagementDataContext();
+            var data = store.TYPE_OF_ITEMs.Select(x => x.NameTypeOfItem);
+            
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("NameTypeOfItem");
+            foreach (var item in data)
+            {
+                dataTable.Rows.Add(item);
+            }
+            return dataTable;
+
+
+
         }
         public DataTable GetNameOfSupplier()
         {
-            string str = "SELECT NameOfSupplier FROM SUPPLIER";
-            return db.ExecuteQueryDataTable(str, CommandType.Text);
+            ConvenienceStoreManagementDataContext store = new ConvenienceStoreManagementDataContext();
+            var data = store.SUPPLIERs.Select(x => x.NameOfSupplier);
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("NameOfSupplier");
+            foreach (var item in data)
+            {
+                dataTable.Rows.Add(item);
+            }
+            return dataTable;
+
+
         }
         public bool AddNewItem(string name, int price, DateTime dateTime, string type, string supplier,
             int quantity, ref string err)

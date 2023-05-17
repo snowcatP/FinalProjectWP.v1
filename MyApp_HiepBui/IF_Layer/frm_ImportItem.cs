@@ -49,9 +49,9 @@ namespace MyApp_HiepBui.IF_Layer
         {
             dt = new DataTable();
             dt.Clear();
-            DataSet ds = blwarehouse.CheckInventory();
-            dt = ds.Tables[0];
-            dgvDetails.DataSource = dt;
+            DataTable ds = blwarehouse.CheckInventory();
+            //dt = ds.Tables[0];
+            dgvDetails.DataSource = ds;
 
         }
         private void btnSearch_Click(object sender, EventArgs e)
@@ -80,8 +80,9 @@ namespace MyApp_HiepBui.IF_Layer
                 {
                     DataTable dt = new DataTable();
                     dt.Clear();
-                    DataSet ds = blwarehouse.CheckInventory();
-                    dt = ds.Tables[0];
+                    DataTable ds = blwarehouse.CheckInventory();
+                    dt = ds;
+
                 }
                 catch (Exception)
                 {
