@@ -32,8 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Menu));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnMain = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuSystem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,15 +44,24 @@
             this.mnuEmployees = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCustomers = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHelp = new System.Windows.Forms.ToolStripMenuItem();
+
             this.pnMain = new System.Windows.Forms.Panel();
+
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.userControlWareHousecs2 = new MyApp_HiepBui.IF_Layer.UserControlWareHousecs();
+
             this.frmCustomers1 = new MyApp_HiepBui.IF_Layer.frmCustomers();
             this.userControlWareHousecs2 = new MyApp_HiepBui.IF_Layer.UserControlWareHousecs();
             this.userControlWareHousecs1 = new MyApp_HiepBui.IF_Layer.UserControlWareHousecs();
             this.addNewOrder1 = new MyApp_HiepBui.IF_Layer.AddNewOrder();
+
             this.addNewOrder2 = new MyApp_HiepBui.IF_Layer.AddNewOrder();
+
+            this.userControl_Employee1 = new MyApp_HiepBui.IF_Layer.UserControl_Employee();
+
             this.statusStrip1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.pnMain.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -71,6 +80,7 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
+
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -80,6 +90,7 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(68, 20);
             this.toolStripStatusLabel1.Text = "Ready";
             // 
+
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
@@ -88,6 +99,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(25, 743);
             this.panel1.TabIndex = 4;
+            // 
+            // pnMain
+            // 
+            this.pnMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnMain.BackgroundImage")));
+            this.pnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnMain.Controls.Add(this.userControl_Employee1);
+            this.pnMain.Controls.Add(this.userControlWareHousecs2);
+            this.pnMain.Controls.Add(this.frmCustomers1);
+            this.pnMain.Controls.Add(this.menuStrip1);
+            this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnMain.Location = new System.Drawing.Point(0, 0);
+            this.pnMain.Name = "pnMain";
+            this.pnMain.Size = new System.Drawing.Size(1362, 742);
+            this.pnMain.TabIndex = 6;
             // 
             // menuStrip1
             // 
@@ -182,8 +208,9 @@
             this.mnuHelp.Size = new System.Drawing.Size(70, 24);
             this.mnuHelp.Text = "&Help";
             // 
-            // pnMain
+            // toolStripStatusLabel1
             // 
+
             this.pnMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnMain.BackgroundImage")));
             this.pnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnMain.Controls.Add(this.frmCustomers1);
@@ -196,6 +223,14 @@
             this.pnMain.Name = "pnMain";
             this.pnMain.Size = new System.Drawing.Size(1362, 743);
             this.pnMain.TabIndex = 6;
+
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.White;
+            this.toolStripStatusLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel1.Image")));
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(76, 20);
+            this.toolStripStatusLabel1.Text = "Ready";
+
             // 
             // frmCustomers1
             // 
@@ -242,6 +277,7 @@
             this.addNewOrder1.Size = new System.Drawing.Size(235, 216);
             this.addNewOrder1.TabIndex = 0;
             // 
+
             // addNewOrder2
             // 
             this.addNewOrder2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(231)))), ((int)(((byte)(243)))));
@@ -252,6 +288,14 @@
             this.addNewOrder2.Name = "addNewOrder2";
             this.addNewOrder2.Size = new System.Drawing.Size(1362, 715);
             this.addNewOrder2.TabIndex = 0;
+
+            // userControl_Employee1
+            // 
+            this.userControl_Employee1.Location = new System.Drawing.Point(0, 32);
+            this.userControl_Employee1.Name = "userControl_Employee1";
+            this.userControl_Employee1.Size = new System.Drawing.Size(1387, 724);
+            this.userControl_Employee1.TabIndex = 4;
+
             // 
             // Form_Menu
             // 
@@ -270,10 +314,10 @@
             this.Load += new System.EventHandler(this.Form_Menu_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.pnMain.ResumeLayout(false);
             this.pnMain.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,6 +343,10 @@
         private IF_Layer.UserControlWareHousecs userControlWareHousecs1;
         private IF_Layer.AddNewOrder addNewOrder1;
         private IF_Layer.UserControlWareHousecs userControlWareHousecs2;
+
         private IF_Layer.AddNewOrder addNewOrder2;
+
+        private IF_Layer.UserControl_Employee userControl_Employee1;
+
     }
 }

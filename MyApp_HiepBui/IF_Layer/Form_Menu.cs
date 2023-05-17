@@ -24,7 +24,11 @@ namespace MyApp_HiepBui
         {
             frmCustomers1.Hide();
             userControlWareHousecs2.Hide();
+
             addNewOrder2.Hide();
+
+            userControl_Employee1.Hide();
+
         }
         private void Form_Programm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -77,9 +81,27 @@ namespace MyApp_HiepBui
 
         private void mnuEmployees_Click(object sender, EventArgs e)
         {
+
             Form_DSNhanVien fNV = new Form_DSNhanVien();
             fNV.Show();
             fNV.BringToFront();
+
+            //if (Const.TypeOfAcc == "IncompleteAuthority")
+            //{
+            //    MessageBox.Show("Bạn không được quyền truy cập");
+            //}
+            //else
+            //{
+            //    Form_DSNhanVien fNV = new Form_DSNhanVien();
+            //    fNV.Show();
+            //    fNV.BringToFront();
+            //}
+            //Form_DSNhanVien fNV = new Form_DSNhanVien();
+            //fNV.Show();
+            //fNV.BringToFront();
+            userControl_Employee1.Show();
+            userControl_Employee1.BringToFront();
+
         }
 
         private void mnuWarehouse_Click(object sender, EventArgs e)

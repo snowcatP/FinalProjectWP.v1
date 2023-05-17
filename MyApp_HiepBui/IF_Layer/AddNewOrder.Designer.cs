@@ -56,7 +56,14 @@ namespace MyApp_HiepBui.IF_Layer
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNewOrder = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+
             this.btn_Export = new System.Windows.Forms.Button();
+
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.pnDetails.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +73,11 @@ namespace MyApp_HiepBui.IF_Layer
             this.dgvOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOrders.BackgroundColor = System.Drawing.Color.White;
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column5});
             this.dgvOrders.Location = new System.Drawing.Point(17, 86);
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.RowHeadersWidth = 51;
@@ -342,6 +354,7 @@ namespace MyApp_HiepBui.IF_Layer
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+
             // btn_Export
             // 
             this.btn_Export.Location = new System.Drawing.Point(1104, 584);
@@ -351,6 +364,43 @@ namespace MyApp_HiepBui.IF_Layer
             this.btn_Export.Text = "Export";
             this.btn_Export.UseVisualStyleBackColor = true;
             this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
+
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column1.DataPropertyName = "ID Order";
+            this.Column1.HeaderText = "ID Order";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 103;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column2.DataPropertyName = "Name customer";
+            this.Column2.HeaderText = "Name customer";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 144;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column3.DataPropertyName = "Total price";
+            this.Column3.HeaderText = "Total price";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 108;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column5.DataPropertyName = "Day transaction";
+            this.Column5.HeaderText = "Day transaction";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 143;
+
             // 
             // AddNewOrder
             // 
@@ -414,6 +464,13 @@ namespace MyApp_HiepBui.IF_Layer
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnNewOrder;
         private System.Windows.Forms.Button btnExit;
+
         private System.Windows.Forms.Button btn_Export;
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+
     }
 }

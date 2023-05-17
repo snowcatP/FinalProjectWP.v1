@@ -141,6 +141,8 @@ namespace MyApp_HiepBui.IF_Layer
 
                     blOrder.AddNewOrder(newIDOrder, phone, idItem, quantity);
                 }
+                MessageBox.Show("Added new order success!");
+                
             }
             catch (Exception)
             {

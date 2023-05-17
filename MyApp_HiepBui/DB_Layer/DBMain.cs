@@ -10,8 +10,14 @@ namespace MyApp_HiepBui.DB_Layer
 {
     class DBMain
     {
-        string connStr = "Data Source=HIEPBUI2812\\SQLEXPRESS;Initial Catalog=ConvenienceStoreManagement(new);Integrated Security=True";
+
+        //string connStr = "Data Source=HIEPBUI2812\\SQLEXPRESS;Initial Catalog=ConvenienceStoreManagement(new);Integrated Security=True";
         
+
+
+        string connStr = @"Data Source=Hoangpro\HOANGPRO;Initial Catalog=ConvenienceStoreManagement;Integrated Security=True";
+
+
 
         SqlConnection conn = null;
         SqlCommand  comm = null;
