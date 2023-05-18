@@ -5,19 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace MyApp_HiepBui.DB_Layer
 {
     class DBMain
     {
         string connStr = @"Data Source=HIEPBUI2812\SQLEXPRESS;Initial Catalog=ConvenienceStoreManagement(new);Integrated Security=True";
-        
+
 
 
         SqlConnection conn = null;
-        SqlCommand  comm = null;
-        SqlDataAdapter SqlAdapter= null;
-        public DBMain() { 
+        SqlCommand comm = null;
+        SqlDataAdapter SqlAdapter = null;
+        public DBMain()
+        {
             conn = new SqlConnection(connStr);
             comm = conn.CreateCommand();
         }
@@ -29,12 +31,12 @@ namespace MyApp_HiepBui.DB_Layer
         }
         public DataSet ExecuteQueryDataSet(string strSQL, CommandType commandType)
         {
-            if (conn.State==ConnectionState.Open)
+            if (conn.State == ConnectionState.Open)
             {
                 conn.Close();
             }
             conn.Open();
-            comm.CommandText =strSQL;
+            comm.CommandText = strSQL;
             comm.CommandType = commandType;
             SqlAdapter = new SqlDataAdapter(comm);
             DataSet ds = new DataSet();
@@ -95,17 +97,17 @@ namespace MyApp_HiepBui.DB_Layer
         public bool MyExecuteNonQuery(string strSQL, CommandType commandType, ref string error)
         {
             bool f = false;
-            if (conn.State==ConnectionState.Open)
+            if (conn.State == ConnectionState.Open)
             {
                 conn.Close();
             }
             conn.Open();
-            comm.CommandText =strSQL;
+            comm.CommandText = strSQL;
             comm.CommandType = commandType;
             try
             {
                 comm.ExecuteNonQuery();
-                f=true;
+                f = true;
             }
             catch (SqlException ex)
             {
@@ -136,30 +138,27 @@ namespace MyApp_HiepBui.DB_Layer
             finally { conn.Close(); }
             return f;
         }
-        public int AutoNumber()
+        public string AutoNumber()
         {
-            if (conn.State == ConnectionState.Open)
+            using (ConvenienceStoreManagementDataContext convenience = new ConvenienceStoreManagementDataContext())
             {
-                conn.Close();
+                var query = (from u in convenience.AutoGenerateIDCustomer()
+                             select u).Aggregate(string.Empty, (current, next) => current + next);
+                string i = query.ToString();
+
+                return i;
             }
-            conn.Open();
-            SqlCommand cmd= new SqlCommand("SELECT MAX(CAST(RIGHT(IDCustomer,2) AS INT)) FROM CUSTOMERS", conn);
-            int i = Convert.ToInt32(cmd.ExecuteScalar());
-            conn.Close();
-            return i;
         }
         public int Number_for_Analyse(int Month_of_OpeningDate)
         {
-            if (conn.State == ConnectionState.Open)
+            using (ConvenienceStoreManagementDataContext convenience = new ConvenienceStoreManagementDataContext())
             {
-                conn.Close();
+                var query = (from u in convenience.CUSTOMERs
+                             where u.OpeningDate.Month == Month_of_OpeningDate
+                             select u.OpeningDate.Month).Count();
+                int i = Convert.ToInt32(query);
+                return i;
             }
-            conn.Open();
-            string sqlQuery = "EXEC USP_AnalyseCustomer " + Month_of_OpeningDate;
-            SqlCommand cmd = new SqlCommand(sqlQuery, conn);
-            int i = Convert.ToInt32(cmd.ExecuteScalar());
-            conn.Close();
-            return i;
         }
         public string ExecuteScalar(string strSQL, ref string error)
         {
