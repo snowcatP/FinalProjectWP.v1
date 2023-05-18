@@ -29,25 +29,15 @@ namespace MyApp_HiepBui.IF_Layer
         {
             try
             {
-                dtKindOfEmp = new DataTable();
-                dtKindOfEmp.Clear();
-                DataSet dsKOE = dbNV.Get_List_Kind_Of_Employee();
-                dtKindOfEmp = dsKOE.Tables[0];
-                dgv_KindOfEmployee.DataSource = dtKindOfEmp;
+                
+                dgv_KindOfEmployee.DataSource = dbNV.Get_List_Kind_Of_Employee();
                 dgv_KindOfEmployee.AutoResizeColumns();
                 //
-                dtGroupEmp = new DataTable();
-                dtGroupEmp.Clear();
-                DataSet dsGroupEmp = dbNV.Get_List_Group_Of_Employee();
-                dtGroupEmp = dsGroupEmp.Tables[0];
-                dgv_GroupEmp.DataSource = dtGroupEmp;
+
+                dgv_GroupEmp.DataSource = dbNV.Get_List_Group_Of_Employee();
                 dgv_GroupEmp.AutoResizeColumns();
                 //
-                dtTypeUser = new DataTable();
-                dtTypeUser.Clear();
-                DataSet dsTypeUser = dbNV.Get_List_Type_Of_User();
-                dtTypeUser = dsTypeUser.Tables[0];
-                dgv_TypeUser.DataSource = dtTypeUser;
+                dgv_TypeUser.DataSource = dbNV.Get_List_Type_Of_User();
                 dgv_TypeUser.AutoResizeColumns();
 
             }
@@ -66,7 +56,7 @@ namespace MyApp_HiepBui.IF_Layer
                 BLNhanVien blNhanVien = new BLNhanVien();
                 int value_StatusEmp = Convert.ToInt32(txt_AddStatusEmp.Text);
                 dateTimePicker_AddDOB.CustomFormat = "yyyy-MM-dd";
-                blNhanVien.ThemNhanVien(txt_AddName.Text, dateTimePicker_AddDOB.Text, txt_AddAddress.Text, txt_AddPhone.Text,
+                blNhanVien.Add_Employee(txt_AddName.Text, dateTimePicker_AddDOB.Text, txt_AddAddress.Text, txt_AddPhone.Text,
                     value_StatusEmp, txt_AddIDKindEmp.Text, txt_AddGroupEmp.Text,
                     txt_AddTypeUser.Text, txt_AddIDStore.Text, ref err);
                 if(err != "")

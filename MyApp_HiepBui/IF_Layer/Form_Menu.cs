@@ -27,7 +27,7 @@ namespace MyApp_HiepBui
 
             addNewOrder2.Hide();
 
-            //userControl_Employee1.Hide();
+            userControl_Employee2.Hide();
 
         }
         private void Form_Programm_FormClosed(object sender, FormClosedEventArgs e)
@@ -99,8 +99,10 @@ namespace MyApp_HiepBui
             //Form_DSNhanVien fNV = new Form_DSNhanVien();
             //fNV.Show();
             //fNV.BringToFront();
-            userControl_Employee1.Show();
-            userControl_Employee1.BringToFront();
+            //userControl_Employee1.Show();
+            //userControl_Employee1.BringToFront();
+            userControl_Employee2.Show();
+            userControl_Employee2.BringToFront();
 
         }
 
