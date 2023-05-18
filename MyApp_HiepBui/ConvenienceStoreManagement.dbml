@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ConvenienceStoreManagement(new)" Class="ConvenienceStoreManagementDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=HIEPBUI2812\SQLEXPRESS;Initial Catalog=ConvenienceStoreManagement(new);Integrated Security=True" SettingsObjectName="MyApp_HiepBui.Properties.Settings" SettingsPropertyName="ConvenienceStoreManagement_new_ConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ConvenienceStoreManagement" Class="ConvenienceStoreManagementDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HOANGPRO\HOANGPRO;Initial Catalog=ConvenienceStoreManagement;Integrated Security=True" SettingsObjectName="MyApp_HiepBui.Properties.Settings" SettingsPropertyName="ConvenienceStoreManagementConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ACCOUNT" Member="ACCOUNTs">
     <Type Name="ACCOUNT">
       <Column Name="IDEmp" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -168,26 +168,6 @@
       <Association Name="ORDER_ITEM_IN_ORDER" Member="ORDER" ThisKey="IDOrder" OtherKey="IDOrder" Type="ORDER" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.[Employees View]" Member="Employees_Views">
-    <Type Name="Employees_View">
-      <Column Name="IDEmp" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DateOfBirth" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="Phone" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
-      <Column Name="Address" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Position" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.[Gold Customer]" Member="Gold_Customers">
-    <Type Name="Gold_Customer">
-      <Column Name="IDCustomer" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="Phone" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.v_Info_Of_Customers" Member="v_Info_Of_Customers">
-    <Type Name="v_Info_Of_Customer">
   <Function Name="dbo.Add_Employee" Method="Add_Employee">
     <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="dateofbirth" Type="System.DateTime" DbType="Date" />
@@ -249,8 +229,6 @@
       <Column Name="[Latest transaction]" Member="Latest_transaction" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
       <Column Name="NameTypeOfCustomer" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="AccumulatedPoint" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
     </ElementType>
   </Function>
   <Function Name="dbo.ModifyItem" Method="ModifyItem">
@@ -270,9 +248,6 @@
     <Parameter Name="AccumulatedPoint" Parameter="accumulatedPoint" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-
-  <Function Name="dbo.AutoGenerateIDCustomer" Method="AutoGenerateIDCustomer" IsComposable="true">
-    <Return Type="System.String" />
   <Function Name="dbo.USP_AnalyseCustomer" Method="USP_AnalyseCustomer">
     <Parameter Name="Month_of_OpeningDate" Parameter="month_of_OpeningDate" Type="System.Int32" DbType="Int" />
     <ElementType Name="USP_AnalyseCustomerResult">

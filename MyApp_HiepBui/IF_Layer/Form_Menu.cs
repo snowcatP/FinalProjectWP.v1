@@ -24,7 +24,7 @@ namespace MyApp_HiepBui
         {
             frmCustomers1.Hide();
             userControlWareHousecs2.Hide();
-            userControl_Employee2.Hide();
+
             addNewOrder2.Hide();
 
             //userControl_Employee1.Hide();
@@ -81,9 +81,26 @@ namespace MyApp_HiepBui
 
         private void mnuEmployees_Click(object sender, EventArgs e)
         {
-            Refresh();
-            userControl_Employee2.Show();
-            userControl_Employee2.BringToFront();
+
+            //Form_DSNhanVien fNV = new Form_DSNhanVien();
+            //fNV.Show();
+            //fNV.BringToFront();
+
+            //if (Const.TypeOfAcc == "IncompleteAuthority")
+            //{
+            //    MessageBox.Show("Bạn không được quyền truy cập");
+            //}
+            //else
+            //{
+            //    Form_DSNhanVien fNV = new Form_DSNhanVien();
+            //    fNV.Show();
+            //    fNV.BringToFront();
+            //}
+            //Form_DSNhanVien fNV = new Form_DSNhanVien();
+            //fNV.Show();
+            //fNV.BringToFront();
+            userControl_Employee1.Show();
+            userControl_Employee1.BringToFront();
 
         }
 
@@ -104,7 +121,6 @@ namespace MyApp_HiepBui
 
         private void mnuOrders_Click(object sender, EventArgs e)
         {
-            Refresh();
             addNewOrder2.Show();
             addNewOrder2.BringToFront();
         }
