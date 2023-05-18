@@ -49,17 +49,19 @@ namespace MyApp_HiepBui.IF_Layer
         {
             dtInven = new DataTable();
             dtInven.Clear();
-            DataSet ds = blInven.CheckInventory();
-            dtInven = ds.Tables[0];
+            DataTable ds = blInven.CheckInventory();
+            //dtInven = ds.Tables[0];
+            dtInven = ds;
+
             dgvInfo.DataSource = dtInven;
         }
         private void btnCheckInven_Click(object sender, EventArgs e)
         {
             dtInven = new DataTable();
             dtInven.Clear();
-            DataSet ds = blInven.CheckInventory();
-            dtInven = ds.Tables[0];
-            dgvInfo.DataSource = dtInven;
+            DataTable ds = blInven.CheckInventory();
+            //dtInven = ds.Tables[0];
+            dgvInfo.DataSource = ds;
         }
 
         private void btnAddItem_Click(object sender, EventArgs e)

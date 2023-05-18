@@ -168,4 +168,99 @@
       <Association Name="ORDER_ITEM_IN_ORDER" Member="ORDER" ThisKey="IDOrder" OtherKey="IDOrder" Type="ORDER" IsForeignKey="true" />
     </Type>
   </Table>
+  <Function Name="dbo.Add_Employee" Method="Add_Employee">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="dateofbirth" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="address" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="phone" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="status_emp" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="idkindemp" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="idgroup" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="idtypeuser" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="idstore" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AddNewItem" Method="AddNewItem">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="Price" Parameter="price" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MFGDate" Parameter="mFGDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Type" Parameter="type" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="Supplier" Parameter="supplier" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="Quantity" Parameter="quantity" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AddNewOrder" Method="AddNewOrder">
+    <Parameter Name="IDOrder" Parameter="iDOrder" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Phone" Parameter="phone" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="IDItem" Parameter="iDItem" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="quantity" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CreateNewOrder" Method="CreateNewOrder">
+    <Parameter Name="NewIDOrder" Parameter="newIDOrder" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Phone" Parameter="phone" Type="System.String" DbType="VarChar(11)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Edit_Employee" Method="Edit_Employee">
+    <Parameter Name="ide" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="dateofbirth" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="address" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="phone" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="status_emp" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="id_kind_emp" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="id_group" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="id_type_user" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="id_store" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.employee_authority" Method="employee_authority">
+    <Parameter Name="id_employee" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="id_typeuser" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.FindCustomer" Method="FindCustomer">
+    <Parameter Name="Phone_Cus" Parameter="phone_Cus" Type="System.String" DbType="VarChar(11)" />
+    <ElementType Name="FindCustomerResult">
+      <Column Name="IDCustomer" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="[Name of Customer]" Member="Name_of_Customer" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="OpeningDate" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="[Latest transaction]" Member="Latest_transaction" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="NameTypeOfCustomer" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AccumulatedPoint" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ModifyItem" Method="ModifyItem">
+    <Parameter Name="IDItem" Parameter="iDItem" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="Price" Parameter="price" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Type" Parameter="type" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="Supplier" Parameter="supplier" Type="System.String" DbType="NVarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_AddCustomer" Method="USP_AddCustomer">
+    <Parameter Name="IdCustomer" Parameter="idCustomer" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="Phone" Parameter="phone" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="OpeningDate" Parameter="openingDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="TransactionDate" Parameter="transactionDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="AccumulatedPoint" Parameter="accumulatedPoint" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_AnalyseCustomer" Method="USP_AnalyseCustomer">
+    <Parameter Name="Month_of_OpeningDate" Parameter="month_of_OpeningDate" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_AnalyseCustomerResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_Update_InfoCustomer" Method="USP_Update_InfoCustomer">
+    <Parameter Name="IdCustomer" Parameter="idCustomer" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="Phone" Parameter="phone" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="OpeningDate" Parameter="openingDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="TransactionDate" Parameter="transactionDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="AccumulatedPoint" Parameter="accumulatedPoint" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>
