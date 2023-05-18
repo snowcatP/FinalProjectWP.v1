@@ -6,6 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 using MyApp_HiepBui.DB_Layer;
+using Microsoft.ReportingServices.Diagnostics.Internal;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+
 namespace MyApp_HiepBui.BS_Layer
 {
      class BLCustomers
@@ -13,61 +17,97 @@ namespace MyApp_HiepBui.BS_Layer
         DBMain db = null;
         public BLCustomers()
         {
-            db=new DBMain();
+            
         }
+        public DataGridView GetInfo_Customer(DataGridView data)
+        {
+            using (ConvenienceStoreManagementDataContext convenience = new ConvenienceStoreManagementDataContext())
+            {
+                var query = from u in convenience.v_Info_Of_Customers
+                            select u;
+                data.DataSource = query;
+                return data;
+            }
 
-        public DataSet GetInfo_KhachHang()
-        {
-            return db.ExecuteQueryDataSet("Select * from [v_Info_Of_Customers]", CommandType.Text);
         }
-        public bool addCustomer(string Name, string Phone, string OpeningDate, string TransactionDate, int AccumulatedPoint, ref string error)
+        public void addCustomer(string Name, string Phone, DateTime OpeningDate, DateTime TransactionDate, int AccumulatedPoint, ref string error)
         {
-            string IdCus;
-            double val =0;
-            int index = db.AutoNumber();
-            index++;
-            if (index==99) 
+            using (ConvenienceStoreManagementDataContext convenience = new ConvenienceStoreManagementDataContext())
             {
-                val++;
-                index = 0;
+                string IdCus;
+                var query = (from u in convenience.AutoGenerateIDCustomer()
+                             select u).Aggregate(string.Empty, (current, next) => current + next);
+                IdCus  = query.ToString();
+                CUSTOMER cus = new CUSTOMER();
+                cus.IDCustomer = IdCus;
+                cus.Name = Name;
+                cus.Phone = Phone;
+                cus.OpeningDate = OpeningDate;
+                cus.TransactionDate=TransactionDate;
+                cus.AccumulatedPoint = AccumulatedPoint;
+                convenience.CUSTOMERs.InsertOnSubmit(cus);
+                convenience.CUSTOMERs.Context.SubmitChanges();
             }
-            IdCus = "CU" + val + index;
-            string sqlQuery = "EXEC dbo.USP_AddCustomer '"+IdCus+"', "+"N'"+Name+"', "+"'"+Phone+"', " + "'" + OpeningDate + "', " + "'" + TransactionDate + "', "+"'" + AccumulatedPoint + "'";
-            return db.MyExecuteNonQuery(sqlQuery, CommandType.Text, ref error);
         }
-        public DataTable searchCustomer(string Phone, string Name)
+        public DataGridView searchCustomer(string Phone, DataGridView data)
         {
-            //string sqlQuery = "Select * from [v_Info_Of_Customers] Where Phone = '" + Phone + "'";
-            //return db.ExecuteQueryDataSet(sqlQuery, CommandType.Text);
-            try
+            using (ConvenienceStoreManagementDataContext convenience = new ConvenienceStoreManagementDataContext())
             {
-                string sqlQuery = "Select * from [v_Info_Of_Customers] Where Phone = '" + Phone + "'";
-                var tb = db.ExecuteQueryDataTable(sqlQuery, CommandType.Text);
-                if (tb.Rows.Count == 0)
+                var Query = (from u in convenience.v_Info_Of_Customers
+                             where u.Phone == Phone
+                             select u);
+
+                data.DataSource = Query;
+                return data;
+            }
+        }
+        public void delCustomer(string IDCustomer, ref string error)
+        {
+            using (ConvenienceStoreManagementDataContext convenience = new ConvenienceStoreManagementDataContext())
+            {
+                var query = from u in convenience.CUSTOMERs
+                            where u.IDCustomer == IDCustomer
+                            select u;
+                convenience.CUSTOMERs.DeleteAllOnSubmit(query);
+                convenience.SubmitChanges();
+
+            }
+        }
+        public void modifyCustomer(string IDCustomer,string Name, string Phone, DateTime OpeningDate, DateTime TransactionDate, int AccumulatedPoint, ref string error) {
+            using (ConvenienceStoreManagementDataContext convenience = new ConvenienceStoreManagementDataContext())
+            {
+                var query = (from u in convenience.CUSTOMERs
+                            where u.IDCustomer == IDCustomer
+                            select u).Single();
+                if (query!=null)
                 {
-                    throw new Exception("No results found");
+
+                    query.Name = Name;
+                    query.Phone = Phone;
+                    query.OpeningDate = OpeningDate;
+                    query.OpeningDate = TransactionDate;
+                    query.AccumulatedPoint = AccumulatedPoint;
+                    convenience.SubmitChanges();
                 }
-                return tb;
+                else
+                {
+                    return;
+                }
+
+
             }
-            catch (Exception ex)
-            {
-                // Log the exception or display an error message to the user
-                Console.WriteLine($"An error occurred while executing the query: {ex.Message}");
-                return null;
-            }
-        }
-        public bool delCustomer(string IDCustomer, ref string error)
-        {
-            string sqlQuery = "DELETE from CUSTOMERS Where IDCustomer = '" + IDCustomer+"'";
-            return db.MyExecuteNonQuery(sqlQuery, CommandType.Text, ref error);
-        }
-        public bool modifyCustomer(string IDCustomer,string Name, string Phone, string OpeningDate, string TransactionDate, int AccumulatedPoint, ref string error) {
-            string sqlQuery = "EXEC dbo.USP_Update_InfoCustomer '" + IDCustomer + "', " + "N'" + Name + "', " + "'" + Phone + "', " + "'" + OpeningDate + "', " + "'" + TransactionDate + "', " + "'" + AccumulatedPoint + "'";
-            return db.MyExecuteNonQuery(sqlQuery, CommandType.Text, ref error);
         }
         public int analyseCustomer(int Month_of_OpeningDate,ref string error)
         {
-            return db.Number_for_Analyse(Month_of_OpeningDate);
+            using (ConvenienceStoreManagementDataContext convenience = new ConvenienceStoreManagementDataContext())
+            {
+                var query = (from u in convenience.CUSTOMERs
+                             where u.OpeningDate.Month == Month_of_OpeningDate
+                             select u).Count();
+                int i = Convert.ToInt32(query);
+                return i;
+            }
         }
+        
     }
 }
