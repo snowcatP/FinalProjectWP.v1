@@ -39,21 +39,21 @@
         <elementListCompartment Id="829ab134-b14b-49e5-8cff-7cf5ab57a9b1" absoluteBounds="3.5149999999999997, 2.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.53125 : 2.25); (3.53125 : 1.82139322916667); (2.625 : 1.82139322916667)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3.53125 : 2.25); (3.53125 : 1.82139322916667); (2.625 : 1.82139322916667)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConvenienceStoreManagementDataContext/EMPLOYEE/EMPLOYEE_ACCOUNT" />
       <nodes>
         <classShapeMoniker Id="bda65e8a-4c63-4383-81a3-9b9f0b727ddb" />
         <classShapeMoniker Id="8ea2e292-b912-4b3f-be5b-edb220e6bffd" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.625 : 2.78449625651042); (3.5 : 2.78449625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.625 : 2.78449625651042); (3.5 : 2.78449625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConvenienceStoreManagementDataContext/KIND_OF_EMPLOYEE/KIND_OF_EMPLOYEE_EMPLOYEE" />
       <nodes>
         <classShapeMoniker Id="4052d446-f6d0-47b7-b9a2-579da6a6f40a" />
         <classShapeMoniker Id="bda65e8a-4c63-4383-81a3-9b9f0b727ddb" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.5 : 4.36620198567708); (3.5 : 4.36620198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.5 : 4.36620198567708); (3.5 : 4.36620198567708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConvenienceStoreManagementDataContext/TYPE_OF_USER/TYPE_OF_USER_EMPLOYEE" />
       <nodes>
         <classShapeMoniker Id="05e32579-85f0-46f9-8d00-38d885ec5d0c" />
@@ -66,7 +66,7 @@
         <elementListCompartment Id="9f53b4c5-3feb-4a11-9fa3-e1c2396ace9b" absoluteBounds="3.6399999999999997, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.5625 : 1.69399251302083); (4.5625 : 2.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.5625 : 1.69399251302083); (4.5625 : 2.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConvenienceStoreManagementDataContext/GROUP_OF_EMPLOYEE/GROUP_OF_EMPLOYEE_EMPLOYEE" />
       <nodes>
         <classShapeMoniker Id="751da713-1185-4f37-b618-0d144a0d86b4" />
@@ -79,7 +79,7 @@
         <elementListCompartment Id="7ca7db16-80a6-42d5-b8d5-afc28fdbff82" absoluteBounds="3.3899999999999997, 5.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.4375 : 4.98240397135417); (4.4375 : 5.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.4375 : 4.98240397135417); (4.4375 : 5.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConvenienceStoreManagementDataContext/EMPLOYEE/EMPLOYEE_WORKINGTIME" />
       <nodes>
         <classShapeMoniker Id="bda65e8a-4c63-4383-81a3-9b9f0b727ddb" />
@@ -111,7 +111,7 @@
         <elementListCompartment Id="15de7813-49e9-4c1e-b637-eeb2a2c73019" absoluteBounds="6.015, 4.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.5 : 4.49120198567708); (6 : 4.49120198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 4.49120198567708); (6 : 4.49120198567708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConvenienceStoreManagementDataContext/EMPLOYEE/EMPLOYEE_ORDER" />
       <nodes>
         <classShapeMoniker Id="bda65e8a-4c63-4383-81a3-9b9f0b727ddb" />
@@ -125,7 +125,7 @@
         <classShapeMoniker Id="8e6bc16a-39ce-4347-9cfc-5ecbded3be01" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(6.1875025 : 2.0112939453125); (6.1875025 : 4)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(6.1875025 : 2.0112939453125); (6.1875025 : 4)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConvenienceStoreManagementDataContext/STORE/STORE_ORDER" />
       <nodes>
         <classShapeMoniker Id="e7a85d38-9316-4ff3-b069-563ff4bda670" />

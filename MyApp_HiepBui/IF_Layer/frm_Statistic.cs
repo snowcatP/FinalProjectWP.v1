@@ -26,11 +26,8 @@ namespace MyApp_HiepBui.IF_Layer
         {
             dt = new DataTable();
             dt.Clear();
-            DataSet ds = blwarehouse.GetMonthlySpendingAllTime();
-            dt = ds.Tables[0];
-
+            dt = blwarehouse.GetMonthlySpendingAllTime();
             linechart.Titles.Add("Line Chart");
-            //linechart.Series["Series2"].IsValueShownAsLabel = true;
             foreach (DataRow row in dt.Rows)
             {
                 int month = Convert.ToInt32(row["Month"]);
@@ -46,18 +43,14 @@ namespace MyApp_HiepBui.IF_Layer
         {
             dt = new DataTable();
             dt.Clear();
-            DataSet ds = blwarehouse.GetDataPieChart();
-            dt = ds.Tables[0];
-
+            dt = blwarehouse.GetDataPieChart();
             piechart.Titles.Add("Pie Chart");
             piechart.Series["Series1"].IsValueShownAsLabel = true;
             foreach (DataRow row in dt.Rows)
             {
-                piechart.Series["Series1"].Points.AddXY(row["NameTypeOfItem"], row["Quantity"]);
+                piechart.Series["Series1"].Points.AddXY(row["Name"], row["Quantity"]);
 
             }
-
-
         }
 
         private void frm_Statistic_Load(object sender, EventArgs e)

@@ -248,6 +248,83 @@ namespace MyApp_HiepBui
 				return this.GetTable<ITEM_IN_ORDER>();
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Add_Employee")]
+		public int Add_Employee([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> dateofbirth, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(11)")] string phone, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> status_emp, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idkindemp, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idgroup, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idtypeuser, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idstore)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, dateofbirth, address, phone, status_emp, idkindemp, idgroup, idtypeuser, idstore);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AddNewItem")]
+		public int AddNewItem([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(30)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Price", DbType="Int")] System.Nullable<int> price, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MFGDate", DbType="Date")] System.Nullable<System.DateTime> mFGDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Type", DbType="NVarChar(30)")] string type, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Supplier", DbType="NVarChar(30)")] string supplier, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Quantity", DbType="Int")] System.Nullable<int> quantity)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, price, mFGDate, type, supplier, quantity);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AddNewOrder")]
+		public int AddNewOrder([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDOrder", DbType="VarChar(5)")] string iDOrder, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Phone", DbType="VarChar(11)")] string phone, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDItem", DbType="VarChar(5)")] string iDItem, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> quantity)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDOrder, phone, iDItem, quantity);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CreateNewOrder")]
+		public int CreateNewOrder([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NewIDOrder", DbType="VarChar(5)")] string newIDOrder, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Phone", DbType="VarChar(11)")] string phone)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), newIDOrder, phone);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Edit_Employee")]
+		public int Edit_Employee([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string ide, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> dateofbirth, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(11)")] string phone, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> status_emp, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string id_kind_emp, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string id_group, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string id_type_user, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string id_store)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ide, name, dateofbirth, address, phone, status_emp, id_kind_emp, id_group, id_type_user, id_store);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.employee_authority")]
+		public int employee_authority([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string id_employee, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string id_typeuser)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_employee, id_typeuser);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FindCustomer")]
+		public ISingleResult<FindCustomerResult> FindCustomer([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Phone_Cus", DbType="VarChar(11)")] string phone_Cus)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), phone_Cus);
+			return ((ISingleResult<FindCustomerResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ModifyItem")]
+		public int ModifyItem([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDItem", DbType="VarChar(5)")] string iDItem, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(30)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Price", DbType="Int")] System.Nullable<int> price, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Type", DbType="NVarChar(30)")] string type, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Supplier", DbType="NVarChar(30)")] string supplier)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDItem, name, price, type, supplier);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.USP_AddCustomer")]
+		public int USP_AddCustomer([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCustomer", DbType="VarChar(5)")] string idCustomer, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(30)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Phone", DbType="VarChar(11)")] string phone, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OpeningDate", DbType="Date")] System.Nullable<System.DateTime> openingDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TransactionDate", DbType="Date")] System.Nullable<System.DateTime> transactionDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="AccumulatedPoint", DbType="Int")] System.Nullable<int> accumulatedPoint)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idCustomer, name, phone, openingDate, transactionDate, accumulatedPoint);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.USP_AnalyseCustomer")]
+		public ISingleResult<USP_AnalyseCustomerResult> USP_AnalyseCustomer([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Month_of_OpeningDate", DbType="Int")] System.Nullable<int> month_of_OpeningDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), month_of_OpeningDate);
+			return ((ISingleResult<USP_AnalyseCustomerResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.USP_Update_InfoCustomer")]
+		public int USP_Update_InfoCustomer([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCustomer", DbType="VarChar(5)")] string idCustomer, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(30)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Phone", DbType="VarChar(11)")] string phone, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="OpeningDate", DbType="Date")] System.Nullable<System.DateTime> openingDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TransactionDate", DbType="Date")] System.Nullable<System.DateTime> transactionDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="AccumulatedPoint", DbType="Int")] System.Nullable<int> accumulatedPoint)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idCustomer, name, phone, openingDate, transactionDate, accumulatedPoint);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ACCOUNT")]
@@ -3682,6 +3759,166 @@ namespace MyApp_HiepBui
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	public partial class FindCustomerResult
+	{
+		
+		private string _IDCustomer;
+		
+		private string _Name_of_Customer;
+		
+		private string _Phone;
+		
+		private string _OpeningDate;
+		
+		private string _Latest_transaction;
+		
+		private string _NameTypeOfCustomer;
+		
+		private int _AccumulatedPoint;
+		
+		public FindCustomerResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDCustomer", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string IDCustomer
+		{
+			get
+			{
+				return this._IDCustomer;
+			}
+			set
+			{
+				if ((this._IDCustomer != value))
+				{
+					this._IDCustomer = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Name of Customer]", Storage="_Name_of_Customer", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string Name_of_Customer
+		{
+			get
+			{
+				return this._Name_of_Customer;
+			}
+			set
+			{
+				if ((this._Name_of_Customer != value))
+				{
+					this._Name_of_Customer = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(11) NOT NULL", CanBeNull=false)]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this._Phone = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OpeningDate", DbType="NVarChar(4000)")]
+		public string OpeningDate
+		{
+			get
+			{
+				return this._OpeningDate;
+			}
+			set
+			{
+				if ((this._OpeningDate != value))
+				{
+					this._OpeningDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Latest transaction]", Storage="_Latest_transaction", DbType="NVarChar(4000)")]
+		public string Latest_transaction
+		{
+			get
+			{
+				return this._Latest_transaction;
+			}
+			set
+			{
+				if ((this._Latest_transaction != value))
+				{
+					this._Latest_transaction = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NameTypeOfCustomer", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string NameTypeOfCustomer
+		{
+			get
+			{
+				return this._NameTypeOfCustomer;
+			}
+			set
+			{
+				if ((this._NameTypeOfCustomer != value))
+				{
+					this._NameTypeOfCustomer = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccumulatedPoint", DbType="Int NOT NULL")]
+		public int AccumulatedPoint
+		{
+			get
+			{
+				return this._AccumulatedPoint;
+			}
+			set
+			{
+				if ((this._AccumulatedPoint != value))
+				{
+					this._AccumulatedPoint = value;
+				}
+			}
+		}
+	}
+	
+	public partial class USP_AnalyseCustomerResult
+	{
+		
+		private System.Nullable<int> _Column1;
+		
+		public USP_AnalyseCustomerResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Int")]
+		public System.Nullable<int> Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
+				}
 			}
 		}
 	}

@@ -35,7 +35,6 @@ namespace MyApp_HiepBui.IF_Layer
             cbSupplier.DataSource = blwarehouse.GetNameOfSupplier();
             cbSupplier.DisplayMember = "NameOfSupplier";
 
-
             txtName.Enabled = false;
             txtPrice.Enabled = false;
             dtpMFGDate.Enabled = false;
@@ -50,12 +49,12 @@ namespace MyApp_HiepBui.IF_Layer
             dt = new DataTable();
             dt.Clear();
             DataTable ds = blwarehouse.CheckInventory();
-            //dt = ds.Tables[0];
             dgvDetails.DataSource = ds;
 
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            LoadData();
             if (txtContent.Text != "Input something" && cbCategories.Text != "Categories")
             {
                 try
@@ -64,9 +63,7 @@ namespace MyApp_HiepBui.IF_Layer
                     string category = cbCategories.Text.Trim();
                     DataTable dt = new DataTable();
                     dt.Clear();
-                    DataSet ds = blwarehouse.SearchInfo(str, category);
-                    dt = ds.Tables[0];
-
+                    dt = blwarehouse.SearchInfo(str, category);
                     dgvDetails.DataSource = dt;
                 }
                 catch (Exception)
@@ -82,11 +79,9 @@ namespace MyApp_HiepBui.IF_Layer
                     dt.Clear();
                     DataTable ds = blwarehouse.CheckInventory();
                     dt = ds;
-
                 }
                 catch (Exception)
                 {
-
                     MessageBox.Show("Something happed, try again!");
                 }
             }
@@ -139,9 +134,7 @@ namespace MyApp_HiepBui.IF_Layer
                     string category = cbCategories.Text.Trim();
                     DataTable dt = new DataTable();
                     dt.Clear();
-                    DataSet ds = blwarehouse.SearchInfo(str, category);
-                    dt = ds.Tables[0];
-
+                    dt = blwarehouse.SearchInfo(str, category);
                     dgvDetails.DataSource = dt;
                 }
                 catch (Exception)
