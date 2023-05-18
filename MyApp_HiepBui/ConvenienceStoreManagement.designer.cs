@@ -22,7 +22,7 @@ namespace MyApp_HiepBui
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ConvenienceStoreManagement(new)")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ConvenienceStoreManagement")]
 	public partial class ConvenienceStoreManagementDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -84,7 +84,7 @@ namespace MyApp_HiepBui
     #endregion
 		
 		public ConvenienceStoreManagementDataContext() : 
-				base(global::MyApp_HiepBui.Properties.Settings.Default.ConvenienceStoreManagement_new_ConnectionString, mappingSource)
+				base(global::MyApp_HiepBui.Properties.Settings.Default.ConvenienceStoreManagementConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -249,31 +249,6 @@ namespace MyApp_HiepBui
 			}
 		}
 		
-
-		public System.Data.Linq.Table<Employees_View> Employees_Views
-		{
-			get
-			{
-				return this.GetTable<Employees_View>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Gold_Customer> Gold_Customers
-		{
-			get
-			{
-				return this.GetTable<Gold_Customer>();
-			}
-		}
-		
-		public System.Data.Linq.Table<v_Info_Of_Customer> v_Info_Of_Customers
-		{
-			get
-			{
-				return this.GetTable<v_Info_Of_Customer>();
-			}
-    }
-    
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Add_Employee")]
 		public int Add_Employee([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> dateofbirth, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(11)")] string phone, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> status_emp, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idkindemp, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idgroup, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idtypeuser, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idstore)
 		{
@@ -337,13 +312,6 @@ namespace MyApp_HiepBui
 			return ((int)(result.ReturnValue));
 		}
 		
-
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AutoGenerateIDCustomer", IsComposable=true)]
-		public string AutoGenerateIDCustomer()
-		{
-			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
-    }
-    
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.USP_AnalyseCustomer")]
 		public ISingleResult<USP_AnalyseCustomerResult> USP_AnalyseCustomer([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Month_of_OpeningDate", DbType="Int")] System.Nullable<int> month_of_OpeningDate)
 		{
@@ -3795,207 +3763,7 @@ namespace MyApp_HiepBui
 		}
 	}
 	
-
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Employees View]")]
-	public partial class Employees_View
-	{
-		
-		private string _IDEmp;
-		
-		private string _Name;
-		
-		private System.DateTime _DateOfBirth;
-		
-		private string _Phone;
-		
-		private string _Address;
-		
-		private string _Position;
-		
-		private string _Type;
-		
-		public Employees_View()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDEmp", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
-		public string IDEmp
-		{
-			get
-			{
-				return this._IDEmp;
-			}
-			set
-			{
-				if ((this._IDEmp != value))
-				{
-					this._IDEmp = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this._Name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfBirth", DbType="Date NOT NULL")]
-		public System.DateTime DateOfBirth
-		{
-			get
-			{
-				return this._DateOfBirth;
-			}
-			set
-			{
-				if ((this._DateOfBirth != value))
-				{
-					this._DateOfBirth = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(11)")]
-		public string Phone
-		{
-			get
-			{
-				return this._Phone;
-			}
-			set
-			{
-				if ((this._Phone != value))
-				{
-					this._Phone = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Address
-		{
-			get
-			{
-				return this._Address;
-			}
-			set
-			{
-				if ((this._Address != value))
-				{
-					this._Address = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Position", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string Position
-		{
-			get
-			{
-				return this._Position;
-			}
-			set
-			{
-				if ((this._Position != value))
-				{
-					this._Position = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Type
-		{
-			get
-			{
-				return this._Type;
-			}
-			set
-			{
-				if ((this._Type != value))
-				{
-					this._Type = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Gold Customer]")]
-	public partial class Gold_Customer
-	{
-		
-		private string _IDCustomer;
-		
-		private string _Name;
-		
-		private string _Phone;
-		
-		public Gold_Customer()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDCustomer", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
-		public string IDCustomer
-		{
-			get
-			{
-				return this._IDCustomer;
-			}
-			set
-			{
-				if ((this._IDCustomer != value))
-				{
-					this._IDCustomer = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this._Name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(11) NOT NULL", CanBeNull=false)]
-		public string Phone
-		{
-			get
-			{
-				return this._Phone;
-			}
-			set
-			{
-				if ((this._Phone != value))
-				{
-					this._Phone = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_Info_Of_Customers")]
-	public partial class v_Info_Of_Customer
+	public partial class FindCustomerResult
 	{
 		
 		private string _IDCustomer;
@@ -4012,7 +3780,7 @@ namespace MyApp_HiepBui
 		
 		private int _AccumulatedPoint;
 		
-		public v_Info_Of_Customer()
+		public FindCustomerResult()
 		{
 		}
 		
@@ -4128,7 +3896,7 @@ namespace MyApp_HiepBui
 			}
 		}
 	}
-
+	
 	public partial class USP_AnalyseCustomerResult
 	{
 		

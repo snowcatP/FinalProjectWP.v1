@@ -70,12 +70,12 @@ namespace MyApp_HiepBui.IF_Layer
                     return;
                 }
                 string Name_of_Customer = dgv_ImportCustomer.Rows[i].Cells[0].Value.ToString();
-                string Phone =  dgv_ImportCustomer.Rows[i].Cells[1].Value.ToString();
+                string Phone = '0' + dgv_ImportCustomer.Rows[i].Cells[1].Value.ToString();
                 DateTime OpeningDate = Convert.ToDateTime(this.dgv_ImportCustomer.Rows[i].Cells[2].Value.ToString());
                 DateTime LatestTransaction = Convert.ToDateTime(this.dgv_ImportCustomer.Rows[i].Cells[3].Value.ToString());
                 int Accumulated_Point = int.Parse(dgv_ImportCustomer.Rows[i].Cells[4].Value.ToString());
                 BLCustomers bLCustomers = new BLCustomers();
-                bLCustomers.addCustomer(Name_of_Customer, Phone, OpeningDate, LatestTransaction, Accumulated_Point, ref err);
+                bLCustomers.addCustomer(Name_of_Customer, Phone, OpeningDate.ToString("MM-dd-yyyy"), LatestTransaction.ToString("MM-dd-yyyy"), Accumulated_Point, ref err);
             }
         }
     }
