@@ -203,7 +203,10 @@ namespace MyApp_HiepBui.BS_Layer
                            where Math.Abs(it.ProductionDate.Month - DateTime.Now.Month) <= 1 &&
                                  it.ProductionDate.Year - DateTime.Now.Year == 0
                            select wh.NumberOfItem;
-                return data.Sum();
+                if(data.Count() > 0)
+                    return data.Sum();
+                else
+                    return 0;
             }
         }
         public int GetMonthlySpending()
@@ -211,10 +214,10 @@ namespace MyApp_HiepBui.BS_Layer
             using (ConvenienceStoreManagementDataContext store = new ConvenienceStoreManagementDataContext())
             {
                 var data = from wh in store.WAREHOUSEs
-                           join it in store.ITEMs on wh.IDItem equals it.IDItem
-                           where Math.Abs(it.ProductionDate.Month - DateTime.Now.Month) <= 1 &&
-                                 it.ProductionDate.Year - DateTime.Now.Year == 0
-                           select wh.NumberOfItem * it.Price;
+                            join it in store.ITEMs on wh.IDItem equals it.IDItem
+                            where Math.Abs(it.ProductionDate.Month - DateTime.Now.Month) <= 1 &&
+                                  it.ProductionDate.Year - DateTime.Now.Year == 0
+                            select wh.NumberOfItem * it.Price;
                 return data.Sum();
             }
         }

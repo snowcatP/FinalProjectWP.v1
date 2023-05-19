@@ -25,7 +25,19 @@ namespace MyApp_HiepBui.BS_Layer
         }
         public DataSet Lay_DSNhanVien_Full()
         {
-            return db.ExecuteQueryDataSet("select * from [EMPLOYEES]", CommandType.Text);
+            using (ConvenienceStoreManagementDataContext qlNV = new ConvenienceStoreManagementDataContext())
+            {
+                try
+                {
+                    var el = qlNV.Add_Employee(hoten, Convert.ToDateTime(ngaysinh), diachi, sdt, Convert.ToBoolean(tinhtrang),
+                        idKindEmp, idGroup, idTypeUser, idStore);
+                }
+                catch (SqlException)
+                {
+                    err = "Some thing was wrong, try again";
+                }
+                return true;
+            }
         }
         public DataSet Get_List_StatusEmp()
         {
@@ -136,36 +148,63 @@ namespace MyApp_HiepBui.BS_Layer
         }
         public bool Add_Account_Emp(string id, string username, string password, ref string err)
         {
-            string sqlString = "EXEC Add_Account @ide='"
-                               + id + "', @username=" +
-                               "'" + username + "', @password=" +
-                               "'" + password +"'";
-
-            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+            using (ConvenienceStoreManagementDataContext qlNV = new ConvenienceStoreManagementDataContext())
+            {
+                try
+                {
+                    var el = qlNV.Add_Account(id, username, password);
+                }
+                catch (SqlException)
+                {
+                    err = "Some thing was wrong, try again";
+                }
+                return true;
+            }
         }
         public bool Modify_Account_Emp(string id, string username, string password, ref string err)
         {
-            string sqlString = "EXEC Edit_Account @ide='"
-                               + id + "', @username=" +
-                               "'" + username + "', @password=" +
-                               "'" + password + "'";
-            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+            using (ConvenienceStoreManagementDataContext qlNV = new ConvenienceStoreManagementDataContext())
+            {
+                try
+                {
+                    var el = qlNV.Edit_Account(id, username, password);
+                }
+                catch (SqlException)
+                {
+                    err = "Some thing was wrong, try again";
+                }
+                return true;
+            }
         }
         public bool Add_Salary_Emp(string id, string totaltime, ref string err)
         {
-            
-            string sqlString = "EXEC Add_WorkingTime @ide='"
-                               + id + "', @totaltime=" +
-                               "'" + Convert.ToInt32(totaltime) + "'";
-
-            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+            using (ConvenienceStoreManagementDataContext qlNV = new ConvenienceStoreManagementDataContext())
+            {
+                try
+                {
+                    var el = qlNV.Add_WorkingTime(id, Convert.ToInt32(totaltime));
+                }
+                catch (SqlException)
+                {
+                    err = "Some thing was wrong, try again";
+                }
+                return true;
+            }
         }
         public bool Modify_Salary_Emp(string id, string totaltime, ref string err)
         {
-            string sqlString = "EXEC Edit_WorkingTime @ide='"
-                               + id + "', @totaltime=" +
-                               "'" + Convert.ToInt32(totaltime) + "'";
-            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+            using (ConvenienceStoreManagementDataContext qlNV = new ConvenienceStoreManagementDataContext())
+            {
+                try
+                {
+                    var el = qlNV.Edit_WorkingTime(id, Convert.ToInt32(totaltime));
+                }
+                catch (SqlException)
+                {
+                    err = "Some thing was wrong, try again";
+                }
+                return true;
+            }
         }
     }
 }
