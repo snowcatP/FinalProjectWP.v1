@@ -31,11 +31,8 @@ namespace MyApp_HiepBui.IF_Layer
         {
             dt = new DataTable();
             dt.Clear();
-            DataSet ds = blOrder.GetRevenueByYear();
-            dt = ds.Tables[0];
-
+            dt = blOrder.GetRevenueByYear();
             lineChart.Titles.Add("Line Chart");
-            //linechart.Series["Series2"].IsValueShownAsLabel = true;
             foreach (DataRow row in dt.Rows)
             {
                 int month = Convert.ToInt32(row["Month"]);
@@ -53,7 +50,7 @@ namespace MyApp_HiepBui.IF_Layer
             lbResultOrdersThisMonth.Text = blOrder.GetOrdersInMonth().ToString();
             lbCusVisited.Text = blOrder.GetCustomerVisitedThisMonth().ToString();
 
-            int weeklySpending = blOrder.GetMonthlyRevenue();
+            int weeklySpending = blOrder.GetWeeklyRevenue();
             var moneySpendingweek = String.Format("{0:C}", weeklySpending);
 
             lbWeeklyRevenue.Text = moneySpendingweek;

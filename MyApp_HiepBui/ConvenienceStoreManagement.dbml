@@ -306,26 +306,34 @@
     <Parameter Name="AccumulatedPoint" Parameter="accumulatedPoint" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+
   <Function Name="dbo.Add_Account" Method="Add_Account">
     <Parameter Name="ide" Type="System.String" DbType="VarChar(5)" />
     <Parameter Name="username" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="password" Type="System.String" DbType="VarChar(30)" />
     <Return Type="System.Int32" />
   </Function>
+   
   <Function Name="dbo.Edit_Account" Method="Edit_Account">
     <Parameter Name="ide" Type="System.String" DbType="VarChar(5)" />
     <Parameter Name="username" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="password" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
+   
   <Function Name="dbo.Edit_WorkingTime" Method="Edit_WorkingTime">
     <Parameter Name="ide" Type="System.String" DbType="VarChar(5)" />
     <Parameter Name="totaltime" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+   
   <Function Name="dbo.Add_WorkingTime" Method="Add_WorkingTime">
     <Parameter Name="ide" Type="System.String" DbType="VarChar(5)" />
     <Parameter Name="totaltime" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
+  </Function>
+   
+  <Function Name="dbo.AutoGenerateIDOrder" Method="AutoGenerateIDOrder" IsComposable="true">
+    <Return Type="System.String" />
   </Function>
 </Database>
