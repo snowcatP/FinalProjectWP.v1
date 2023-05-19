@@ -29,11 +29,7 @@ namespace MyApp_HiepBui.IF_Layer
         {
             try
             {
-                dtNhanVien = new DataTable();
-                dtNhanVien.Clear();
-                DataSet ds = dbNV.Lay_DSNhanVien_DangLamViec();
-                dtNhanVien = ds.Tables[0];
-                dgv_NhanVien.DataSource = dtNhanVien;
+                dgv_NhanVien.DataSource = dbNV.Get_Employee_Is_Working();
                 dgv_NhanVien.AutoResizeColumns();
                 txt_ID.Enabled = false;
                 txt_Name.Enabled = false;
@@ -133,7 +129,7 @@ namespace MyApp_HiepBui.IF_Layer
                 {
                     try
                     {
-                        dbNV.XoaNhanVien(strNhanVien, ref err);
+                        dbNV.Delete_Employee(strNhanVien, ref err);
                         if(err != "")
                         {
                             MessageBox.Show(err);

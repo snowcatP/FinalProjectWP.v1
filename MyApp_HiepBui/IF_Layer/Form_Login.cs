@@ -18,7 +18,7 @@ namespace MyApp_HiepBui
         public string Accont { get; set; }
         public string Password { get; set; }
 
-        string connstr = "Data Source=HIEPBUI2812\\SQLEXPRESS;Initial Catalog=ConvenienceStoreManagement(new);Integrated Security=True";
+        string connstr = @"Data Source=LAPTOP-TL4MGTDD\MSSQLSERVER01;Initial Catalog=ConvenienceStoreManagement;Integrated Security=True";
 
         public Form_Login()
         {
