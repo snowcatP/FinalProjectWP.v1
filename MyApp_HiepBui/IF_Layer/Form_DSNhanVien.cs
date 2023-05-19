@@ -11,13 +11,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace MyApp_HiepBui.IF_Layer
 {
-    public partial class UserControl_Employee : UserControl
+    public partial class Form_DSNhanVien : Form
     {
         string err = "";
         DataTable dtNhanVien = null;
         BLNhanVien dbNV = new BLNhanVien();
-        public UserControl_Employee()
+        bool Them = false;
+        bool Sua = false;
+        public Form_DSNhanVien()
         {
+
             InitializeComponent();
             dateTimePicker_Ngaysinh.Format = DateTimePickerFormat.Custom;
             dateTimePicker_Ngaysinh.CustomFormat = "dd-MM-yyyy";
@@ -55,17 +58,22 @@ namespace MyApp_HiepBui.IF_Layer
             }
         }
 
-        private void UserControl_Employee_Load(object sender, EventArgs e)
+        private void Form_DSNhanVien_Load(object sender, EventArgs e)
         {
             loadDataNV();
+
         }
 
-        private void btn_Exit_Click(object sender, EventArgs e)
+        private void Form_DSNhanVien_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Hide();
         }
 
-        private void btn_Reload_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btn_Reload_Click_1(object sender, EventArgs e)
         {
             btn_addEmployee.Enabled = true;
             btn_modifyEmployee.Enabled = true;
@@ -73,7 +81,7 @@ namespace MyApp_HiepBui.IF_Layer
             loadDataNV();
         }
 
-        private void dgv_NhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_NhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dateTimePicker_Ngaysinh.Format = DateTimePickerFormat.Custom;
             dateTimePicker_Ngaysinh.CustomFormat = "dd-MM-yyyy";
@@ -84,23 +92,24 @@ namespace MyApp_HiepBui.IF_Layer
             dateTimePicker_Ngaysinh.Text = dgv_NhanVien.Rows[r].Cells[2].Value.ToString();
             txt_Phone.Text = dgv_NhanVien.Rows[r].Cells[3].Value.ToString();
             txt_Address.Text = dgv_NhanVien.Rows[r].Cells[4].Value.ToString();
-            txt_Position.Text = dgv_NhanVien.Rows[r].Cells[5].Value.ToString();
-            txt_TypeEmp.Text = dgv_NhanVien.Rows[r].Cells[6].Value.ToString();
+            //txt_Position.Text = dgv_NhanVien.Rows[r].Cells[5].Value.ToString();
+            //txt_TypeEmp.Text = dgv_NhanVien.Rows[r].Cells[6].Value.ToString();
         }
 
-        private void btn_addEmployee_Click(object sender, EventArgs e)
+        private void lb_Thongtinnhanvien_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_addCustomer_Click(object sender, EventArgs e)
         {
             FormAddEmployee formAddEmp = new FormAddEmployee();
             formAddEmp.Show();
             loadDataNV();
         }
 
-        private void btn_modifyEmployee_Click(object sender, EventArgs e)
-        {
-            FormModifyEmp formModifyEmp = new FormModifyEmp();
-            formModifyEmp.Show();
-            loadDataNV();
-        }
+
+
 
         private void btn_delEmployee_Click(object sender, EventArgs e)
         {
@@ -125,7 +134,7 @@ namespace MyApp_HiepBui.IF_Layer
                     try
                     {
                         dbNV.XoaNhanVien(strNhanVien, ref err);
-                        if (err != "")
+                        if(err != "")
                         {
                             MessageBox.Show(err);
                             return;
@@ -151,6 +160,13 @@ namespace MyApp_HiepBui.IF_Layer
             {
                 MessageBox.Show("Không xóa được. Lỗi rồi!");
             }
+        }
+
+        private void btn_modifyEmployee_Click(object sender, EventArgs e)
+        {
+            FormModifyEmp formModifyEmp = new FormModifyEmp();
+            formModifyEmp.Show();
+            loadDataNV();
         }
 
         private void btn_Search_Click(object sender, EventArgs e)
@@ -182,6 +198,11 @@ namespace MyApp_HiepBui.IF_Layer
                 }
 
             }
+        }
+
+        private void mList_of_Employee_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void txt_SearchName_KeyDown(object sender, KeyEventArgs e)

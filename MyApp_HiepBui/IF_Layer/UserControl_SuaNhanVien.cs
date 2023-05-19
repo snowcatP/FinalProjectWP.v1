@@ -9,25 +9,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace MyApp_HiepBui.IF_Layer
 {
-    public partial class FormModifyEmp : Form
+    public partial class UserControl_SuaNhanVien : UserControl
     {
-        string err = "";
+        string err;
         DataTable dtKindOfEmp = null;
         DataTable dtGroupEmp = null;
         DataTable dtTypeUser = null;
         DataTable dtFullEmp = null;
-
+        
         BLNhanVien dbNV = new BLNhanVien();
-        public FormModifyEmp()
+        bool Sua = false;
+        public UserControl_SuaNhanVien()
         {
             InitializeComponent();
             dateTimePicker_DOB.Format = DateTimePickerFormat.Custom;
             dateTimePicker_DOB.CustomFormat = "dd-MM-yyyy";
         }
-        void LoadDataInformation()
+        void loadDataNV()
         {
             try
             {
@@ -67,10 +67,11 @@ namespace MyApp_HiepBui.IF_Layer
             }
         }
 
-        private void FormModifyEmp_Load(object sender, EventArgs e)
+        private void UserControl_SuaNhanVien_Load_1(object sender, EventArgs e)
         {
-            LoadDataInformation();
+            loadDataNV();
         }
+
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
@@ -83,14 +84,14 @@ namespace MyApp_HiepBui.IF_Layer
                 blNhanVien.SuaNhanVien(txt_ID.Text, txt_Name.Text, dateTimePicker_DOB.Text, txt_Address.Text, txt_Phone.Text,
                     value_StatusEmp, txt_IDKindEmp.Text, txt_GroupEmp.Text,
                     txt_TypeUser.Text, txt_IDStore.Text, ref err);
-                if(err != "")
+                if (err != "")
                 {
                     MessageBox.Show(err);
                     return;
                 }
                 else
                 {
-                // Thông báo
+                    // Thông báo
                     MessageBox.Show("Đã sửa xong!");
 
                 }
@@ -106,7 +107,7 @@ namespace MyApp_HiepBui.IF_Layer
             this.Hide();
         }
 
-        private void dgv_FullEmp_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_FullEmp_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             dateTimePicker_DOB.Format = DateTimePickerFormat.Custom;
             dateTimePicker_DOB.CustomFormat = "dd-MM-yyyy";
@@ -124,5 +125,4 @@ namespace MyApp_HiepBui.IF_Layer
             txt_IDStore.Text = dgv_FullEmp.Rows[r].Cells[9].Value.ToString();
         }
     }
-
 }
