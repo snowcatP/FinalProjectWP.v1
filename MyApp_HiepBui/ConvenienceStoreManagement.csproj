@@ -121,6 +121,12 @@
     <Compile Include="IF_Layer\Form_Account_Emp.Designer.cs">
       <DependentUpon>Form_Account_Emp.cs</DependentUpon>
     </Compile>
+    <Compile Include="IF_Layer\Form_DSNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IF_Layer\Form_DSNhanVien.Designer.cs">
+      <DependentUpon>Form_DSNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="IF_Layer\Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,18 @@
     <Compile Include="IF_Layer\UserControl_Employee.Designer.cs">
       <DependentUpon>UserControl_Employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="IF_Layer\UserControl_SuaNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IF_Layer\UserControl_SuaNhanVien.Designer.cs">
+      <DependentUpon>UserControl_SuaNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IF_Layer\UserControl_ThemNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IF_Layer\UserControl_ThemNhanVien.Designer.cs">
+      <DependentUpon>UserControl_ThemNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="ItemsInOrder.cs">
       <DependentUpon>ItemsInOrder.xsd</DependentUpon>
     </Compile>
@@ -230,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IF_Layer\Form_Account_Emp.resx">
       <DependentUpon>Form_Account_Emp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IF_Layer\Form_DSNhanVien.resx">
+      <DependentUpon>Form_DSNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IF_Layer\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
@@ -269,6 +290,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IF_Layer\UserControl_Employee.resx">
       <DependentUpon>UserControl_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IF_Layer\UserControl_SuaNhanVien.resx">
+      <DependentUpon>UserControl_SuaNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IF_Layer\UserControl_ThemNhanVien.resx">
+      <DependentUpon>UserControl_ThemNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

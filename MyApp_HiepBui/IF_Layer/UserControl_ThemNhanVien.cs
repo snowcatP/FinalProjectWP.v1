@@ -9,23 +9,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace MyApp_HiepBui.IF_Layer
 {
-    public partial class FormAddEmployee : Form
+    public partial class UserControl_ThemNhanVien : UserControl
     {
-        string err = "";
+
+        string err;
         DataTable dtKindOfEmp = null;
         DataTable dtGroupEmp = null;
         DataTable dtTypeUser = null;
+        DataTable dtNhanVien = null;
         BLNhanVien dbNV = new BLNhanVien();
-        public FormAddEmployee()
+        bool Them = false;
+        public UserControl_ThemNhanVien()
         {
             InitializeComponent();
             dateTimePicker_AddDOB.Format = DateTimePickerFormat.Custom;
             dateTimePicker_AddDOB.CustomFormat = "dd-MM-yyyy";
         }
-        void LoadDataInformation()
+        void loadDataNV()
         {
             try
             {
@@ -58,6 +60,20 @@ namespace MyApp_HiepBui.IF_Layer
             }
         }
 
+        private void UserControl_ThemNhanVien_Load(object sender, EventArgs e)
+        {
+            loadDataNV();
+        }
+
+        
+
+       
+
+        private void label_Ngaysinh_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btn_Save_Click(object sender, EventArgs e)
         {
             try
@@ -69,7 +85,7 @@ namespace MyApp_HiepBui.IF_Layer
                 blNhanVien.ThemNhanVien(txt_AddName.Text, dateTimePicker_AddDOB.Text, txt_AddAddress.Text, txt_AddPhone.Text,
                     value_StatusEmp, txt_AddIDKindEmp.Text, txt_AddGroupEmp.Text,
                     txt_AddTypeUser.Text, txt_AddIDStore.Text, ref err);
-                if(err != "")
+                if (err != "")
                 {
                     MessageBox.Show(err);
                     return;
@@ -81,11 +97,6 @@ namespace MyApp_HiepBui.IF_Layer
             {
                 MessageBox.Show("Không thêm được. Lỗi rồi!");
             }
-        }
-
-        private void FormAddEmployee_Load(object sender, EventArgs e)
-        {
-            LoadDataInformation();
         }
 
         private void btn_Clear_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 14.375" name="ConvenienceStoreManagement">
   <DataContextMoniker Name="/ConvenienceStoreManagementDataContext" />
   <nestedChildShapes>
@@ -223,6 +224,7 @@
         <classShapeMoniker Id="8d932da5-0d40-450e-8ff2-f0d16c76e0b5" />
       </nodes>
     </associationConnector>
+
     <associationConnector edgePoints="[(7.96875 : 6.15549967447917); (7.96875 : 8.95274983723958); (8.375 : 8.95274983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConvenienceStoreManagementDataContext/ORDER/ORDER_ITEM_IN_ORDER" />
       <nodes>
@@ -230,28 +232,28 @@
         <classShapeMoniker Id="8d932da5-0d40-450e-8ff2-f0d16c76e0b5" />
       </nodes>
     </associationConnector>
-    <classShape Id="54bb7cb8-5b1d-4341-9d3d-fd60d38e778c" absoluteBounds="3, 9.25, 2, 2.3478011067708335">
-      <DataClassMoniker Name="/ConvenienceStoreManagementDataContext/Salary_Of_Employee" />
-      <nestedChildShapes>
-        <elementListCompartment Id="bc7eb267-9e55-482f-a7ef-4145d9d9bf5e" absoluteBounds="3.0149999999999997, 9.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="3c0ab385-befa-4c5b-ab9d-2ad1a64b0f79" absoluteBounds="5.5, 9.25, 2, 1.9631982421875">
-      <DataClassMoniker Name="/ConvenienceStoreManagementDataContext/v_Account_Authority" />
-      <nestedChildShapes>
-        <elementListCompartment Id="8b55b65c-507b-4213-8a96-1fd134b6387a" absoluteBounds="5.515, 9.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="daef75a0-fca6-4cee-8637-3270a4542c42" absoluteBounds="0.5, 12.125, 2, 1.9631982421875">
-      <DataClassMoniker Name="/ConvenienceStoreManagementDataContext/v_Working_time" />
-      <nestedChildShapes>
-        <elementListCompartment Id="0adc7e42-22f4-462c-8e17-2fe4a95cef8a" absoluteBounds="0.51500000000000012, 12.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="b0a711a9-9375-42b6-b60a-f7529b43f618" absoluteBounds="0.75, 9.25, 2, 2.1554996744791666">
+    <classShape Id="8ba2350e-1402-4359-8290-64f9f314b89f" absoluteBounds="0.5, 9.25, 2, 2.1554996744791666">
       <DataClassMoniker Name="/ConvenienceStoreManagementDataContext/Employees_View" />
       <nestedChildShapes>
-        <elementListCompartment Id="eb0688d3-f842-4994-a2dc-c380dc38b5d4" absoluteBounds="0.76500000000000012, 9.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5deb4c27-9489-40d9-b669-da160ebbe986" absoluteBounds="0.51500000000000012, 9.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bac36cd0-b4d2-49f5-aba0-b85264fa2b90" absoluteBounds="3.125, 9.25, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/ConvenienceStoreManagementDataContext/Salary_Of_Employee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="266f1ee5-7374-4a37-84e8-b4f09ec229cb" absoluteBounds="3.1399999999999997, 9.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="46ca0a52-7321-421d-aa09-a312a8629cf1" absoluteBounds="6, 10.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/ConvenienceStoreManagementDataContext/v_Account_Authority" />
+      <nestedChildShapes>
+        <elementListCompartment Id="68a3800e-bfb3-4f70-8634-35d5cab73bab" absoluteBounds="6.015, 10.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="469a705c-45eb-45e8-9409-bb15029a25dc" absoluteBounds="0.625, 11.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/ConvenienceStoreManagementDataContext/v_Working_time" />
+      <nestedChildShapes>
+        <elementListCompartment Id="72763e99-4450-472a-888d-e0c54cf19db2" absoluteBounds="0.64000000000000012, 12.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

@@ -312,6 +312,7 @@
     <Parameter Name="password" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
+
   <Function Name="dbo.Add_Employee" Method="Add_Employee">
     <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="dateofbirth" Type="System.DateTime" DbType="Date" />

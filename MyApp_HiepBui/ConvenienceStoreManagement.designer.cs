@@ -249,6 +249,14 @@ namespace MyApp_HiepBui
 			}
 		}
 		
+		public System.Data.Linq.Table<Employees_View> Employees_Views
+		{
+			get
+			{
+				return this.GetTable<Employees_View>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Salary_Of_Employee> Salary_Of_Employees
 		{
 			get
@@ -270,14 +278,6 @@ namespace MyApp_HiepBui
 			get
 			{
 				return this.GetTable<v_Working_time>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Employees_View> Employees_Views
-		{
-			get
-			{
-				return this.GetTable<Employees_View>();
 			}
 		}
 		
@@ -377,13 +377,14 @@ namespace MyApp_HiepBui
 			return ((int)(result.ReturnValue));
 		}
 		
+
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Add_Employee")]
 		public int Add_Employee([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> dateofbirth, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(11)")] string phone, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> status_emp, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idkindemp, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idgroup, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idtypeuser, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idstore)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, dateofbirth, address, phone, status_emp, idkindemp, idgroup, idtypeuser, idstore);
 			return ((int)(result.ReturnValue));
 		}
-		
+
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Add_WorkingTime")]
 		public int Add_WorkingTime([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string ide, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> totaltime)
 		{
@@ -4222,6 +4223,7 @@ namespace MyApp_HiepBui
 		}
 	}
 	
+
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Employees View]")]
 	public partial class Employees_View
 	{
