@@ -249,19 +249,19 @@ namespace MyApp_HiepBui
 			}
 		}
 		
-		public System.Data.Linq.Table<Employees_View> Employees_Views
-		{
-			get
-			{
-				return this.GetTable<Employees_View>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Salary_Of_Employee> Salary_Of_Employees
 		{
 			get
 			{
 				return this.GetTable<Salary_Of_Employee>();
+			}
+		}
+		
+		public System.Data.Linq.Table<v_Account_Authority> v_Account_Authorities
+		{
+			get
+			{
+				return this.GetTable<v_Account_Authority>();
 			}
 		}
 		
@@ -273,11 +273,11 @@ namespace MyApp_HiepBui
 			}
 		}
 		
-		public System.Data.Linq.Table<v_Account_Authority> v_Account_Authorities
+		public System.Data.Linq.Table<Employees_View> Employees_Views
 		{
 			get
 			{
-				return this.GetTable<v_Account_Authority>();
+				return this.GetTable<Employees_View>();
 			}
 		}
 		
@@ -362,6 +362,42 @@ namespace MyApp_HiepBui
 		public string AutoGenerateIDOrder()
 		{
 			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
+		}
+		
+
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Add_WorkingTime")]
+		public int Add_WorkingTime([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string ide, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> totaltime)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ide, totaltime);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Edit_WorkingTime")]
+		public int Edit_WorkingTime([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string ide, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> totaltime)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ide, totaltime);
+			return ((int)(result.ReturnValue));
+    }
+
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AutoGenerateIDCustomer", IsComposable=true)]
+		public string AutoGenerateIDCustomer()
+		{
+			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
+
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Add_Account")]
+		public int Add_Account([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string ide, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string password)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ide, username, password);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Edit_Account")]
+		public int Edit_Account([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string ide, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string password)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ide, username, password);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -3801,105 +3837,7 @@ namespace MyApp_HiepBui
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Employees View]")]
-	public partial class Employees_View
-	{
-		
-		private string _IDEmp;
-		
-		private string _Name;
-		
-		private System.DateTime _DateOfBirth;
-		
-		private string _Phone;
-		
-		private string _Address;
-		
-		public Employees_View()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDEmp", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
-		public string IDEmp
-		{
-			get
-			{
-				return this._IDEmp;
-			}
-			set
-			{
-				if ((this._IDEmp != value))
-				{
-					this._IDEmp = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this._Name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfBirth", DbType="Date NOT NULL")]
-		public System.DateTime DateOfBirth
-		{
-			get
-			{
-				return this._DateOfBirth;
-			}
-			set
-			{
-				if ((this._DateOfBirth != value))
-				{
-					this._DateOfBirth = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(11)")]
-		public string Phone
-		{
-			get
-			{
-				return this._Phone;
-			}
-			set
-			{
-				if ((this._Phone != value))
-				{
-					this._Phone = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Address
-		{
-			get
-			{
-				return this._Address;
-			}
-			set
-			{
-				if ((this._Address != value))
-				{
-					this._Address = value;
-				}
-			}
-		}
-	}
-	
+
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Salary_Of_Employee")]
 	public partial class Salary_Of_Employee
 	{
@@ -4053,123 +3991,6 @@ namespace MyApp_HiepBui
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_Working_time")]
-	public partial class v_Working_time
-	{
-		
-		private string _IDEmp;
-		
-		private string _Name;
-		
-		private string _Status_Employee;
-		
-		private string _Position;
-		
-		private string _Kind_of_Employee;
-		
-		private int _TotalTime;
-		
-		public v_Working_time()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDEmp", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
-		public string IDEmp
-		{
-			get
-			{
-				return this._IDEmp;
-			}
-			set
-			{
-				if ((this._IDEmp != value))
-				{
-					this._IDEmp = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this._Name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status_Employee", DbType="VarChar(8) NOT NULL", CanBeNull=false)]
-		public string Status_Employee
-		{
-			get
-			{
-				return this._Status_Employee;
-			}
-			set
-			{
-				if ((this._Status_Employee != value))
-				{
-					this._Status_Employee = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Position", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string Position
-		{
-			get
-			{
-				return this._Position;
-			}
-			set
-			{
-				if ((this._Position != value))
-				{
-					this._Position = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Kind of Employee]", Storage="_Kind_of_Employee", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Kind_of_Employee
-		{
-			get
-			{
-				return this._Kind_of_Employee;
-			}
-			set
-			{
-				if ((this._Kind_of_Employee != value))
-				{
-					this._Kind_of_Employee = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalTime", DbType="Int NOT NULL")]
-		public int TotalTime
-		{
-			get
-			{
-				return this._TotalTime;
-			}
-			set
-			{
-				if ((this._TotalTime != value))
-				{
-					this._TotalTime = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[v_Account&Authority]")]
 	public partial class v_Account_Authority
 	{
@@ -4287,6 +4108,259 @@ namespace MyApp_HiepBui
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_Working_time")]
+	public partial class v_Working_time
+	{
+		
+		private string _IDEmp;
+		
+		private string _Name;
+		
+		private string _Status_Employee;
+		
+		private string _Position;
+		
+		private string _Kind_of_Employee;
+		
+		private int _TotalTime;
+		
+		public v_Working_time()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDEmp", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string IDEmp
+		{
+			get
+			{
+				return this._IDEmp;
+			}
+			set
+			{
+				if ((this._IDEmp != value))
+				{
+					this._IDEmp = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status_Employee", DbType="VarChar(8) NOT NULL", CanBeNull=false)]
+		public string Status_Employee
+		{
+			get
+			{
+				return this._Status_Employee;
+			}
+			set
+			{
+				if ((this._Status_Employee != value))
+				{
+					this._Status_Employee = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Position", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string Position
+		{
+			get
+			{
+				return this._Position;
+			}
+			set
+			{
+				if ((this._Position != value))
+				{
+					this._Position = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Kind of Employee]", Storage="_Kind_of_Employee", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Kind_of_Employee
+		{
+			get
+			{
+				return this._Kind_of_Employee;
+			}
+			set
+			{
+				if ((this._Kind_of_Employee != value))
+				{
+					this._Kind_of_Employee = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalTime", DbType="Int NOT NULL")]
+		public int TotalTime
+		{
+			get
+			{
+				return this._TotalTime;
+			}
+			set
+			{
+				if ((this._TotalTime != value))
+				{
+					this._TotalTime = value;
+				}
+			}
+		}
+	}
+	
+
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Employees View]")]
+	public partial class Employees_View
+	{
+		
+		private string _IDEmp;
+		
+		private string _Name;
+		
+		private System.DateTime _DateOfBirth;
+		
+		private string _Phone;
+		
+		private string _Address;
+		
+		private string _Position;
+		
+		private string _Type;
+		
+		public Employees_View()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDEmp", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string IDEmp
+		{
+			get
+			{
+				return this._IDEmp;
+			}
+			set
+			{
+				if ((this._IDEmp != value))
+				{
+					this._IDEmp = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfBirth", DbType="Date NOT NULL")]
+		public System.DateTime DateOfBirth
+		{
+			get
+			{
+				return this._DateOfBirth;
+			}
+			set
+			{
+				if ((this._DateOfBirth != value))
+				{
+					this._DateOfBirth = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(11)")]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this._Phone = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this._Address = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Position", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string Position
+		{
+			get
+			{
+				return this._Position;
+			}
+			set
+			{
+				if ((this._Position != value))
+				{
+					this._Position = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this._Type = value;
+				}
+			}
+		}
+	}
+
 	public partial class FindCustomerResult
 	{
 		

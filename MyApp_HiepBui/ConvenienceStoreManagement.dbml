@@ -168,15 +168,7 @@
       <Association Name="ORDER_ITEM_IN_ORDER" Member="ORDER" ThisKey="IDOrder" OtherKey="IDOrder" Type="ORDER" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.[Employees View]" Member="Employees_Views">
-    <Type Name="Employees_View">
-      <Column Name="IDEmp" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DateOfBirth" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="Phone" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
-      <Column Name="Address" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
+
   <Table Name="dbo.Salary_Of_Employee" Member="Salary_Of_Employees">
     <Type Name="Salary_Of_Employee">
       <Column Name="IDEmp" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
@@ -189,16 +181,6 @@
       <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.v_Working_time" Member="v_Working_times">
-    <Type Name="v_Working_time">
-      <Column Name="IDEmp" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Status_Employee" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
-      <Column Name="Position" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="[Kind of Employee]" Member="Kind_of_Employee" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="TotalTime" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.[v_Account&amp;Authority]" Member="v_Account_Authorities">
     <Type Name="v_Account_Authority">
       <Column Name="IDEmp" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
@@ -209,6 +191,29 @@
       <Column Name="NameAuthority" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.v_Working_time" Member="v_Working_times">
+    <Type Name="v_Working_time">
+      <Column Name="IDEmp" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Employee" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="[Kind of Employee]" Member="Kind_of_Employee" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalTime" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+
+  <Table Name="dbo.[Employees View]" Member="Employees_Views">
+    <Type Name="Employees_View">
+      <Column Name="IDEmp" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+
   <Function Name="dbo.Add_Employee" Method="Add_Employee">
     <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="dateofbirth" Type="System.DateTime" DbType="Date" />
@@ -306,5 +311,43 @@
   </Function>
   <Function Name="dbo.AutoGenerateIDOrder" Method="AutoGenerateIDOrder" IsComposable="true">
     <Return Type="System.String" />
+  </Function>
+
+  <Function Name="dbo.Add_WorkingTime" Method="Add_WorkingTime">
+    <Parameter Name="ide" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="totaltime" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Edit_WorkingTime" Method="Edit_WorkingTime">
+    <Parameter Name="ide" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="totaltime" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+
+  <Function Name="dbo.AutoGenerateIDCustomer" Method="AutoGenerateIDCustomer" IsComposable="true">
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.Add_Account" Method="Add_Account">
+    <Parameter Name="ide" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="username" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="password" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Edit_Account" Method="Edit_Account">
+    <Parameter Name="ide" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="username" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="password" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+
+  <Function Name="dbo.Add_WorkingTime" Method="Add_WorkingTime">
+    <Parameter Name="ide" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="totaltime" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Edit_WorkingTime" Method="Edit_WorkingTime">
+    <Parameter Name="ide" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="totaltime" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

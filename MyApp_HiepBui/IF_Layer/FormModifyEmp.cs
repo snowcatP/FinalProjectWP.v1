@@ -31,32 +31,17 @@ namespace MyApp_HiepBui.IF_Layer
         {
             try
             {
-                dtKindOfEmp = new DataTable();
-                dtKindOfEmp.Clear();
-                DataSet dsKOE = dbNV.Get_List_Kind_Of_Employee();
-                dtKindOfEmp = dsKOE.Tables[0];
-                dgv_KindOfEmployee.DataSource = dtKindOfEmp;
+
+                dgv_KindOfEmployee.DataSource = dbNV.Get_List_Kind_Of_Employee();
                 dgv_KindOfEmployee.AutoResizeColumns();
                 //
-                dtGroupEmp = new DataTable();
-                dtGroupEmp.Clear();
-                DataSet dsGroupEmp = dbNV.Get_List_Group_Of_Employee();
-                dtGroupEmp = dsGroupEmp.Tables[0];
-                dgv_GroupEmp.DataSource = dtGroupEmp;
+                dgv_GroupEmp.DataSource = dbNV.Get_List_Group_Of_Employee();
                 dgv_GroupEmp.AutoResizeColumns();
                 //
-                dtTypeUser = new DataTable();
-                dtTypeUser.Clear();
-                DataSet dsTypeUser = dbNV.Get_List_Type_Of_User();
-                dtTypeUser = dsTypeUser.Tables[0];
-                dgv_TypeUser.DataSource = dtTypeUser;
+                dgv_TypeUser.DataSource = dbNV.Get_List_Type_Of_User();
                 dgv_TypeUser.AutoResizeColumns();
                 //
-                dtFullEmp = new DataTable();
-                dtFullEmp.Clear();
-                DataSet dsFullEmp = dbNV.Lay_DSNhanVien_Full();
-                dtFullEmp = dsFullEmp.Tables[0];
-                dgv_FullEmp.DataSource = dtFullEmp;
+                dgv_FullEmp.DataSource = dbNV.Get_Full_List_Employee();
                 dgv_FullEmp.AutoResizeColumns();
 
             }
@@ -80,17 +65,17 @@ namespace MyApp_HiepBui.IF_Layer
                 BLNhanVien blNhanVien = new BLNhanVien();
                 int value_StatusEmp = Convert.ToInt32(txt_StatusEmp.Text);
                 dateTimePicker_DOB.CustomFormat = "yyyy-MM-dd";
-                blNhanVien.SuaNhanVien(txt_ID.Text, txt_Name.Text, dateTimePicker_DOB.Text, txt_Address.Text, txt_Phone.Text,
+                blNhanVien.Update_Employee(txt_ID.Text, txt_Name.Text, dateTimePicker_DOB.Text, txt_Address.Text, txt_Phone.Text,
                     value_StatusEmp, txt_IDKindEmp.Text, txt_GroupEmp.Text,
                     txt_TypeUser.Text, txt_IDStore.Text, ref err);
-                if(err != "")
+                if (err != "")
                 {
                     MessageBox.Show(err);
                     return;
                 }
                 else
                 {
-                // Thông báo
+                    // Thông báo
                     MessageBox.Show("Đã sửa xong!");
 
                 }
@@ -124,5 +109,4 @@ namespace MyApp_HiepBui.IF_Layer
             txt_IDStore.Text = dgv_FullEmp.Rows[r].Cells[9].Value.ToString();
         }
     }
-
 }
