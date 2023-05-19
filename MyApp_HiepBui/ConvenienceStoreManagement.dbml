@@ -266,4 +266,7 @@
   <Function Name="dbo.AutoGenerateIDOrder" Method="AutoGenerateIDOrder" IsComposable="true">
     <Return Type="System.String" />
   </Function>
+  <Function Name="dbo.AutoGenerateIDCustomer" Method="AutoGenerateIDCustomer" IsComposable="true">
+    <Return Type="System.String" />
+  </Function>
 </Database>
