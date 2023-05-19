@@ -82,27 +82,16 @@ namespace MyApp_HiepBui
         private void mnuEmployees_Click(object sender, EventArgs e)
         {
 
-            //Form_DSNhanVien fNV = new Form_DSNhanVien();
-            //fNV.Show();
-            //fNV.BringToFront();
-
-            //if (Const.TypeOfAcc == "IncompleteAuthority")
-            //{
-            //    MessageBox.Show("Bạn không được quyền truy cập");
-            //}
-            //else
-            //{
-            //    Form_DSNhanVien fNV = new Form_DSNhanVien();
-            //    fNV.Show();
-            //    fNV.BringToFront();
-            //}
-            //Form_DSNhanVien fNV = new Form_DSNhanVien();
-            //fNV.Show();
-            //fNV.BringToFront();
-            //userControl_Employee1.Show();
-            //userControl_Employee1.BringToFront();
-            userControl_Employee2.Show();
-            userControl_Employee2.BringToFront();
+            Refresh();
+            if (Const.TypeOfAcc == "IncompleteAuthority")
+            {
+                MessageBox.Show("Bạn không được quyền truy cập");
+            }
+            else
+            {
+                userControl_Employee2.Show();
+                userControl_Employee2.BringToFront();
+            }
 
         }
 

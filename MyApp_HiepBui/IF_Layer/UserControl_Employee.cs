@@ -26,10 +26,6 @@ namespace MyApp_HiepBui.IF_Layer
         {
             try
             {
-                //dtNhanVien = new DataTable();
-                //dtNhanVien.Clear();
-                //DataSet ds = dbNV.Lay_DSNhanVien_DangLamViec();
-                //dtNhanVien = ds.Tables[0];
                 dgv_NhanVien.DataSource = dbNV.Get_Employee_Is_Working();
                 dgv_NhanVien.AutoResizeColumns();
                 txt_ID.Enabled = false;
@@ -162,12 +158,11 @@ namespace MyApp_HiepBui.IF_Layer
                 {
                     DataTable dtSearchName = new DataTable();
                     dtSearchName.Clear();
-                    //DataSet dsSearchName = dbNV.SearchInfo(searchName);
                     dtSearchName = dbNV.SearchInfo(searchName);
                     if (dtSearchName == null)
                     {
                         throw new Exception("No data found.");
-                        //MessageBox.Show("Không tìm thấy nhân viên");
+                        MessageBox.Show("Không tìm thấy nhân viên");
                     }
                     else
                     {
