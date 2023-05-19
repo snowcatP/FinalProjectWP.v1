@@ -15,13 +15,7 @@ namespace MyApp_HiepBui.IF_Layer
 {
     public partial class frmCustomers : UserControl
     {
-
-        //string connstr = "Data Source=HIEPBUI2812\\SQLEXPRESS;Initial Catalog=ConvenienceStoreManagement(new);Integrated Security=True";
-
-
-        string connstr = @"Data Source=Hoangpro\HOANGPRO;Initial Catalog=ConvenienceStoreManagement;Integrated Security=True";
-
-
+        BLCustomers blCus = new BLCustomers();
         string err;
         string IDCustomer;
         DataTable dtKhahcHang = null;
@@ -36,20 +30,7 @@ namespace MyApp_HiepBui.IF_Layer
         }
         void loadDataCustomer()
         {
-            try
-            {
-                dtKhahcHang = new DataTable();
-                dtKhahcHang.Clear();
-                DataSet ds = dbKH.GetInfo_KhachHang();
-                dtKhahcHang = ds.Tables[0];
-                dgv_Customer.DataSource = dtKhahcHang;
-                dgv_Customer.AutoResizeColumns();
-            }
-            catch (SqlException)
-            {
-
-                throw;
-            }
+            blCus.GetInfo_Customer(dgv_Customer);
         }
         void Refresh()
         {
@@ -85,25 +66,17 @@ namespace MyApp_HiepBui.IF_Layer
         }
         public void Textbox_PhoneLoad()
         {
-            SqlConnection conn = new SqlConnection(connstr);
-            if (conn.State == ConnectionState.Open)
-            {
-                conn.Close();
-            }
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("Select Phone from CUSTOMERS", conn);
-            SqlDataReader dr;
-            dr = cmd.ExecuteReader();
+            ConvenienceStoreManagementDataContext convenience = new ConvenienceStoreManagementDataContext();
+            var query = from u in convenience.CUSTOMERs
+                        select u.Phone;
             AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
-            while (dr.Read())
+            foreach (var item in query)
             {
-                collection.Add(dr["Phone"].ToString());
+                collection.Add(item.ToString());
             }
             txt_Phone.AutoCompleteMode = AutoCompleteMode.Suggest;
             txt_Phone.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txt_Phone.AutoCompleteCustomSource = collection;
-            dr.Close();
-            conn.Close();
         }
 
         private void btn_Search_Click(object sender, EventArgs e)
@@ -138,7 +111,7 @@ namespace MyApp_HiepBui.IF_Layer
                 {
 
                     BLCustomers bLCustomers = new BLCustomers();
-                    bLCustomers.addCustomer(this.txt_Name_of_Customer.Text, this.txt_Phone.Text, OpeningDate.ToString("MM-dd-yyyy"), LatestTransaction.ToString("MM-dd-yyyy"), int.Parse(this.txt_AccumulatedPoint.Text), ref err);
+                    bLCustomers.addCustomer(this.txt_Name_of_Customer.Text, this.txt_Phone.Text, OpeningDate, LatestTransaction, int.Parse(this.txt_AccumulatedPoint.Text), ref err);
                     loadDataCustomer();
                 }
                 catch (SqlException)
@@ -151,7 +124,7 @@ namespace MyApp_HiepBui.IF_Layer
                 try
                 {
                     BLCustomers bLCustomers = new BLCustomers();
-                    bLCustomers.modifyCustomer(IDCustomer, this.txt_Name_of_Customer.Text, this.txt_Phone.Text, OpeningDate.ToString("MM-dd-yyyy"), LatestTransaction.ToString("MM-dd-yyyy"), int.Parse(this.txt_AccumulatedPoint.Text), ref err);
+                    bLCustomers.modifyCustomer(IDCustomer, this.txt_Name_of_Customer.Text, this.txt_Phone.Text, OpeningDate, LatestTransaction, int.Parse(this.txt_AccumulatedPoint.Text), ref err);
                     loadDataCustomer();
                 }
                 catch (SqlException)
@@ -168,9 +141,9 @@ namespace MyApp_HiepBui.IF_Layer
             Delete = true;
             try
             {
+                BLCustomers bLCustomers = new BLCustomers();
                 foreach (DataGridViewRow row in dgv_Customer.SelectedRows)
                 {
-                    BLCustomers bLCustomers = new BLCustomers();
                     bLCustomers.delCustomer(row.Cells[0].Value.ToString(), ref err);
                 }
                 loadDataCustomer();
@@ -213,7 +186,7 @@ namespace MyApp_HiepBui.IF_Layer
         private void button1_Click(object sender, EventArgs e)
         {
             Refresh();
-            frm_CustomerChart1.Update();
+            frm_CustomerChart1.Refresh();
         }
 
         public void ExportFileCustomer(DataTable dataTable, string sheetName, string title)
@@ -425,21 +398,12 @@ namespace MyApp_HiepBui.IF_Layer
                 {
                     try
                     {
-                        BLCustomers bLCustomers = new BLCustomers();
-                        dtKhahcHang = new DataTable();
-                        //DataSet ds = bLCustomers.searchCustomer(this.txt_Phone.Text, this.txt_Name_of_Customer.Text);
-                        dtKhahcHang = bLCustomers.searchCustomer(this.txt_Phone.Text, this.txt_Name_of_Customer.Text);
-                        if (dtKhahcHang == null)
-                        {
-                            throw new Exception("No data found.");
-                            //MessageBox.Show("Không tìm thấy khách hàng!");
-                        }
-                        else
-                        {
-                            dgv_Customer.DataSource = dtKhahcHang;
-                            dgv_Customer.AutoResizeColumns();
 
-                        }
+                        //DataSet ds = bLCustomers.searchCustomer(this.txt_Phone.Text, this.txt_Name_of_Customer.Text);
+                        blCus.searchCustomer(this.txt_Phone.Text, dgv_Customer);
+
+
+
                     }
                     catch (Exception ex)
                     {

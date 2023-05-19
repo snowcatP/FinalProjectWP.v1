@@ -249,14 +249,6 @@ namespace MyApp_HiepBui
 			}
 		}
 		
-		public System.Data.Linq.Table<Employees_View> Employees_Views
-		{
-			get
-			{
-				return this.GetTable<Employees_View>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Salary_Of_Employee> Salary_Of_Employees
 		{
 			get
@@ -278,6 +270,22 @@ namespace MyApp_HiepBui
 			get
 			{
 				return this.GetTable<v_Working_time>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Employees_View> Employees_Views
+		{
+			get
+			{
+				return this.GetTable<Employees_View>();
+			}
+		}
+		
+		public System.Data.Linq.Table<v_Info_Of_Customer> v_Info_Of_Customers
+		{
+			get
+			{
+				return this.GetTable<v_Info_Of_Customer>();
 			}
 		}
 		
@@ -377,14 +385,13 @@ namespace MyApp_HiepBui
 			return ((int)(result.ReturnValue));
 		}
 		
-
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Add_Employee")]
 		public int Add_Employee([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> dateofbirth, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(11)")] string phone, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> status_emp, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idkindemp, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idgroup, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idtypeuser, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idstore)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, dateofbirth, address, phone, status_emp, idkindemp, idgroup, idtypeuser, idstore);
 			return ((int)(result.ReturnValue));
 		}
-
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Add_WorkingTime")]
 		public int Add_WorkingTime([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string ide, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> totaltime)
 		{
@@ -4223,7 +4230,6 @@ namespace MyApp_HiepBui
 		}
 	}
 	
-
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Employees View]")]
 	public partial class Employees_View
 	{
@@ -4354,6 +4360,141 @@ namespace MyApp_HiepBui
 				if ((this._Type != value))
 				{
 					this._Type = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_Info_Of_Customers")]
+	public partial class v_Info_Of_Customer
+	{
+		
+		private string _IDCustomer;
+		
+		private string _Name_of_Customer;
+		
+		private string _Phone;
+		
+		private string _OpeningDate;
+		
+		private string _Latest_transaction;
+		
+		private string _NameTypeOfCustomer;
+		
+		private int _AccumulatedPoint;
+		
+		public v_Info_Of_Customer()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDCustomer", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string IDCustomer
+		{
+			get
+			{
+				return this._IDCustomer;
+			}
+			set
+			{
+				if ((this._IDCustomer != value))
+				{
+					this._IDCustomer = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Name of Customer]", Storage="_Name_of_Customer", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string Name_of_Customer
+		{
+			get
+			{
+				return this._Name_of_Customer;
+			}
+			set
+			{
+				if ((this._Name_of_Customer != value))
+				{
+					this._Name_of_Customer = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(11) NOT NULL", CanBeNull=false)]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this._Phone = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OpeningDate", DbType="NVarChar(4000)")]
+		public string OpeningDate
+		{
+			get
+			{
+				return this._OpeningDate;
+			}
+			set
+			{
+				if ((this._OpeningDate != value))
+				{
+					this._OpeningDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Latest transaction]", Storage="_Latest_transaction", DbType="NVarChar(4000)")]
+		public string Latest_transaction
+		{
+			get
+			{
+				return this._Latest_transaction;
+			}
+			set
+			{
+				if ((this._Latest_transaction != value))
+				{
+					this._Latest_transaction = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NameTypeOfCustomer", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string NameTypeOfCustomer
+		{
+			get
+			{
+				return this._NameTypeOfCustomer;
+			}
+			set
+			{
+				if ((this._NameTypeOfCustomer != value))
+				{
+					this._NameTypeOfCustomer = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccumulatedPoint", DbType="Int NOT NULL")]
+		public int AccumulatedPoint
+		{
+			get
+			{
+				return this._AccumulatedPoint;
+			}
+			set
+			{
+				if ((this._AccumulatedPoint != value))
+				{
+					this._AccumulatedPoint = value;
 				}
 			}
 		}

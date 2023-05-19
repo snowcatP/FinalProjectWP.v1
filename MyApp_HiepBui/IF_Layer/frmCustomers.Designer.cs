@@ -52,16 +52,16 @@
             this.lb_NameofCusomer = new System.Windows.Forms.Label();
             this.txt_Name_of_Customer = new System.Windows.Forms.TextBox();
             this.lb_Phone = new System.Windows.Forms.Label();
-            this.cln_TypeofCus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cln_Accumulated_Point = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cln_LatestTransaction = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cln_OpeningDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cln_Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cln_Name_of_Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cln_IDCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_Customer = new System.Windows.Forms.DataGridView();
             this.openFD = new System.Windows.Forms.OpenFileDialog();
             this.frm_CustomerChart1 = new MyApp_HiepBui.IF_Layer.frm_CustomerChart();
+            this.cln_IDCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cln_Name_of_Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cln_Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cln_OpeningDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cln_LatestTransaction = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cln_Accumulated_Point = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cln_TypeofCus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pn_CustomerFunction.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Customer)).BeginInit();
@@ -372,62 +372,6 @@
             this.lb_Phone.TabIndex = 0;
             this.lb_Phone.Text = "Phone:";
             // 
-            // cln_TypeofCus
-            // 
-            this.cln_TypeofCus.DataPropertyName = "NameTypeOfCustomer";
-            this.cln_TypeofCus.FillWeight = 69.28934F;
-            this.cln_TypeofCus.HeaderText = "Type of Customer";
-            this.cln_TypeofCus.MinimumWidth = 6;
-            this.cln_TypeofCus.Name = "cln_TypeofCus";
-            // 
-            // cln_Accumulated_Point
-            // 
-            this.cln_Accumulated_Point.DataPropertyName = "AccumulatedPoint";
-            this.cln_Accumulated_Point.FillWeight = 69.28934F;
-            this.cln_Accumulated_Point.HeaderText = "Accumulated Point";
-            this.cln_Accumulated_Point.MinimumWidth = 6;
-            this.cln_Accumulated_Point.Name = "cln_Accumulated_Point";
-            // 
-            // cln_LatestTransaction
-            // 
-            this.cln_LatestTransaction.DataPropertyName = "Latest transaction";
-            this.cln_LatestTransaction.FillWeight = 69.28934F;
-            this.cln_LatestTransaction.HeaderText = "Latest Transaction";
-            this.cln_LatestTransaction.MinimumWidth = 6;
-            this.cln_LatestTransaction.Name = "cln_LatestTransaction";
-            // 
-            // cln_OpeningDate
-            // 
-            this.cln_OpeningDate.DataPropertyName = "OpeningDate";
-            this.cln_OpeningDate.FillWeight = 69.28934F;
-            this.cln_OpeningDate.HeaderText = "Opening Date";
-            this.cln_OpeningDate.MinimumWidth = 6;
-            this.cln_OpeningDate.Name = "cln_OpeningDate";
-            // 
-            // cln_Phone
-            // 
-            this.cln_Phone.DataPropertyName = "Phone";
-            this.cln_Phone.FillWeight = 69.28934F;
-            this.cln_Phone.HeaderText = "Phone";
-            this.cln_Phone.MinimumWidth = 6;
-            this.cln_Phone.Name = "cln_Phone";
-            // 
-            // cln_Name_of_Customer
-            // 
-            this.cln_Name_of_Customer.DataPropertyName = "Name of Customer";
-            this.cln_Name_of_Customer.FillWeight = 69.28934F;
-            this.cln_Name_of_Customer.HeaderText = "Name of Customer";
-            this.cln_Name_of_Customer.MinimumWidth = 6;
-            this.cln_Name_of_Customer.Name = "cln_Name_of_Customer";
-            // 
-            // cln_IDCustomer
-            // 
-            this.cln_IDCustomer.DataPropertyName = "IDCustomer";
-            this.cln_IDCustomer.FillWeight = 284.264F;
-            this.cln_IDCustomer.HeaderText = "ID Customer";
-            this.cln_IDCustomer.MinimumWidth = 6;
-            this.cln_IDCustomer.Name = "cln_IDCustomer";
-            // 
             // dgv_Customer
             // 
             this.dgv_Customer.AllowUserToAddRows = false;
@@ -465,6 +409,62 @@
             this.frm_CustomerChart1.Size = new System.Drawing.Size(1378, 515);
             this.frm_CustomerChart1.TabIndex = 7;
             // 
+            // cln_IDCustomer
+            // 
+            this.cln_IDCustomer.DataPropertyName = "IDCustomer";
+            this.cln_IDCustomer.FillWeight = 70F;
+            this.cln_IDCustomer.HeaderText = "ID Customer";
+            this.cln_IDCustomer.MinimumWidth = 6;
+            this.cln_IDCustomer.Name = "cln_IDCustomer";
+            // 
+            // cln_Name_of_Customer
+            // 
+            this.cln_Name_of_Customer.DataPropertyName = "Name_of_Customer";
+            this.cln_Name_of_Customer.FillWeight = 69.28934F;
+            this.cln_Name_of_Customer.HeaderText = "Name of Customer";
+            this.cln_Name_of_Customer.MinimumWidth = 6;
+            this.cln_Name_of_Customer.Name = "cln_Name_of_Customer";
+            // 
+            // cln_Phone
+            // 
+            this.cln_Phone.DataPropertyName = "Phone";
+            this.cln_Phone.FillWeight = 69.28934F;
+            this.cln_Phone.HeaderText = "Phone";
+            this.cln_Phone.MinimumWidth = 6;
+            this.cln_Phone.Name = "cln_Phone";
+            // 
+            // cln_OpeningDate
+            // 
+            this.cln_OpeningDate.DataPropertyName = "OpeningDate";
+            this.cln_OpeningDate.FillWeight = 69.28934F;
+            this.cln_OpeningDate.HeaderText = "Opening Date";
+            this.cln_OpeningDate.MinimumWidth = 6;
+            this.cln_OpeningDate.Name = "cln_OpeningDate";
+            // 
+            // cln_LatestTransaction
+            // 
+            this.cln_LatestTransaction.DataPropertyName = "Latest_transaction";
+            this.cln_LatestTransaction.FillWeight = 69.28934F;
+            this.cln_LatestTransaction.HeaderText = "Latest Transaction";
+            this.cln_LatestTransaction.MinimumWidth = 6;
+            this.cln_LatestTransaction.Name = "cln_LatestTransaction";
+            // 
+            // cln_Accumulated_Point
+            // 
+            this.cln_Accumulated_Point.DataPropertyName = "AccumulatedPoint";
+            this.cln_Accumulated_Point.FillWeight = 69.28934F;
+            this.cln_Accumulated_Point.HeaderText = "Accumulated Point";
+            this.cln_Accumulated_Point.MinimumWidth = 6;
+            this.cln_Accumulated_Point.Name = "cln_Accumulated_Point";
+            // 
+            // cln_TypeofCus
+            // 
+            this.cln_TypeofCus.DataPropertyName = "NameTypeOfCustomer";
+            this.cln_TypeofCus.FillWeight = 69.28934F;
+            this.cln_TypeofCus.HeaderText = "Type of Customer";
+            this.cln_TypeofCus.MinimumWidth = 6;
+            this.cln_TypeofCus.Name = "cln_TypeofCus";
+            // 
             // frmCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -498,13 +498,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btn_Search;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cln_TypeofCus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cln_Accumulated_Point;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cln_LatestTransaction;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cln_OpeningDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cln_Phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cln_Name_of_Customer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cln_IDCustomer;
         private System.Windows.Forms.DataGridView dgv_Customer;
         private System.Windows.Forms.Label lb_Openingdate;
         private System.Windows.Forms.DateTimePicker dpk_Oppeningdate;
@@ -521,5 +514,12 @@
         private System.Windows.Forms.Button btn_Import;
         private System.Windows.Forms.OpenFileDialog openFD;
         private System.Windows.Forms.TextBox txt_Phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cln_IDCustomer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cln_Name_of_Customer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cln_Phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cln_OpeningDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cln_LatestTransaction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cln_Accumulated_Point;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cln_TypeofCus;
     }
 }

@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 14.375" name="ConvenienceStoreManagement">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 14.5" name="ConvenienceStoreManagement">
   <DataContextMoniker Name="/ConvenienceStoreManagementDataContext" />
   <nestedChildShapes>
     <classShape Id="8ea2e292-b912-4b3f-be5b-edb220e6bffd" absoluteBounds="0.5, 0.5, 2, 1.3862939453125">
@@ -40,14 +39,14 @@
         <elementListCompartment Id="829ab134-b14b-49e5-8cff-7cf5ab57a9b1" absoluteBounds="3.5149999999999997, 2.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.53125 : 2.25); (3.53125 : 1.82139322916667); (2.625 : 1.82139322916667)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(3.53125 : 2.25); (3.53125 : 1.82139322916667); (2.5 : 1.82139322916667)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ConvenienceStoreManagementDataContext/EMPLOYEE/EMPLOYEE_ACCOUNT" />
       <nodes>
         <classShapeMoniker Id="bda65e8a-4c63-4383-81a3-9b9f0b727ddb" />
         <classShapeMoniker Id="8ea2e292-b912-4b3f-be5b-edb220e6bffd" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.625 : 2.78449625651042); (3.5 : 2.78449625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.5 : 2.78449625651042); (3.5 : 2.78449625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ConvenienceStoreManagementDataContext/KIND_OF_EMPLOYEE/KIND_OF_EMPLOYEE_EMPLOYEE" />
       <nodes>
         <classShapeMoniker Id="4052d446-f6d0-47b7-b9a2-579da6a6f40a" />
@@ -224,7 +223,6 @@
         <classShapeMoniker Id="8d932da5-0d40-450e-8ff2-f0d16c76e0b5" />
       </nodes>
     </associationConnector>
-
     <associationConnector edgePoints="[(7.96875 : 6.15549967447917); (7.96875 : 8.95274983723958); (8.375 : 8.95274983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConvenienceStoreManagementDataContext/ORDER/ORDER_ITEM_IN_ORDER" />
       <nodes>
@@ -254,6 +252,12 @@
       <DataClassMoniker Name="/ConvenienceStoreManagementDataContext/v_Working_time" />
       <nestedChildShapes>
         <elementListCompartment Id="72763e99-4450-472a-888d-e0c54cf19db2" absoluteBounds="0.64000000000000012, 12.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9ca8f49d-8c53-45ab-9cb0-1b2b06dd7338" absoluteBounds="3.125, 12.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/ConvenienceStoreManagementDataContext/v_Info_Of_Customer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0124b668-e242-4301-bd6e-07ce3b9e9500" absoluteBounds="3.14, 12.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

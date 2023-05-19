@@ -211,6 +211,17 @@
       <Column Name="Type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.v_Info_Of_Customers" Member="v_Info_Of_Customers">
+    <Type Name="v_Info_Of_Customer">
+      <Column Name="IDCustomer" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="[Name of Customer]" Member="Name_of_Customer" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="OpeningDate" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="[Latest transaction]" Member="Latest_transaction" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="NameTypeOfCustomer" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AccumulatedPoint" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Function Name="dbo.AddNewItem" Method="AddNewItem">
     <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(30)" />
     <Parameter Name="Price" Parameter="price" Type="System.Int32" DbType="Int" />
@@ -312,7 +323,6 @@
     <Parameter Name="password" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-
   <Function Name="dbo.Add_Employee" Method="Add_Employee">
     <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="dateofbirth" Type="System.DateTime" DbType="Date" />

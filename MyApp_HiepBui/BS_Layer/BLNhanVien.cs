@@ -43,8 +43,6 @@ namespace MyApp_HiepBui.BS_Layer
                 }
                 return true;
             }
-            return true;
-
         }
 
         public bool Delete_Employee(string id, ref string err)
@@ -219,7 +217,6 @@ namespace MyApp_HiepBui.BS_Layer
                 }
                 return true;
             }
-            return true;
         }
         public bool Modify_Account_Emp(string id, string username, string password, ref string err)
         {
@@ -235,7 +232,6 @@ namespace MyApp_HiepBui.BS_Layer
                 }
                 return true;
             }
-            return true;
         }
         public bool Add_Salary_Emp(string id, string totaltime, ref string err)
         {
@@ -251,8 +247,6 @@ namespace MyApp_HiepBui.BS_Layer
                 }
                 return true;
             }
-            return true;
-
         }
         public bool Modify_Salary_Emp(string id, string totaltime, ref string err)
         {
@@ -268,8 +262,6 @@ namespace MyApp_HiepBui.BS_Layer
                 }
                 return true;
             }
-            return true;
-
         }
     }
 }
