@@ -141,30 +141,27 @@ namespace MyApp_HiepBui.DB_Layer
             finally { conn.Close(); }
             return f;
         }
-        public int AutoNumber()
+        public string AutoNumber()
         {
-            if (conn.State == ConnectionState.Open)
+            using (ConvenienceStoreManagementDataContext convenience = new ConvenienceStoreManagementDataContext())
             {
-                conn.Close();
+                var query = (from u in convenience.AutoGenerateIDCustomer()
+                             select u).Aggregate(string.Empty, (current, next) => current + next);
+                string i = query.ToString();
+
+                return i;
             }
-            conn.Open();
-            SqlCommand cmd= new SqlCommand("SELECT MAX(CAST(RIGHT(IDCustomer,2) AS INT)) FROM CUSTOMERS", conn);
-            int i = Convert.ToInt32(cmd.ExecuteScalar());
-            conn.Close();
-            return i;
         }
         public int Number_for_Analyse(int Month_of_OpeningDate)
         {
-            if (conn.State == ConnectionState.Open)
+            using (ConvenienceStoreManagementDataContext convenience = new ConvenienceStoreManagementDataContext())
             {
-                conn.Close();
+                var query = (from u in convenience.CUSTOMERs
+                             where u.OpeningDate.Month == Month_of_OpeningDate
+                             select u.OpeningDate.Month).Count();
+                int i = Convert.ToInt32(query);
+                return i;
             }
-            conn.Open();
-            string sqlQuery = "EXEC USP_AnalyseCustomer " + Month_of_OpeningDate;
-            SqlCommand cmd = new SqlCommand(sqlQuery, conn);
-            int i = Convert.ToInt32(cmd.ExecuteScalar());
-            conn.Close();
-            return i;
         }
         public string ExecuteScalar(string strSQL, ref string error)
         {
