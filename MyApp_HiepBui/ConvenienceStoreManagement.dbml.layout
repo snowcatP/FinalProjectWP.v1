@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 15" name="ConvenienceStoreManagement">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 10.5" name="ConvenienceStoreManagement">
   <DataContextMoniker Name="/ConvenienceStoreManagementDataContext" />
   <nestedChildShapes>
     <classShape Id="8ea2e292-b912-4b3f-be5b-edb220e6bffd" absoluteBounds="0.625, 0.5, 2, 1.3862939453125">
@@ -39,14 +39,14 @@
         <elementListCompartment Id="829ab134-b14b-49e5-8cff-7cf5ab57a9b1" absoluteBounds="3.5149999999999997, 2.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.53125 : 2.25); (3.53125 : 1.82139322916667); (2.625 : 1.82139322916667)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3.53125 : 2.25); (3.53125 : 1.82139322916667); (2.625 : 1.82139322916667)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConvenienceStoreManagementDataContext/EMPLOYEE/EMPLOYEE_ACCOUNT" />
       <nodes>
         <classShapeMoniker Id="bda65e8a-4c63-4383-81a3-9b9f0b727ddb" />
         <classShapeMoniker Id="8ea2e292-b912-4b3f-be5b-edb220e6bffd" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.625 : 2.78449625651042); (3.5 : 2.78449625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.625 : 2.78449625651042); (3.5 : 2.78449625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConvenienceStoreManagementDataContext/KIND_OF_EMPLOYEE/KIND_OF_EMPLOYEE_EMPLOYEE" />
       <nodes>
         <classShapeMoniker Id="4052d446-f6d0-47b7-b9a2-579da6a6f40a" />
@@ -230,29 +230,5 @@
         <classShapeMoniker Id="8d932da5-0d40-450e-8ff2-f0d16c76e0b5" />
       </nodes>
     </associationConnector>
-    <classShape Id="beaf09d1-7f07-42f5-b274-f9a494612e99" absoluteBounds="0.5, 10.375, 2, 1.7708968098958331">
-      <DataClassMoniker Name="/ConvenienceStoreManagementDataContext/Employees_View" />
-      <nestedChildShapes>
-        <elementListCompartment Id="0f0bcb27-2c0e-4717-891b-b44af446ac91" absoluteBounds="0.515, 10.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="32e128d2-61e1-475a-82b8-5e0926a9092e" absoluteBounds="3.25, 10.5, 2, 2.3478011067708335">
-      <DataClassMoniker Name="/ConvenienceStoreManagementDataContext/Salary_Of_Employee" />
-      <nestedChildShapes>
-        <elementListCompartment Id="59a0c232-52b6-413b-af3a-7c80afddf0a7" absoluteBounds="3.2649999999999997, 10.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="aba8dfcb-b352-44d3-8418-5116556f4fb7" absoluteBounds="6.875, 11.125, 2, 1.9631982421875">
-      <DataClassMoniker Name="/ConvenienceStoreManagementDataContext/v_Working_time" />
-      <nestedChildShapes>
-        <elementListCompartment Id="7a91ed46-e454-4f16-a303-9493d9b042da" absoluteBounds="6.89, 11.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="1aba32cb-f072-45e6-bb25-6a1939ad9ddc" absoluteBounds="0.5, 12.75, 2, 1.9631982421875">
-      <DataClassMoniker Name="/ConvenienceStoreManagementDataContext/v_Account_Authority" />
-      <nestedChildShapes>
-        <elementListCompartment Id="cf3ab532-0565-4690-95eb-b27d9402d825" absoluteBounds="0.51500000000000012, 13.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
