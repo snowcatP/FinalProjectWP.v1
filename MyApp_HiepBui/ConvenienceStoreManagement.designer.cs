@@ -364,6 +364,7 @@ namespace MyApp_HiepBui
 			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
 		}
 		
+
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Add_WorkingTime")]
 		public int Add_WorkingTime([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string ide, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> totaltime)
 		{
@@ -376,6 +377,13 @@ namespace MyApp_HiepBui
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ide, totaltime);
 			return ((int)(result.ReturnValue));
+    }
+
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AutoGenerateIDCustomer", IsComposable=true)]
+		public string AutoGenerateIDCustomer()
+		{
+			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
+
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Add_Account")]
@@ -3829,6 +3837,7 @@ namespace MyApp_HiepBui
 		}
 	}
 	
+
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Salary_Of_Employee")]
 	public partial class Salary_Of_Employee
 	{
@@ -4216,6 +4225,7 @@ namespace MyApp_HiepBui
 		}
 	}
 	
+
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Employees View]")]
 	public partial class Employees_View
 	{
@@ -4350,7 +4360,7 @@ namespace MyApp_HiepBui
 			}
 		}
 	}
-	
+
 	public partial class FindCustomerResult
 	{
 		
