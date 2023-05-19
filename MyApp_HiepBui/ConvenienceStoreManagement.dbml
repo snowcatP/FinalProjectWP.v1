@@ -263,4 +263,7 @@
     <Parameter Name="AccumulatedPoint" Parameter="accumulatedPoint" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.AutoGenerateIDOrder" Method="AutoGenerateIDOrder" IsComposable="true">
+    <Return Type="System.String" />
+  </Function>
 </Database>

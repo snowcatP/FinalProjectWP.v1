@@ -156,9 +156,7 @@ namespace MyApp_HiepBui.IF_Layer
         {
             DataTable dt = new DataTable();
             dt.Clear();
-            DataSet ds = blOrder.GetAllOrders();
-
-            dt = ds.Tables[0];
+            dt = blOrder.GetAllOrders();
             dgvOrders.DataSource = dt;
         }
 
@@ -177,9 +175,7 @@ namespace MyApp_HiepBui.IF_Layer
             dgvOrders.DataSource = null;
             DataTable dt = new DataTable();
             dt.Clear();
-            DataSet ds = blOrder.GetAllOrders();
-
-            dt = ds.Tables[0];
+            dt = blOrder.GetAllOrders();
             dgvOrders.DataSource = dt;
         }
 
@@ -286,7 +282,7 @@ namespace MyApp_HiepBui.IF_Layer
             int price = 0;
             foreach (DataRow item in nameitems.Rows)
             {
-                if (item["NameItem"].ToString() == txtNameOfItem.Text.ToString())
+                if (item["NameItem"].ToString().Contains(txtNameOfItem.Text.ToString()))
                 {
                     idofitem = item["IDItem"].ToString();
                     price = int.Parse(item["Price"].ToString());
