@@ -281,13 +281,6 @@ namespace MyApp_HiepBui
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Add_Employee")]
-		public int Add_Employee([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> dateofbirth, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(11)")] string phone, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> status_emp, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idkindemp, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idgroup, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idtypeuser, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idstore)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, dateofbirth, address, phone, status_emp, idkindemp, idgroup, idtypeuser, idstore);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AddNewItem")]
 		public int AddNewItem([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(30)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Price", DbType="Int")] System.Nullable<int> price, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MFGDate", DbType="Date")] System.Nullable<System.DateTime> mFGDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Type", DbType="NVarChar(30)")] string type, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Supplier", DbType="NVarChar(30)")] string supplier, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Quantity", DbType="Int")] System.Nullable<int> quantity)
 		{
@@ -364,26 +357,10 @@ namespace MyApp_HiepBui
 			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
 		}
 		
-
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Add_WorkingTime")]
-		public int Add_WorkingTime([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string ide, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> totaltime)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ide, totaltime);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Edit_WorkingTime")]
-		public int Edit_WorkingTime([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string ide, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> totaltime)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ide, totaltime);
-			return ((int)(result.ReturnValue));
-    }
-
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AutoGenerateIDCustomer", IsComposable=true)]
 		public string AutoGenerateIDCustomer()
 		{
 			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
-
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Add_Account")]
@@ -397,6 +374,27 @@ namespace MyApp_HiepBui
 		public int Edit_Account([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string ide, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string password)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ide, username, password);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Add_Employee")]
+		public int Add_Employee([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> dateofbirth, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(11)")] string phone, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> status_emp, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idkindemp, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idgroup, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idtypeuser, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string idstore)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, dateofbirth, address, phone, status_emp, idkindemp, idgroup, idtypeuser, idstore);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Add_WorkingTime")]
+		public int Add_WorkingTime([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string ide, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> totaltime)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ide, totaltime);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Edit_WorkingTime")]
+		public int Edit_WorkingTime([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string ide, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> totaltime)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ide, totaltime);
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -3837,7 +3835,6 @@ namespace MyApp_HiepBui
 		}
 	}
 	
-
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Salary_Of_Employee")]
 	public partial class Salary_Of_Employee
 	{
@@ -4225,7 +4222,6 @@ namespace MyApp_HiepBui
 		}
 	}
 	
-
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Employees View]")]
 	public partial class Employees_View
 	{
@@ -4360,7 +4356,7 @@ namespace MyApp_HiepBui
 			}
 		}
 	}
-
+	
 	public partial class FindCustomerResult
 	{
 		

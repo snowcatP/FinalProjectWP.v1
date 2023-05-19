@@ -168,7 +168,6 @@
       <Association Name="ORDER_ITEM_IN_ORDER" Member="ORDER" ThisKey="IDOrder" OtherKey="IDOrder" Type="ORDER" IsForeignKey="true" />
     </Type>
   </Table>
-
   <Table Name="dbo.Salary_Of_Employee" Member="Salary_Of_Employees">
     <Type Name="Salary_Of_Employee">
       <Column Name="IDEmp" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
@@ -201,7 +200,6 @@
       <Column Name="TotalTime" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-
   <Table Name="dbo.[Employees View]" Member="Employees_Views">
     <Type Name="Employees_View">
       <Column Name="IDEmp" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
@@ -213,19 +211,6 @@
       <Column Name="Type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-
-  <Function Name="dbo.Add_Employee" Method="Add_Employee">
-    <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
-    <Parameter Name="dateofbirth" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="address" Type="System.String" DbType="NVarChar(50)" />
-    <Parameter Name="phone" Type="System.String" DbType="VarChar(11)" />
-    <Parameter Name="status_emp" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="idkindemp" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="idgroup" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="idtypeuser" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="idstore" Type="System.String" DbType="VarChar(5)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.AddNewItem" Method="AddNewItem">
     <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(30)" />
     <Parameter Name="Price" Parameter="price" Type="System.Int32" DbType="Int" />
@@ -312,18 +297,6 @@
   <Function Name="dbo.AutoGenerateIDOrder" Method="AutoGenerateIDOrder" IsComposable="true">
     <Return Type="System.String" />
   </Function>
-
-  <Function Name="dbo.Add_WorkingTime" Method="Add_WorkingTime">
-    <Parameter Name="ide" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="totaltime" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.Edit_WorkingTime" Method="Edit_WorkingTime">
-    <Parameter Name="ide" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="totaltime" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-
   <Function Name="dbo.AutoGenerateIDCustomer" Method="AutoGenerateIDCustomer" IsComposable="true">
     <Return Type="System.String" />
   </Function>
@@ -339,7 +312,18 @@
     <Parameter Name="password" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-
+  <Function Name="dbo.Add_Employee" Method="Add_Employee">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="dateofbirth" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="address" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="phone" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="status_emp" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="idkindemp" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="idgroup" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="idtypeuser" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="idstore" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.Add_WorkingTime" Method="Add_WorkingTime">
     <Parameter Name="ide" Type="System.String" DbType="VarChar(5)" />
     <Parameter Name="totaltime" Type="System.Int32" DbType="Int" />
