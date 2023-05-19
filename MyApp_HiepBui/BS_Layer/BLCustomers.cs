@@ -24,7 +24,7 @@ namespace MyApp_HiepBui.BS_Layer
         {
             string IdCus;
             double val =0;
-            int index = db.AutoNumber();
+            int index = int.Parse(db.AutoNumber());
             index++;
             if (index==99) 
             {
