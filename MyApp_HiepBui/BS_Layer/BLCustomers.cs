@@ -67,7 +67,14 @@ namespace MyApp_HiepBui.BS_Layer
         }
         public int analyseCustomer(int Month_of_OpeningDate,ref string error)
         {
-            return db.Number_for_Analyse(Month_of_OpeningDate);
+            using (ConvenienceStoreManagementDataContext convenience = new ConvenienceStoreManagementDataContext())
+            {
+                var query = (from u in convenience.CUSTOMERs
+                             where u.OpeningDate.Month == Month_of_OpeningDate
+                             select u).Count();
+                int i = Convert.ToInt32(query);
+                return i;
+            }
         }
     }
 }
