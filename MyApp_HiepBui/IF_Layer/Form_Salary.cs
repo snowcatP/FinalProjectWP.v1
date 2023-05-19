@@ -16,7 +16,7 @@ namespace MyApp_HiepBui.IF_Layer
         string err;
         DataTable dtSalary = null;
         BLNhanVien dbNV = new BLNhanVien();
-        bool Them = false; 
+        bool Them = false;
         public Form_Salary()
         {
             InitializeComponent();
@@ -25,11 +25,7 @@ namespace MyApp_HiepBui.IF_Layer
         {
             try
             {
-                dtSalary = new DataTable();
-                dtSalary.Clear();
-                DataSet dsSalary = dbNV.Salary_Of_Employee();
-                dtSalary = dsSalary.Tables[0];
-                dgv_Salary.DataSource = dtSalary;
+                dgv_Salary.DataSource = dbNV.Get_Salary_Of_Employee();
                 dgv_Salary.AutoResizeColumns();
 
 
