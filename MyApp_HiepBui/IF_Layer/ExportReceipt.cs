@@ -34,7 +34,7 @@ namespace MyApp_HiepBui.IF_Layer
 
         public void ExportOrder(string idCus)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=LAPTOP-TL4MGTDD\MSSQLSERVER01;Initial Catalog=ConvenienceStoreManagement;Integrated Security=True");
+            SqlConnection connection = new SqlConnection("Data Source=HIEPBUI2812\\SQLEXPRESS;Initial Catalog=ConvenienceStoreManagement(new);Integrated Security=True");
             SqlCommand command = new SqlCommand("select * from [v_Order_Detail_For_Export] where [ID Order] = '" + idCus + "' ",connection);
             SqlDataAdapter d = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
@@ -42,7 +42,7 @@ namespace MyApp_HiepBui.IF_Layer
            
             reportViewer1.LocalReport.DataSources.Clear();
             Microsoft.Reporting.WinForms.ReportDataSource source = new Microsoft.Reporting.WinForms.ReportDataSource("ItemsInOrder", dt);
-            reportViewer1.LocalReport.ReportPath = "D:\\Học tập năm 2 - HK2\\Window-Programming\\Final_Term\\FinalProjectWP.v1\\MyApp_HiepBui\\IF_Layer\\ExportOrder.rdlc"; //vo folder da tai ve, copy path cua folder roi paste truoc ExportOrder.rdlc
+            reportViewer1.LocalReport.ReportPath = "D:\\NAM 2_ Ky 2\\LT_WinDows\\Do_An\\FinalProject\\FinalProjectWP.v1\\MyApp_HiepBui\\IF_Layer\\ExportOrder.rdlc"; //vo folder da tai ve, copy path cua folder roi paste truoc ExportOrder.rdlc
             reportViewer1.LocalReport.DataSources.Add(source);
             reportViewer1.RefreshReport();
         }

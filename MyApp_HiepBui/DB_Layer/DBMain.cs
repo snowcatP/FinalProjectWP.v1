@@ -15,7 +15,7 @@ namespace MyApp_HiepBui.DB_Layer
         
 
 
-        string connStr = @"Data Source=LAPTOP-TL4MGTDD\MSSQLSERVER01;Initial Catalog=ConvenienceStoreManagement;Integrated Security=True";
+        string connStr = @"Data Source=Hoangpro\HOANGPRO;Initial Catalog=ConvenienceStoreManagement;Integrated Security=True";
 
 
 

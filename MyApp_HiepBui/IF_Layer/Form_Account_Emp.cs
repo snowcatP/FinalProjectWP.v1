@@ -25,7 +25,11 @@ namespace MyApp_HiepBui.IF_Layer
         {
             try
             {
-                dgv_AccountEmp.DataSource = dbNV.Get_Account_Of_Employee();
+                dtAccount = new DataTable();
+                dtAccount.Clear();
+                DataSet dsAccount = dbNV.Account_Employee();
+                dtAccount = dsAccount.Tables[0];
+                dgv_AccountEmp.DataSource = dtAccount;
                 dgv_AccountEmp.AutoResizeColumns();
             }
             catch (SqlException)
