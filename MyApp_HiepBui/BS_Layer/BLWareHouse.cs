@@ -200,7 +200,7 @@ namespace MyApp_HiepBui.BS_Layer
             {
                 var data = from wh in store.WAREHOUSEs
                            join it in store.ITEMs on wh.IDItem equals it.IDItem
-                           where it.ProductionDate.Month - DateTime.Now.Month == 0 &&
+                           where Math.Abs(it.ProductionDate.Month - DateTime.Now.Month) <= 1 &&
                                  it.ProductionDate.Year - DateTime.Now.Year == 0
                            select wh.NumberOfItem;
                 return data.Sum();
@@ -212,7 +212,7 @@ namespace MyApp_HiepBui.BS_Layer
             {
                 var data = from wh in store.WAREHOUSEs
                            join it in store.ITEMs on wh.IDItem equals it.IDItem
-                           where it.ProductionDate.Month - DateTime.Now.Month == 0 &&
+                           where Math.Abs(it.ProductionDate.Month - DateTime.Now.Month) <= 1 &&
                                  it.ProductionDate.Year - DateTime.Now.Year == 0
                            select wh.NumberOfItem * it.Price;
                 return data.Sum();
