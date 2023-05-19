@@ -25,11 +25,7 @@ namespace MyApp_HiepBui.IF_Layer
         {
             try
             {
-                dtAccount = new DataTable();
-                dtAccount.Clear();
-                DataSet dsAccount = dbNV.Account_Employee();
-                dtAccount = dsAccount.Tables[0];
-                dgv_AccountEmp.DataSource = dtAccount;
+                dgv_AccountEmp.DataSource = dbNV.Get_Account_Of_Employee();
                 dgv_AccountEmp.AutoResizeColumns();
             }
             catch (SqlException)
@@ -56,7 +52,7 @@ namespace MyApp_HiepBui.IF_Layer
             txt_ID.Text = dgv_AccountEmp.Rows[r].Cells[0].Value.ToString();
             txt_Username.Text = dgv_AccountEmp.Rows[r].Cells[2].Value.ToString();
             txt_Password.Text = dgv_AccountEmp.Rows[r].Cells[3].Value.ToString();
-           
+
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
