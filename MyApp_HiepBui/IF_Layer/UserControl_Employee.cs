@@ -14,7 +14,6 @@ namespace MyApp_HiepBui.IF_Layer
     public partial class UserControl_Employee : UserControl
     {
         string err = "";
-        DataTable dtNhanVien = null;
         BLNhanVien dbNV = new BLNhanVien();
         public UserControl_Employee()
         {
@@ -161,8 +160,7 @@ namespace MyApp_HiepBui.IF_Layer
                     dtSearchName = dbNV.SearchInfo(searchName);
                     if (dtSearchName == null)
                     {
-                        throw new Exception("No data found.");
-                        MessageBox.Show("Không tìm thấy nhân viên");
+                        MessageBox.Show("No data found.");
                     }
                     else
                     {

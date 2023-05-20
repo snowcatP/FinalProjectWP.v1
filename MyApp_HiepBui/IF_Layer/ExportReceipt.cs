@@ -16,7 +16,6 @@ namespace MyApp_HiepBui.IF_Layer
 {
     public partial class ExportReceipt : Form
     {
-        DBMain db;
         string IDCus;
         public ExportReceipt(string iDCus)
         {

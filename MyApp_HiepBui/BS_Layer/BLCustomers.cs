@@ -11,7 +11,6 @@ namespace MyApp_HiepBui.BS_Layer
 {
     class BLCustomers
     {
-        DBMain db = null;
         public BLCustomers()
         {
 
